@@ -1,22 +1,29 @@
 import React from 'react'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 const text = {
-  intro: {
-    firstPerson: `Hi, I'm Brian Han, a front-end developer based in Austin, Texas.`,
-    thirdPerson: `Brian Han is a front-end developer based in Austin, Texas.`,
-  },
-  about: `I build interfaces with web technologies , fix bugs, and refactor code. I've been working as developer for a few years now.`,
-  currently: `These days, I'm working at Accenture Interactive collaborating with studios like Fjord and Intrepid helping clients build solutions using web technologies.`,
-  previously: `Previously, I was at IBM where I helped start Carbon Design System as a core developer and contributor.`,
+  name: `Brian Han is a front-end developer.`,
+  about: `I build websites and apps with a focus on design, code quality and performance.`,
+  started: `I started at IBM working on Carbon, an award-winning design system. I was a founding developer and core contributor.`,
+  currently: `Currently, I work at Accenture Interactive and collaborate with studios like Fjord and Intrepid.`,
+}
+
+const links = {
+  carbon: `http://www.carbondesignsystem.com/`,
 }
 
 const HomePage = () => (
   <div className={styles.root}>
-    <h1>{text.intro.thirdPerson}</h1>
-    <p>{text.about}</p>
-    <p>{text.currently}</p>
-    <p>{text.previously}</p>
+    <h1 className={styles.heading}>{text.name}</h1>
+    <p className={styles.paragraph}>{text.about}</p>
+    <p className={styles.paragraph}>
+      I started at <span className={styles.accent}>IBM</span> working on{' '}
+      <a className={styles.link} href={links.carbon}>
+        Carbon
+      </a>, an award-winning design system. I was a founding developer and core
+      contributor.
+    </p>
+    <p className={styles.paragraph}>{text.currently}</p>
   </div>
 )
 
