@@ -3,6 +3,9 @@ import styles from './styles.module.css'
 
 const links = {
   carbon: `http://www.carbondesignsystem.com/`,
+  github: `https://github.com/hellobrian`,
+  linkedin: `https://www.linkedin.com/in/hellobrian`,
+  blog: `https://medium.com/@brianhan`,
 }
 
 const HomePage = () => (
@@ -23,8 +26,8 @@ const HomePage = () => (
           touchy, visual parts of the web.
         </p>
         <p className={styles.paragraph}>
-          Currently, I work as at Accenture Interactive and collaborate with
-          other designers and devs at studios like Fjord and Intrepid Pursuits.
+          Currently, I work at Accenture Interactive and collaborate with other
+          designers and devs at studios like Fjord and Intrepid Pursuits.
         </p>
         <p className={styles.paragraph}>
           Previously, I was at IBM working on{' '}
@@ -41,6 +44,23 @@ const HomePage = () => (
           suppose). You can find me enjoying stuff like 🍜 🍣 🌮 ☕️
         </p>
       </div>
+      <ul className={styles.linkList}>
+        <li>
+          <a href={links.github} className={styles.link}>
+            GitHub
+          </a>
+        </li>
+        <li>
+          <a href={links.linkedin} className={styles.link}>
+            LinkedIn
+          </a>
+        </li>
+        <li>
+          <a href={links.blog} className={styles.link}>
+            Medium
+          </a>
+        </li>
+      </ul>
     </main>
   </div>
 )
