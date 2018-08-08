@@ -17,9 +17,9 @@ const HomePage = () => (
       <div className={styles.paragraphList}>
         <p className={styles.paragraph}>
           I build websites and apps but mainly my focus is on building
-          interfaces &mdash; it should look good, feel good, and deliver the
-          best possible experience for people using it. Sure, I can build APIs
-          and tinker with some middleware but my jam is all about the clicky,
+          interfaces &mdash; UI should look good, feel good, and deliver the
+          best possible experience for people using it. Sure, I can build an API
+          or tinker with some middleware but my jam is all about the clicky,
           touchy, visual parts of the web.
         </p>
         <p className={styles.paragraph}>
