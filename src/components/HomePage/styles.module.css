@@ -27,10 +27,12 @@
 .root {
   margin: 0 auto;
   height: 100vh;
+  animation-name: fadein;
+  animation-duration: 3s;
 }
 
 .main {
-  padding: 0;
+  padding: 0 0.5rem;
   width: 95%;
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -69,8 +71,10 @@
   /* padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 2rem 0 rgba(0, 0, 0, 0.1); */
-  animation-name: fadein;
-  animation-duration: 3s;
+}
+
+.name {
+  color: rgb(45, 116, 218);
 }
 
 @media (min-width: 720px) {
@@ -79,22 +83,10 @@
   }
 }
 
-.name {
-  color: rgb(45, 116, 218);
-}
-
-.paragraphList {
-  /* padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 2rem 0 rgba(0, 0, 0, 0.1); */
-}
-
 .paragraph {
   font-family: 'Merriweather', serif;
   margin-bottom: 1rem;
   line-height: 1.5;
-  animation-name: fadein;
-  animation-duration: 4s;
 }
 
 .linkList {
@@ -106,7 +98,6 @@
 }
 
 .linkList > li {
-  margin-top: 2rem;
   padding-bottom: 1rem;
   padding-right: 1rem;
 }

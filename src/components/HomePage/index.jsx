@@ -56,6 +56,8 @@ const HomePage = () => (
             LinkedIn
           </a>
         </li>
+      </ul>
+      <ul className={styles.linkList}>
         <li>
           <a href={links.blog} className={styles.link}>
             Medium
