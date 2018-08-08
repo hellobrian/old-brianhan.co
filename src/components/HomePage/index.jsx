@@ -1,29 +1,36 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-const text = {
-  name: `Brian Han is a front-end developer.`,
-  about: `I build websites and apps with a focus on design, code quality and performance.`,
-  started: `I started at IBM working on Carbon, an award-winning design system. I was a founding developer and core contributor.`,
-  currently: `Currently, I work at Accenture Interactive and collaborate with studios like Fjord and Intrepid.`,
-}
-
 const links = {
   carbon: `http://www.carbondesignsystem.com/`,
 }
 
 const HomePage = () => (
-  <div className={styles.root}>
-    <h1 className={styles.heading}>{text.name}</h1>
-    <p className={styles.paragraph}>{text.about}</p>
-    <p className={styles.paragraph}>
-      I started at <span className={styles.accent}>IBM</span> working on{' '}
-      <a className={styles.link} href={links.carbon}>
-        Carbon
-      </a>, an award-winning design system. I was a founding developer and core
-      contributor.
-    </p>
-    <p className={styles.paragraph}>{text.currently}</p>
+  <div>
+    <svg className={styles.circle} />
+    <main className={styles.root}>
+      <h1 className={styles.heading}>
+        Brian Han is a front-end developer &mdash; building things for people on
+        the internet.
+      </h1>
+      <div className={styles.paragraphList}>
+        <p className={styles.paragraph}>
+          I build websites, apps and the occasional API. I like to focus on
+          design, code-quality and performance.
+        </p>
+        <p className={styles.paragraph}>
+          Currently, I work at Accenture Interactive and collaborate with
+          studios like Fjord and Intrepid Pursuits.
+        </p>
+        <p className={styles.paragraph}>
+          Previously, I was at IBM working on{' '}
+          <a className={styles.link} href={links.carbon}>
+            Carbon
+          </a>, an award-winning design system. I was a founding developer and
+          core contributor.
+        </p>
+      </div>
+    </main>
   </div>
 )
 

@@ -4,12 +4,10 @@
   "version": "1.0.0",
   "author": "Brian Han",
   "dependencies": {
-    "gatsby": "^1.9.247",
+    "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-google-fonts": "^0.0.4",
-    "gatsby-plugin-react-css-modules": "^1.0.15",
     "gatsby-plugin-react-helmet": "^2.0.10",
-    "gatsby-plugin-sass": "^1.0.26",
     "react-helmet": "^5.2.0"
   },
   "keywords": [
@@ -18,7 +16,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
