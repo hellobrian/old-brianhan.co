@@ -6,6 +6,7 @@ const links = {
   github: `https://github.com/hellobrian`,
   linkedin: `https://www.linkedin.com/in/hellobrian`,
   blog: `https://medium.com/@brianhan`,
+  email: `mailto:thisisbrianhan@gmail.com`,
 }
 
 const HomePage = () => (
@@ -58,6 +59,11 @@ const HomePage = () => (
         <li>
           <a href={links.blog} className={styles.link}>
             Medium
+          </a>
+        </li>
+        <li>
+          <a href={links.email} className={styles.link}>
+            thisisbrianhan@gmail.com
           </a>
         </li>
       </ul>
