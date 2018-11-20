@@ -19,7 +19,9 @@ export default ({ children }) => (
         <Helmet
           titleTemplate={`%s | ${data.site.siteMetadata.title}`}
           defaultTitle={data.site.siteMetadata.title}
-        />
+        >
+          <html lang="en" />
+        </Helmet>
         <div>{children}</div>
       </>
     )}
