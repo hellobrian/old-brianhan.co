@@ -5,10 +5,10 @@
   "author": "Brian Han",
   "dependencies": {
     "gatsby": "^2.0.52",
-    "gatsby-plugin-google-fonts": "^0.0.4",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-netlify": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.15",
+    "gatsby-plugin-prefetch-google-fonts": "^1.0.11",
     "gatsby-plugin-react-helmet": "^3.0.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
@@ -25,8 +25,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write 'src/**/*.js'"
   },
   "repository": {
     "type": "git",

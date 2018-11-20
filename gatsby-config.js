@@ -9,9 +9,18 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        fonts: [`karla\:400,700`, `merriweather\:400,700`],
+        fonts: [
+          {
+            family: `Karla`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Merriweather`,
+            variants: [`400`, `700`],
+          },
+        ],
       },
     },
     {
