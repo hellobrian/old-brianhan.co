@@ -1,13 +1,7 @@
 import React from 'react'
+import LinkList from '../LinkList'
+import links from '../../constants/links'
 import styles from './styles.module.css'
-
-const links = {
-  carbon: `http://www.carbondesignsystem.com/`,
-  github: `https://github.com/hellobrian`,
-  linkedin: `https://www.linkedin.com/in/hellobrian`,
-  blog: `https://medium.com/@brianhan`,
-  email: `mailto:thisisbrianhan@gmail.com`,
-}
 
 const HomePage = () => (
   <div className={styles.root}>
@@ -52,30 +46,7 @@ const HomePage = () => (
           </span>
         </p>
       </div>
-      <ul className={styles.linkList}>
-        <li>
-          <a href={links.github} className={styles.link}>
-            GitHub
-          </a>
-        </li>
-        <li>
-          <a href={links.linkedin} className={styles.link}>
-            LinkedIn
-          </a>
-        </li>
-      </ul>
-      <ul className={styles.linkList}>
-        <li>
-          <a href={links.blog} className={styles.link}>
-            Medium
-          </a>
-        </li>
-        <li>
-          <a href={links.email} className={styles.link}>
-            thisisbrianhan@gmail.com
-          </a>
-        </li>
-      </ul>
+      <LinkList />
     </main>
   </div>
 )
