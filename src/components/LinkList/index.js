@@ -1,33 +1,26 @@
 import React from 'react'
-import styles from './styles.module.css'
 import links from '../../constants/links'
+import LinkListItem from '../LinkListItem'
+import { StyledList } from './styled'
 
 const LinkList = () => (
   <>
-    <ul className={styles.linkList}>
+    <StyledList>
       <li>
-        <a href={links.github} className={styles.link}>
-          GitHub
-        </a>
+        <LinkListItem href={links.github} text={`GitHub`} />
       </li>
       <li>
-        <a href={links.linkedin} className={styles.link}>
-          LinkedIn
-        </a>
+        <LinkListItem href={links.linkedin} text={`LinkedIn`} />
       </li>
-    </ul>
-    <ul className={styles.linkList}>
+    </StyledList>
+    <StyledList>
       <li>
-        <a href={links.blog} className={styles.link}>
-          Medium
-        </a>
+        <LinkListItem href={links.blog} text={`Medium`} />
       </li>
       <li>
-        <a href={links.email} className={styles.link}>
-          thisisbrianhan@gmail.com
-        </a>
+        <LinkListItem href={links.email} text={`thisisbrianhan@gmail.com`} />
       </li>
-    </ul>
+    </StyledList>
   </>
 )
 

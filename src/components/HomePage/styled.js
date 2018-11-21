@@ -1,4 +1,6 @@
-@keyframes fadein {
+import styled, { keyframes } from 'styled-components'
+
+const fadein = keyframes`
   from {
     opacity: 0;
   }
@@ -6,9 +8,30 @@
   to {
     opacity: 1;
   }
-}
+`
 
-.circle {
+export const HomePageRoot = styled.div`
+  margin: 0 auto;
+  height: 100vh;
+  animation-name: ${fadein};
+  animation-duration: 3s;
+
+  @media (min-width: 400px) {
+    width: 80%;
+  }
+
+  @media (min-width: 600px) {
+    width: 70%;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 800px) {
+    width: 500px;
+  }
+`
+
+export const CircleSvg = styled.svg`
   background-image: linear-gradient(
     to top,
     #ff9a9e 0%,
@@ -21,47 +44,19 @@
   border-radius: 50%;
   top: -1rem;
   left: -1rem;
-  animation-name: fadein;
-  animation-duration: 2s;
-}
-
-.root {
-  margin: 0 auto;
-  height: 100vh;
-  animation-name: fadein;
+  animation-name: ${fadein};
   animation-duration: 3s;
-}
-
-.main {
+`
+export const Main = styled.main`
   padding: 0 0.5rem;
   width: 95%;
   padding-top: 3rem;
   padding-bottom: 3rem;
   position: relative;
   z-index: 1;
-}
+`
 
-@media (min-width: 400px) {
-  .root {
-    width: 80%;
-  }
-}
-
-@media (min-width: 600px) {
-  .root {
-    width: 70%;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-}
-
-@media (min-width: 800px) {
-  .root {
-    width: 500px;
-  }
-}
-
-.heading {
+export const H1 = styled.h1`
   display: flex;
   flex-direction: column;
   font-family: 'Karla', sans-serif;
@@ -72,20 +67,18 @@
   /* padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 2rem 0 rgba(0, 0, 0, 0.1); */
-}
 
-.name {
-  color: rgb(45, 116, 218);
-}
-
-@media (min-width: 720px) {
-  .heading {
+  @media (min-width: 720px) {
     font-size: 2.75rem;
   }
-}
+`
 
-.paragraph {
+export const NameSpan = styled.span`
+  color: rgb(45, 116, 218);
+`
+
+export const Paragraph = styled.p`
   font-family: 'Merriweather', serif;
   margin-bottom: 1rem;
   line-height: 1.5;
-}
+`
