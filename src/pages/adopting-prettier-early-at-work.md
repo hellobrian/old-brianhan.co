@@ -3,7 +3,7 @@ title: 'Adopting Prettier Early at Work'
 date: '2018-11-22'
 ---
 
-When I join a new team or start a new project, the first thing I try to do is setup `prettier`, which is a tool that automatically formats the syntax of your code. It works with a bunch of languages and you can make it work in a few different ways. To be caught up in an argument about semicolons or making comments on someone's pull request about indents isn't the best use of time. The earlier you can squash these arguments, and bring peace to the universe is through automation ☮️
+When I join a new team or start a new project, the first thing I try to do is setup `prettier`, which is a tool that automatically formats the syntax of your code. It works with a bunch of languages and you can make it work in a few different ways. Getting caught up in an argument about semicolons or making comments on someone's pull request about indents isn't the best use of time.
 
 In this article, I'm going to guide you through how you can integrate Prettier into your team's workflow. Before we get into details, here's a quick overview of what you can do:
 
@@ -59,10 +59,9 @@ Here's a **package.json** lifted straight from the [Prettier docs](https://prett
 }
 ```
 
-## Compatibility beyond JS
+## Prettier isn't just meant for JS
 
-Prettier works with more than just `.js` files as you have probably noticed.
-You can use it on `css` files, `md` files; there are a bunch of different file extensions you can target. You can see a [full list here on the Prettier's landing page](https://prettier.io/).
+You can use Prettier on `css` files, `md` files, and a bunch of others too! You can see a [full list here on the Prettier's landing page](https://prettier.io/).
 
 For example, maybe you're real fancy and using TypeScript, JSX, Sass and MDX.
 Well, here's how you can target all those files.
@@ -79,7 +78,7 @@ Well, here's how you can target all those files.
 
 ## Targeting files for Prettier via lint-staged
 
-Let's look at the target pattern again: `*.{js,json,css,md}`.
+Let's look at the target pattern we're using with lint-staged: `*.{js,json,css,md}`.
 
 This is going to target all of those files with those extensions anywhere in your project.
 You can refer to the [lint-staged docs on filtering files here.](https://github.com/okonet/lint-staged#filtering-files)
