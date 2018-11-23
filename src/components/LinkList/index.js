@@ -1,24 +1,37 @@
 import React from 'react'
-import links from '../../constants/links'
+import { LINKS } from '../../constants'
 import LinkListItem from '../LinkListItem'
-import { StyledList } from './styled'
+import styled from 'styled-components'
+
+export const StyledList = styled.ul`
+  margin: 0;
+  padding: 0;
+  font-family: 'Karla', sans-serif;
+  list-style-type: none;
+  display: flex;
+
+  & > li {
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+  }
+`
 
 const LinkList = () => (
   <>
     <StyledList>
       <li>
-        <LinkListItem href={links.github} text={`GitHub`} />
+        <LinkListItem href={LINKS.github} text={`GitHub`} />
       </li>
       <li>
-        <LinkListItem href={links.linkedin} text={`LinkedIn`} />
+        <LinkListItem href={LINKS.linkedin} text={`LinkedIn`} />
       </li>
     </StyledList>
     <StyledList>
       <li>
-        <LinkListItem href={links.blog} text={`Medium`} />
+        <LinkListItem href={LINKS.blog} text={`Medium`} />
       </li>
       <li>
-        <LinkListItem href={links.email} text={`thisisbrianhan@gmail.com`} />
+        <LinkListItem href={LINKS.email} text={`thisisbrianhan@gmail.com`} />
       </li>
     </StyledList>
   </>

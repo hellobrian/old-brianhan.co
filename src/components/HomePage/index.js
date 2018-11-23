@@ -9,7 +9,7 @@ import {
 } from './styled'
 import LinkList from '../LinkList'
 import LinkListItem from '../LinkListItem'
-import links from '../../constants/links'
+import { LINKS } from '../../constants'
 
 export default () => (
   <HomePageRoot>
@@ -34,7 +34,7 @@ export default () => (
         </Paragraph>
         <Paragraph>
           Previously, I was at IBM working on{' '}
-          <LinkListItem href={links.carbon} text={'Carbon'} />, an award-winning
+          <LinkListItem href={LINKS.carbon} text={'Carbon'} />, an award-winning
           open-source design system. I was one of the first developers to work
           on it and maintained it with an amazing team of designers and devs for
           most of my career at IBM.
