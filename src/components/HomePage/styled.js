@@ -1,41 +1,13 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { rem } from '../../utils'
-
-const fadein = keyframes`
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-`
 
 export const HomePageRoot = styled.div`
   height: 100vh;
-  animation-name: ${fadein};
-  animation-duration: 3s;
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 
-export const CircleSvg = styled.svg`
-  background-image: linear-gradient(
-    to top,
-    #ff9a9e 0%,
-    #fecfef 99%,
-    #fecfef 100%
-  );
-  width: 7rem;
-  height: 7rem;
-  position: fixed;
-  border-radius: 50%;
-  top: -1rem;
-  left: -1rem;
-  animation-name: ${fadein};
-  animation-duration: 3s;
-`
 export const Main = styled.main`
   position: relative;
   z-index: 1;

@@ -1,5 +1,6 @@
 import React from 'react'
-import { HomePageRoot, CircleSvg, Main, H1, NameSpan } from './styled'
+import { HomePageRoot, Main, H1, NameSpan } from './styled'
+import CircleSvg from '../CircleSvg'
 import LinkList from '../LinkList'
 import LinkListItem from '../LinkListItem'
 import { LINKS } from '../../constants'
