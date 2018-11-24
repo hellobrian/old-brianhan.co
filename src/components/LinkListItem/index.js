@@ -25,9 +25,9 @@ export const StyledLink = styled.a`
   }
 `
 
-const LinkListItem = ({ href, text }) => (
-  <StyledLink href={href}>{text}</StyledLink>
-)
+const LinkListItem = ({ href, text }) => {
+  return <StyledLink href={href}>{text}</StyledLink>
+}
 
 LinkListItem.propTypes = {
   href: PropTypes.string.isRequired,

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { rem } from '../../typography'
+import { rem } from '../../utils'
 
 const fadein = keyframes`
   from {
