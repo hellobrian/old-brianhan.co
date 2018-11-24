@@ -1,9 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from 'src/components/Layout';
 
-export default ({ data }) => {
-  console.log(data);
+const AllBlogPost = ({ data }) => {
   return (
     <Layout>
       <div>
@@ -22,6 +22,10 @@ export default ({ data }) => {
       </div>
     </Layout>
   );
+};
+
+AllBlogPost.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export const query = graphql`
@@ -44,3 +48,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default AllBlogPost;

@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from 'src/components/Layout';
 
-export default ({ data }) => {
+const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <Layout>
@@ -12,6 +13,10 @@ export default ({ data }) => {
       </div>
     </Layout>
   );
+};
+
+BlogPost.propTypes = {
+  data: PropTypes.object.isRequired,
 };
 
 export const query = graphql`
@@ -24,3 +29,5 @@ export const query = graphql`
     }
   }
 `;
+
+export default BlogPost;

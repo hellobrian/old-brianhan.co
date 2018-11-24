@@ -31,7 +31,12 @@
     "@storybook/addon-links": "^4.0.8",
     "@storybook/addons": "^4.0.8",
     "@storybook/react": "^4.0.8",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
     "prettier": "^1.12.0",
     "react-typography": "^0.16.13"
   },
@@ -44,6 +49,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --config .prettierrc --ignore-path .prettierignore --write '**/*.{js,json,md}'",
+    "lint": "eslint -c .eslintrc src/**/*.js",
     "storybook": "start-storybook -p 6006 --quiet --ci",
     "build-storybook": "build-storybook"
   },
