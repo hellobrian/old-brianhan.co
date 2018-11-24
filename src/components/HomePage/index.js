@@ -1,9 +1,9 @@
-import React from 'react'
-import { HomePageRoot, Main, H1, NameSpan } from './styled'
-import CircleSvg from '../CircleSvg'
-import LinkList from '../LinkList'
-import LinkListItem from '../LinkListItem'
-import { LINKS } from '../../utils'
+import React from 'react';
+import { HomePageRoot, Main, H1, NameSpan } from './styled';
+import CircleSvg from '../CircleSvg';
+import LinkList from '../LinkList';
+import LinkListItem from '../LinkListItem';
+import { LINKS } from '../../utils';
 
 export default () => (
   <HomePageRoot>
@@ -40,8 +40,7 @@ export default () => (
           suppose). You can find me enjoying stuff like{' '}
           <span
             role="img"
-            aria-label="Stuff that Brian enjoys: ramen, sushi, tacos, and coffee"
-          >
+            aria-label="Stuff that Brian enjoys: ramen, sushi, tacos, and coffee">
             🍜 🍣 🌮 ☕️
           </span>
         </p>
@@ -49,4 +48,4 @@ export default () => (
       <LinkList />
     </Main>
   </HomePageRoot>
-)
+);

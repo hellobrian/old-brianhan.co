@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const CircleSvg = styled.svg`
   background-image: linear-gradient(
@@ -13,6 +13,6 @@ const CircleSvg = styled.svg`
   border-radius: 50%;
   top: -1rem;
   left: -1rem;
-`
+`;
 
-export default CircleSvg
+export default CircleSvg;

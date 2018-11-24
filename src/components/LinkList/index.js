@@ -1,7 +1,7 @@
-import React from 'react'
-import { LINKS } from '../../utils'
-import LinkListItem from '../LinkListItem'
-import styled from 'styled-components'
+import React from 'react';
+import { LINKS } from '../../utils';
+import LinkListItem from '../LinkListItem';
+import styled from 'styled-components';
 
 export const StyledList = styled.ul`
   margin: 0;
@@ -13,7 +13,7 @@ export const StyledList = styled.ul`
   & > li {
     padding-right: 0.5rem;
   }
-`
+`;
 
 const LinkList = () => (
   <>
@@ -34,6 +34,6 @@ const LinkList = () => (
       </li>
     </StyledList>
   </>
-)
+);
 
-export default LinkList
+export default LinkList;

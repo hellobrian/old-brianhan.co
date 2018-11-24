@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
-import '../src/components/Layout/index.css'
+import React from 'react';
+import styled from 'styled-components';
+import '../src/components/Layout/index.css';
 
 export const StyledStoryWrapper = styled.div`
   display: flex;
@@ -8,6 +8,8 @@ export const StyledStoryWrapper = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100vw;
-`
+`;
 
-export default storyFn => <StyledStoryWrapper>{storyFn()}</StyledStoryWrapper>
+export default (storyFn) => (
+  <StyledStoryWrapper>{storyFn()}</StyledStoryWrapper>
+);

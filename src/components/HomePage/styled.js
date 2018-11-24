@@ -1,12 +1,12 @@
-import styled from 'styled-components'
-import { rem } from '../../utils'
+import styled from 'styled-components';
+import { rem } from '../../utils';
 
 export const HomePageRoot = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 export const Main = styled.main`
   position: relative;
@@ -26,13 +26,13 @@ export const Main = styled.main`
   @media screen and (min-width: 768px) {
     width: ${rem(550)};
   }
-`
+`;
 
 export const H1 = styled.h1`
   display: flex;
   flex-direction: column;
-`
+`;
 
 export const NameSpan = styled.span`
   color: rgb(45, 116, 218);
-`
+`;

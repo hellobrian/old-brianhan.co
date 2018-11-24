@@ -40,7 +40,7 @@
   "scripts": {
     "build": "gatsby build",
     "dev": "gatsby develop",
-    "format": "prettier --write 'src/**/*.js'",
+    "format": "prettier --config .prettierrc --ignore-path .prettierignore --write '**/*.{js,json,md}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },

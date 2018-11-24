@@ -4,4 +4,4 @@ export const LINKS = {
   linkedin: `https://www.linkedin.com/in/hellobrian`,
   blog: `https://medium.com/@brianhan`,
   email: `mailto:thisisbrianhan@gmail.com`,
-}
+};

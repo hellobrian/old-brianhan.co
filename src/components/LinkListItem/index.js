@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 export const StyledLink = styled.a`
   text-decoration: none;
@@ -23,15 +23,15 @@ export const StyledLink = styled.a`
     outline: none;
     background-color: rgba(0, 0, 0, 0.1);
   }
-`
+`;
 
 const LinkListItem = ({ href, text }) => {
-  return <StyledLink href={href}>{text}</StyledLink>
-}
+  return <StyledLink href={href}>{text}</StyledLink>;
+};
 
 LinkListItem.propTypes = {
   href: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-}
+};
 
-export default LinkListItem
+export default LinkListItem;

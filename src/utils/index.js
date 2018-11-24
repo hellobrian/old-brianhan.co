@@ -1,5 +1,5 @@
-import typography, { rem } from './typography'
-import { LINKS } from './constants'
+import typography, { rem } from './typography';
+import { LINKS } from './constants';
 
 /**
  * Reuse with defaultProps event handlers
@@ -8,6 +8,6 @@ import { LINKS } from './constants'
  *   onClick: noop
  * }
  */
-const noop = () => {}
+const noop = () => {};
 
-export { noop, rem, typography, LINKS }
+export { noop, rem, typography, LINKS };
