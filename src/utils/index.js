@@ -1,4 +1,5 @@
 import typography, { rem } from './typography'
+import { LINKS } from './constants'
 
 /**
  * Reuse with defaultProps event handlers
@@ -9,4 +10,4 @@ import typography, { rem } from './typography'
  */
 const noop = () => {}
 
-export { noop, rem, typography }
+export { noop, rem, typography, LINKS }

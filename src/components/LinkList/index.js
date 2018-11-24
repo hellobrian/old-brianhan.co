@@ -1,5 +1,5 @@
 import React from 'react'
-import { LINKS } from '../../constants'
+import { LINKS } from '../../utils'
 import LinkListItem from '../LinkListItem'
 import styled from 'styled-components'
 

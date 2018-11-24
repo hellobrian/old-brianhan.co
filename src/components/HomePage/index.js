@@ -3,7 +3,7 @@ import { HomePageRoot, Main, H1, NameSpan } from './styled'
 import CircleSvg from '../CircleSvg'
 import LinkList from '../LinkList'
 import LinkListItem from '../LinkListItem'
-import { LINKS } from '../../constants'
+import { LINKS } from '../../utils'
 
 export default () => (
   <HomePageRoot>
