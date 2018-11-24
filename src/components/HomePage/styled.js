@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { rem } from '../../utils';
+import { rem } from 'src/utils';
 
 export const HomePageRoot = styled.div`
   height: 100vh;

@@ -7,6 +7,7 @@ const typography = new Typography({
   baseLineHeight: 1.666,
   headerFontFamily: ['Karla', 'Arial', 'sans-serif'],
   bodyFontFamily: ['Merriweather', 'serif'],
+  scaleRatio: 2,
 });
 
 export const rem = (px) => `${px / baseFontSize}rem`;

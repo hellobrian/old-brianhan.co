@@ -1,9 +1,9 @@
 import { configure, addDecorator } from '@storybook/react';
 import StoryWrapper from './StoryWrapper';
-import { typography } from '../src/utils';
+import { typography } from 'src/utils';
 
 // automatically import all files in src ending in *.stories.js
-const req = require.context('../src', true, /.stories.js$/);
+const req = require.context('src', true, /.stories.js$/);
 
 // dynamically load stories
 function loadStories() {

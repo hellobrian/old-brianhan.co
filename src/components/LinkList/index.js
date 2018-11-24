@@ -1,8 +1,7 @@
 import React from 'react';
-import { LINKS } from '../../utils';
-import LinkListItem from '../LinkListItem';
 import styled from 'styled-components';
-import { rem } from '../../utils';
+import LinkListItem from 'src/components/LinkListItem';
+import { rem, LINKS } from 'src/utils';
 
 export const StyledList = styled.ul`
   margin: 0;

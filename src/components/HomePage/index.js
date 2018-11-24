@@ -1,9 +1,10 @@
 import React from 'react';
 import { HomePageRoot, Main, H1, NameSpan } from './styled';
-import CircleSvg from '../CircleSvg';
-import LinkList from '../LinkList';
-import LinkListItem from '../LinkListItem';
-import { LINKS } from '../../utils';
+import CircleSvg from 'src/components/CircleSvg';
+import LinkList from 'src/components/LinkList';
+import LinkListItem from 'src/components/LinkListItem';
+import BlogCard from 'src/components/BlogCard';
+import { LINKS } from 'src/utils';
 
 export default () => (
   <HomePageRoot>

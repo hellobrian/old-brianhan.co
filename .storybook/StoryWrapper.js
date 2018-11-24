@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import '../src/components/Layout/index.css';
+import 'src/components/Layout/index.css';
 
 export const StyledStoryWrapper = styled.div`
   display: flex;
@@ -10,6 +10,16 @@ export const StyledStoryWrapper = styled.div`
   width: 100vw;
 `;
 
+export const Fonts = () => (
+  <link
+    href="https://fonts.googleapis.com/css?family=Karla|Merriweather:400,700"
+    rel="stylesheet"
+  />
+);
+
 export default (storyFn) => (
-  <StyledStoryWrapper>{storyFn()}</StyledStoryWrapper>
+  <StyledStoryWrapper>
+    <Fonts />
+    {storyFn()}
+  </StyledStoryWrapper>
 );
