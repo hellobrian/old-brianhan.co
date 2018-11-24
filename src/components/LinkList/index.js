@@ -11,8 +11,7 @@ export const StyledList = styled.ul`
   display: flex;
 
   & > li {
-    padding-bottom: 1rem;
-    padding-right: 1rem;
+    padding-right: 0.5rem;
   }
 `
 
