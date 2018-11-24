@@ -1,11 +1,21 @@
 import React from 'react';
-import HomePage from 'src/components/HomePage';
+import styled from 'styled-components';
 import Layout from 'src/components/Layout/';
 
-const IndexPage = () => (
+export const H1 = styled.h1`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const NameSpan = styled.span`
+  color: rgb(45, 116, 218);
+`;
+
+export default () => (
   <Layout>
-    <HomePage />
+    <H1>
+      <NameSpan>Brian Han</NameSpan> is a front-end developer &mdash; building
+      things for people on the internet.
+    </H1>
   </Layout>
 );
-
-export default IndexPage;
