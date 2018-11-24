@@ -3,22 +3,22 @@ title: 'Adopting Prettier Early at Work'
 date: '2018-11-22'
 ---
 
-When I join a new team or start a new project, the first thing I try to do is setup `prettier`, which is a tool that automatically formats the syntax of your code. It works with a bunch of languages and you can make it work in a few different ways. Getting caught up in an argument about semicolons or making comments on someone's pull request about indents isn't the best use of time.
+When I join a new team or start a new project, the first thing I try to do is setup Prettier, which is a tool that automatically formats the syntax of your code. It works with a bunch of languages and you can make it work in a few different ways. Getting caught up in an argument about semicolons or making comments on someone's pull request about indents isn't the best use of time.
 
 In this article, I'm going to guide you through how you can integrate Prettier into your team's workflow. Before we get into details, here's a quick overview of what you can do:
 
-Talk to your team about `prettier`
+Talk to your team about Prettier.
 
 - Tell them what it is
 - Explain why it's going to help
 - Show them how it works
 - Mention that it works with ESLint
 
-Set up [`prettier` using a pre-commit hook](https://prettier.io/docs/en/precommit.html)
+Set up [Prettier using a pre-commit hook](https://prettier.io/docs/en/precommit.html)
 
 - IDE agnostic, and one person can set this up for everyone in a single pull request
 
-Turn off ESLint's formatting rules with [`eslint-config-prettier`](https://prettier.io/docs/en/eslint.html#turn-off-eslint-s-formatting-rules)
+Turn off ESLint's formatting rules with [eslint-config-prettier](https://prettier.io/docs/en/eslint.html#turn-off-eslint-s-formatting-rules)
 
 - A one-line fix and now you have Prettier handling all the formatting rules
 
@@ -26,21 +26,21 @@ Finally, submit a pull request including all the newly formatted files so that a
 
 ## What you need to get started
 
-- `git`: version control for your code
-- `.gitignore`: a list of files ignored by `git`
-- `node`: JavaScript runtime outside of the browser (version 8 or newer will work best)
-- `npm`: package manager that comes with `node`
-- `package.json`: a manifest file for you to declare packages from `npm` and run `npm scripts`
+- **git**: version control for your code
+- **.gitignore**: a list of files ignored by git
+- **node**: JavaScript runtime outside of the browser (version 8 or newer will work best)
+- **npm**: package manager that comes with node
+- **package.json**: a manifest file for you to declare packages from npm and run npm scripts
 
 ## Using Prettier with a "pre-commit" hook
 
-I think this is the best and simplest way to get `prettier` adopted by your team. Your team should be standardized around `git` and you can leverage this by automatically using Prettier whenever someone uses `git commit`.
+I think this is the best and simplest way to get Prettier adopted by your team. Your team should be standardized around git and you can leverage this by automatically using Prettier whenever someone uses `git commit`.
 
 This solution uses three packages:
 
-- `prettier`: An opinionated and automatic code formatter
-- `lint-staged`: A tool to run linters against staged git files
-- `husky`: Gives you easy access to `git` hooks via `npm` scripts
+- **prettier**: An opinionated and automatic code formatter
+- **lint-staged**: A tool to run linters against staged git files
+- **husky**: Gives you easy access to git hooks via npm scripts
 
 Here's a **package.json** lifted straight from the [Prettier docs](https://prettier.io/docs/en/precommit.html):
 
@@ -61,12 +61,12 @@ Here's a **package.json** lifted straight from the [Prettier docs](https://prett
 
 ## Prettier isn't just meant for JS
 
-You can use Prettier on `css` files, `md` files, and a bunch of others too! You can see a [full list here on the Prettier's landing page](https://prettier.io/).
+You can use Prettier on CSS files, Markdown files, and a bunch of others too! You can see a full list here on the [Prettier's landing page](https://prettier.io/).
 
 For example, maybe you're real fancy and using TypeScript, JSX, Sass and MDX.
 Well, here's how you can target all those files.
 
-```json {4}
+```json{4}
 {
   "lint-staged": {
     "linters": {
@@ -83,23 +83,23 @@ Let's look at the target pattern we're using with lint-staged: `*.{js,json,css,m
 This is going to target all of those files with those extensions anywhere in your project.
 You can refer to the [lint-staged docs on filtering files here.](https://github.com/okonet/lint-staged#filtering-files)
 
-But since we're using `git` is our way to use `prettier`, it's super important to rely on your `.gitignore` file to make sure that you're not accidentally committing things like, `node_modules` or `dist` or whichever folder holds all of your bundled production code.
+But since we're using git is our way to use Prettier, it's super important to rely on your .gitignore file to make sure that you're not accidentally committing things like, node_modules or dist or whichever folder holds all of your bundled production code.
 
-Again, when `git` ignores something because it's in your `.gitignore` file, then `prettier` should ignore it too.
+Again, when git ignores something because it's in your .gitignore file, then Prettier should ignore it too.
 
-So, it should be okay to let `lint-staged` target all the files in you project - I personally like this because I can target my `src` files and some commonly used root files like:
+So, it should be okay to let `lint-staged` target all the files in you project - I personally like this because I can target my src files and some commonly used root files like:
 
-- `webpack.config.js`
-- `package.json`
-- `README.md`
+- webpack.config.js
+- package.json
+- README.md
 
 ## More ways to ignore files
 
-Maybe you think using a `.gitignore` and `lint-staged` isn't quite enough. That's fine, you can configure `lint-staged` to be extra diligent in targeting and ignoring the files you want.
+Maybe you think using a .gitignore and lint-staged isn't quite enough. That's fine, you can configure lint-staged to be extra diligent in targeting and ignoring the files you want.
 
-You can target `src` files only.
+You can target src files only.
 
-```json
+```json{4}
 {
   "lint-staged": {
     "linters": {
@@ -111,7 +111,7 @@ You can target `src` files only.
 
 Specific files works too, like some common files outside of `src`.
 
-```json
+```json{4-6}
 {
   "lint-staged": {
     "linters": {
@@ -125,7 +125,7 @@ Specific files works too, like some common files outside of `src`.
 
 Heck, you can even add an `ignore` key here too because...safety!
 
-```json
+```json{8}
 {
   "lint-staged": {
     "linters": {
