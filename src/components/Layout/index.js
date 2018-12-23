@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import SEO from 'src/components/SEO';
 import CircleSvg from 'src/components/CircleSvg';
 import LinkList from 'src/components/LinkList';
@@ -40,10 +40,10 @@ export default ({ children }) => (
     <PageRoot>
       <CircleSvg />
       <Main>
-        <div>
+        {/* <div>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-        </div>
+        </div> */}
         {children}
         <LinkList />
       </Main>

@@ -1,3 +1,31 @@
+:root {
+  /* Colors */
+  --blue: rgb(45, 116, 218);
+  --gray: #ccc;
+  --purple--light: #d887fe;
+  --purple: #b721ff;
+  --turquoise--light: #78e6fe;
+  --turquoise: #21d4fd;
+  --salmon: #ff9a9e;
+  --salmon--light: #fecfef;
+
+  /* Gradients */
+  --gradient--link: linear-gradient(
+    -20deg,
+    var(--purple) 0%,
+    var(--turquoise) 100%
+  );
+  --gradient--link--hover: linear-gradient(
+    -20deg,
+    var(--purple--light) 0%,
+    var(--turquoise--light) 100%
+  );
+  --gradient--salmon: linear-gradient(
+    to top,
+    var(--salmon) 0%,
+    var(--salmon--light) 99%
+  );
+}
 @keyframes fadein {
   from {
     opacity: 0;
@@ -8,10 +36,17 @@
   }
 }
 
-* {
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }

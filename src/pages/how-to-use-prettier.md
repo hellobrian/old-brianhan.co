@@ -1,5 +1,5 @@
 ---
-title: 'Adopting Prettier Early at Work'
+title: 'How to Use Prettier'
 date: '2018-11-22'
 ---
 

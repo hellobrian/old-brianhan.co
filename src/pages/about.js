@@ -3,7 +3,7 @@ import Layout from 'src/components/Layout/';
 import LinkListItem from 'src/components/LinkListItem';
 import { LINKS } from 'src/utils';
 
-export default () => (
+const About = () => (
   <Layout>
     <p>
       I build websites and apps but mainly my focus is on building interfaces
@@ -25,9 +25,8 @@ export default () => (
     </p>
     <p>
       A little more about me: I was born and raised in Toronto, Canada. These
-      days I'm working and living in Austin, Texas with a modest collection of
-      succulents and houseplants (it's the Texas way I suppose). You can find me
-      enjoying stuff like{' '}
+      days I am working and living in Austin, Texas. You can find me enjoying
+      stuff like{' '}
       <span
         role="img"
         aria-label="Stuff that Brian enjoys: ramen, sushi, tacos, and coffee">
@@ -36,3 +35,5 @@ export default () => (
     </p>
   </Layout>
 );
+
+export default About;

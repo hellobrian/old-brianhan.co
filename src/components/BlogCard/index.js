@@ -6,14 +6,14 @@ import { rem } from 'src/utils';
 const Root = styled.div`
   display: grid;
   width: ${rem(350)};
-  outline: 1px solid #ccc;
 `;
 
-const Title = styled.h2`
+const Title = styled.h3`
   color: currentColor;
 `;
 
-const Date = styled.p`
+const Date = styled.span`
+  margin-bottom: ${rem(10)};
   color: #ccc;
 `;
 

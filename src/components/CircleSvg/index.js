@@ -1,12 +1,7 @@
 import styled from 'styled-components';
 
 const CircleSvg = styled.svg`
-  background-image: linear-gradient(
-    to top,
-    #ff9a9e 0%,
-    #fecfef 99%,
-    #fecfef 100%
-  );
+  background-image: var(--gradient--salmon);
   width: 7rem;
   height: 7rem;
   position: fixed;
