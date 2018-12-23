@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LinkListItem from 'src/components/LinkListItem';
+import StyledLink from 'src/components/StyledLink';
 import { rem, LINKS } from 'src/utils';
 
 export const StyledList = styled.ul`
@@ -20,16 +20,13 @@ export const StyledList = styled.ul`
 const LinkList = () => (
   <StyledList>
     <li>
-      <LinkListItem href={LINKS.github} text={`GitHub`} />
+      <StyledLink href={LINKS.github}>GitHub</StyledLink>
     </li>
     <li>
-      <LinkListItem href={LINKS.linkedin} text={`LinkedIn`} />
+      <StyledLink href={LINKS.linkedin}>LinkedIn</StyledLink>
     </li>
     <li>
-      <LinkListItem href={LINKS.blog} text={`Medium`} />
-    </li>
-    <li>
-      <LinkListItem href={LINKS.email} text={`thisisbrianhan@gmail.com`} />
+      <StyledLink href={LINKS.email}>thisisbrianhan@gmail.com</StyledLink>
     </li>
   </StyledList>
 );

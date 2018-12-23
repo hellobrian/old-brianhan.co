@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Layout from 'src/components/Layout/';
 import BlogCard from 'src/components/BlogCard';
+import StyledLink from 'src/components/StyledLink';
+import { LINKS } from 'src/utils';
 
 export const H1 = styled.h1`
-  display: flex;
-  flex-direction: column;
+  /* font-size: 1.5rem; */
 `;
 
 export const NameSpan = styled.span`
-  color: rgb(45, 116, 218);
   color: var(--blue);
 `;
 
@@ -38,9 +38,24 @@ const IndexPage = ({
       things for people on the internet.
     </H1>
     <Blogs>
-      {edges.map(({ node: { id, excerpt, frontmatter: { title, date } } }) => (
-        <BlogCard key={id} title={title} excerpt={excerpt} fromNow={date} />
-      ))}
+      {edges.map(
+        ({
+          node: {
+            id,
+            excerpt,
+            frontmatter: { title, date },
+            fields: { slug },
+          },
+        }) => (
+          <BlogCard
+            key={id}
+            title={title}
+            excerpt={excerpt}
+            fromNow={date}
+            to={slug}
+          />
+        ),
+      )}
     </Blogs>
   </Layout>
 );
@@ -57,6 +72,9 @@ export const query = graphql`
         node {
           id
           excerpt
+          fields {
+            slug
+          }
           frontmatter {
             title
             date(fromNow: true)

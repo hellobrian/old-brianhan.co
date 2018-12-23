@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from 'src/components/Layout/';
-import LinkListItem from 'src/components/LinkListItem';
+import StyledLink from 'src/components/StyledLink';
 import { LINKS } from 'src/utils';
 
 const About = () => (
@@ -18,7 +18,7 @@ const About = () => (
     </p>
     <p>
       Previously, I was at IBM working on{' '}
-      <LinkListItem href={LINKS.carbon} text={'Carbon'} />, an award-winning
+      <StyledLink href={LINKS.carbon}>Carbon</StyledLink>, an award-winning
       open-source design system. I was one of the first developers to work on it
       and maintained it with an amazing team of designers and devs for most of
       my career at IBM.

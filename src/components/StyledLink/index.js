@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
-export const StyledLink = styled.a`
+const commonStyles = `
+  display: inline-block;
   text-decoration: none;
   background-repeat: no-repeat;
   background-image: var(--gradient--link);
@@ -22,18 +24,29 @@ export const StyledLink = styled.a`
   }
 `;
 
-const LinkListItem = ({ href, text }) => (
-  <StyledLink href={href}>{text}</StyledLink>
-);
+const ExternalLink = styled.a`
+  ${commonStyles}
+`;
 
-LinkListItem.propTypes = {
+const StyledGatsbyLink = styled(Link)`
+  ${commonStyles}
+`;
+
+const StyledLink = ({ href, to, ...props }) =>
+  href === '' ? (
+    <StyledGatsbyLink to={to} {...props} />
+  ) : (
+    <ExternalLink href={href} {...props} />
+  );
+
+StyledLink.propTypes = {
   href: PropTypes.string,
-  text: PropTypes.string,
+  to: PropTypes.string,
 };
 
-LinkListItem.defaultProps = {
+StyledLink.defaultProps = {
   href: '',
-  text: '',
+  to: '',
 };
 
-export default LinkListItem;
+export default StyledLink;
