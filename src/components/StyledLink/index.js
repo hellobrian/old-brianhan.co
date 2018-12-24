@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-const commonLinkStyles = `
+const styles = `
   display: inline-block;
   text-decoration: none;
   transition: background-size 100ms cubic-bezier(0.5, 0, 0.1, 1);
@@ -17,23 +17,15 @@ const StyledSpan = styled.span`
   background-position: 0 115%;
 `;
 
-const ExternalLink = styled.a`
-  ${commonLinkStyles}
-`;
-
-const StyledGatsbyLink = styled(Link)`
-  ${commonLinkStyles}
-`;
-
 const StyledLink = ({ href, to, children, ...props }) =>
   href === '' ? (
-    <StyledGatsbyLink to={to} {...props}>
+    <Link css={styles} to={to} {...props}>
       <StyledSpan>{children}</StyledSpan>
-    </StyledGatsbyLink>
+    </Link>
   ) : (
-    <ExternalLink href={href} {...props}>
+    <a css={styles} href={href} {...props}>
       <StyledSpan>{children}</StyledSpan>
-    </ExternalLink>
+    </a>
   );
 
 StyledLink.propTypes = {

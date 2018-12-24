@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Brian Han",
   "dependencies": {
-    "babel-plugin-styled-components": "^1.8.0",
     "gatsby": "^2.0.52",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-netlify": "^2.0.5",
@@ -33,6 +32,8 @@
     "@storybook/react": "^4.0.8",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
+    "babel-plugin-styled-components": "^1.10.0",
+    "babel-preset-gatsby": "^0.1.6",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
