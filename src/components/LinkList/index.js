@@ -12,6 +12,8 @@ export const StyledList = styled.ul`
   @media screen and (min-width: 600px) {
     margin-left: auto;
     margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     width: 400px;
   }
   @media screen and (min-width: 800px) {
