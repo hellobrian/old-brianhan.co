@@ -1,6 +1,5 @@
 /* src/components/StyledLink */
-.blog h1 > a,
-.blog p > a {
+.blog a {
   display: inline-block;
   text-decoration: none;
   color: currentColor;
@@ -8,4 +7,9 @@
   background-image: var(--gradient--link);
   background-size: 100% 0.375rem;
   background-position: 0 115%;
+}
+
+.blog p {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }

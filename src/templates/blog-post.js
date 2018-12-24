@@ -9,15 +9,16 @@ import './index.css';
 export const NameSpanWrapper = styled.h1`
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  padding-left: 0.5rem;
 
   @media screen and (min-width: 600px) {
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 500px;
   }
 
   @media screen and (min-width: 800px) {
-    width: 500px;
+    width: 600px;
     font-size: 2rem;
   }
 
@@ -28,17 +29,19 @@ export const NameSpanWrapper = styled.h1`
 
 export const Title = styled.h2`
   font-size: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   width: 100%;
 
   @media screen and (min-width: 600px) {
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 500px;
   }
 
   @media screen and (min-width: 800px) {
     font-size: 2.5rem;
-    width: 500px;
+    width: 600px;
   }
 
   @media screen and (min-width: 1200px) {
@@ -52,14 +55,10 @@ export const Content = styled.div`
   @media screen and (min-width: 600px) {
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
-  }
-
-  @media screen and (min-width: 800px) {
     width: 500px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 800px) {
     width: 600px;
   }
 `;

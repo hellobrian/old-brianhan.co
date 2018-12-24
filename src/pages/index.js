@@ -7,6 +7,8 @@ import NameSpan from 'src/components/NameSpan';
 
 export const H1 = styled.h1`
   padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 
   @media screen and (min-width: 400px) {
     font-size: 1.5rem;
@@ -29,6 +31,8 @@ export const H1 = styled.h1`
 `;
 
 export const Intro = styled.div`
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   display: flex;
   flex-direction: column;
   height: 75vh;
@@ -36,6 +40,8 @@ export const Intro = styled.div`
 `;
 
 export const Blogs = styled.div`
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   @media screen and (min-width: 600px) {
     margin-left: auto;
     margin-right: auto;

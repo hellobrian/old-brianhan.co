@@ -16,8 +16,6 @@ export const Main = styled.main`
   position: relative;
   z-index: 1;
   padding-bottom: 3rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   padding-top: 3rem;
   width: 100%;
 `;
