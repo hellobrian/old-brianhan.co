@@ -14,13 +14,13 @@ export const StyledList = styled.ul`
     margin-right: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    width: 400px;
-  }
-  @media screen and (min-width: 800px) {
     width: 500px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 800px) {
     width: 600px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 700px;
   }
 `;
 

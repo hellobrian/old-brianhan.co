@@ -8,12 +8,19 @@
   --turquoise: #21d4fd;
   --salmon: #ff9a9e;
   --salmon--light: #fecfef;
+  --salmon--light--rgba50: rgba(254, 207, 239, 0.5);
 
   /* Gradients */
   --gradient--link: linear-gradient(
     -20deg,
     var(--purple) 0%,
     var(--turquoise) 100%
+  );
+  --gradient--link--fadeOut: linear-gradient(
+    to right,
+    var(--purple) 0%,
+    var(--turquoise) 90%,
+    white 100%
   );
   --gradient--link--hover: linear-gradient(
     -20deg,

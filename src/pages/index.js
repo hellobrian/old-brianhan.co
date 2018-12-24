@@ -17,16 +17,16 @@ export const H1 = styled.h1`
   @media screen and (min-width: 600px) {
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
+    width: 500px;
   }
 
   @media screen and (min-width: 800px) {
-    width: 500px;
+    width: 600px;
     font-size: 2rem;
   }
 
   @media screen and (min-width: 1200px) {
-    width: 600px;
+    width: 700px;
   }
 `;
 
@@ -42,18 +42,19 @@ export const Intro = styled.div`
 export const Blogs = styled.div`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+
   @media screen and (min-width: 600px) {
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
-  }
-
-  @media screen and (min-width: 800px) {
     width: 500px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 800px) {
     width: 600px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 700px;
   }
 `;
 
