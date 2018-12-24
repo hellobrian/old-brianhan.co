@@ -7,7 +7,7 @@ import StyledLink from 'src/components/StyledLink';
 import { LINKS } from 'src/utils';
 
 export const H1 = styled.h1`
-  /* font-size: 1.5rem; */
+  margin-bottom: 6rem;
 `;
 
 export const NameSpan = styled.span`
@@ -43,18 +43,19 @@ const IndexPage = ({
           node: {
             id,
             excerpt,
-            frontmatter: { title, date },
+            frontmatter: { title, date, excerptCustom, publish },
             fields: { slug },
           },
-        }) => (
-          <BlogCard
-            key={id}
-            title={title}
-            excerpt={excerpt}
-            fromNow={date}
-            to={slug}
-          />
-        ),
+        }) =>
+          publish && (
+            <BlogCard
+              key={id}
+              title={title}
+              excerpt={excerptCustom || excerpt}
+              date={date}
+              to={slug}
+            />
+          ),
       )}
     </Blogs>
   </Layout>
@@ -77,7 +78,10 @@ export const query = graphql`
           }
           frontmatter {
             title
-            date(fromNow: true)
+            # date(fromNow: true)
+            date(formatString: "DD MMMM YYYY", locale: "us")
+            excerptCustom
+            publish
           }
         }
       }

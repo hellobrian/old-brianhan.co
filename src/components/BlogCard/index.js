@@ -6,33 +6,44 @@ import { rem } from 'src/utils';
 
 const Root = styled.div`
   display: block;
-  width: ${rem(350)};
+  /* width: ${rem(350)}; */
 `;
 
-const Date = styled.small`
-  margin-bottom: ${rem(10)};
-  color: #ccc;
+const Title = styled.h2`
+  /* white-space: nowrap;
+  overflow: hidden; */
+
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+`;
+
+const Date = styled.p`
+  /* margin-bottom: ${rem(10)}; */
+  /* color: #ccc; */
 `;
 
 const Excerpt = styled.p`
-  font-family: 'Karla', sans-serif;
+  /* font-family: 'Karla', sans-serif; */
 `;
 
-const BlogCard = ({ title, excerpt, fromNow, to }) => (
-  <Root>
-    <h2>
-      <StyledLink to={to}>{title}</StyledLink>
-    </h2>
-    <Date>{fromNow}</Date>
-    <Excerpt>{excerpt}</Excerpt>
-  </Root>
-);
+const BlogCard = ({ title, excerpt, date, to }) => {
+  return (
+    <Root>
+      <Title>
+        <StyledLink to={to}>{title}</StyledLink>
+      </Title>
+      <Date>{date}</Date>
+      <Excerpt>{excerpt}</Excerpt>
+    </Root>
+  );
+};
 
 BlogCard.propTypes = {
   title: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   excerpt: PropTypes.string.isRequired,
-  fromNow: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
 };
 
 export default BlogCard;
