@@ -1,5 +1,5 @@
 ---
-title: 'How to Use Prettier'
+title: 'Setting Up Prettier For Your Team'
 date: '2018-11-22'
 excerptCustom: 'Automatically format your frontend code and save your team from daily code style discussions.'
 publish: true

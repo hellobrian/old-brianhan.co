@@ -25,19 +25,13 @@ export const StyledList = styled.ul`
 const LinkList = () => (
   <StyledList>
     <li>
-      <StyledLink className="link" href={LINKS.github}>
-        GitHub
-      </StyledLink>
+      <StyledLink href={LINKS.github}>GitHub</StyledLink>
     </li>
     <li>
-      <StyledLink className="link" href={LINKS.linkedin}>
-        LinkedIn
-      </StyledLink>
+      <StyledLink href={LINKS.linkedin}>LinkedIn</StyledLink>
     </li>
     <li>
-      <StyledLink className="link" href={LINKS.email}>
-        thisisbrianhan@gmail.com
-      </StyledLink>
+      <StyledLink href={LINKS.email}>thisisbrianhan@gmail.com</StyledLink>
     </li>
   </StyledList>
 );

@@ -1,5 +1,6 @@
 /* src/components/StyledLink */
-.blog a {
+.blog h1 > a,
+.blog p > a {
   display: inline-block;
   text-decoration: none;
   color: currentColor;

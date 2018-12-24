@@ -12,8 +12,8 @@ const styles = `
 const StyledSpan = styled.span`
   background-repeat: no-repeat;
   background-image: var(--gradient--link);
-  background-size: 100% 0.375rem;
-  background-position: 0 115%;
+  background-size: 100% 3px;
+  background-position: 0 100%;
   padding-bottom: 2px;
 `;
 
