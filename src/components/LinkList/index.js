@@ -1,32 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
 import StyledLink from 'src/components/StyledLink';
-import { rem, LINKS } from 'src/utils';
+import { LINKS } from 'src/utils';
 
 export const StyledList = styled.ul`
-  margin: 0;
-  padding: 0;
-  font-family: 'Karla', sans-serif;
   list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  width: ${rem(300)};
+  margin-left: 1rem;
+  padding: 0;
+  width: 100%;
 
-  & > li {
-    padding-right: 0.5rem;
+  @media screen and (min-width: 600px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+  }
+  @media screen and (min-width: 800px) {
+    width: 500px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 600px;
   }
 `;
 
 const LinkList = () => (
   <StyledList>
     <li>
-      <StyledLink href={LINKS.github}>GitHub</StyledLink>
+      <StyledLink className="link" href={LINKS.github}>
+        GitHub
+      </StyledLink>
     </li>
     <li>
-      <StyledLink href={LINKS.linkedin}>LinkedIn</StyledLink>
+      <StyledLink className="link" href={LINKS.linkedin}>
+        LinkedIn
+      </StyledLink>
     </li>
     <li>
-      <StyledLink href={LINKS.email}>thisisbrianhan@gmail.com</StyledLink>
+      <StyledLink className="link" href={LINKS.email}>
+        thisisbrianhan@gmail.com
+      </StyledLink>
     </li>
   </StyledList>
 );

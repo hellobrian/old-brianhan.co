@@ -2,16 +2,51 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from 'src/components/Layout';
+import styled from 'styled-components';
 import './index.css';
+
+export const Title = styled.h1`
+  width: 100%;
+
+  @media screen and (min-width: 600px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 500px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 600px;
+  }
+`;
+
+export const Content = styled.div`
+  width: 100%;
+
+  @media screen and (min-width: 600px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 500px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 600px;
+  }
+`;
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <Layout>
-      <div className="blog">
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+    <Layout className="blog">
+      <Title>{post.frontmatter.title}</Title>
+      <Content dangerouslySetInnerHTML={{ __html: post.html }} />
     </Layout>
   );
 };

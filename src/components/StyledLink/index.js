@@ -14,6 +14,7 @@ const StyledSpan = styled.span`
   background-image: var(--gradient--link);
   background-size: 100% 0.375rem;
   background-position: 0 115%;
+  padding-bottom: 2px;
 `;
 
 const StyledLink = ({ href, to, children, ...props }) =>

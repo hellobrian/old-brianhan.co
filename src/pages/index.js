@@ -3,15 +3,29 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Layout from 'src/components/Layout/';
 import BlogCard from 'src/components/BlogCard';
-import StyledLink from 'src/components/StyledLink';
-import { LINKS } from 'src/utils';
+import NameSpan from 'src/components/NameSpan';
 
 export const H1 = styled.h1`
-  margin-bottom: 6rem;
-`;
+  padding-bottom: 1rem;
 
-export const NameSpan = styled.span`
-  color: var(--blue);
+  @media screen and (min-width: 400px) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (min-width: 600px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 500px;
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 600px;
+  }
 `;
 
 export const Intro = styled.div`
@@ -22,9 +36,19 @@ export const Intro = styled.div`
 `;
 
 export const Blogs = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  @media screen and (min-width: 600px) {
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 500px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 600px;
+  }
 `;
 
 const IndexPage = ({
@@ -34,8 +58,11 @@ const IndexPage = ({
 }) => (
   <Layout>
     <H1>
-      <NameSpan>Brian Han</NameSpan> is a front-end developer &mdash; building
-      things for people on the internet.
+      <span>
+        <NameSpan>Brian Han</NameSpan>
+        <div>is a front-end developer.</div>
+        <div>Building things for people on the internet.</div>
+      </span>
     </H1>
     <Blogs>
       {edges.map(
