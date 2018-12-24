@@ -6,7 +6,6 @@ import { Link } from 'gatsby';
 const styles = `
   display: inline-block;
   text-decoration: none;
-  transition: background-size 100ms cubic-bezier(0.5, 0, 0.1, 1);
   color: currentColor;
 `;
 

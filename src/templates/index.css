@@ -1,0 +1,9 @@
+.blog a {
+  display: inline-block;
+  text-decoration: none;
+  color: currentColor;
+  background-repeat: no-repeat;
+  background-image: var(--gradient--link);
+  background-size: 100% 0.375rem;
+  background-position: 0 115%;
+}
