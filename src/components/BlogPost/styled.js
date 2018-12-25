@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import { COMMON_BREAKPOINTS } from 'src/utils';
 
-export const H1 = styled.h1`
+export const HomeLink = styled.p`
   font-size: 1.5rem;
+  line-height: 1.1;
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
   margin-bottom: 1rem;
   padding-left: 0.5rem;
 
@@ -10,14 +13,10 @@ export const H1 = styled.h1`
     font-size: 2rem;
   }
 
-  @media screen and (min-width: 1200px) {
-    width: 700px;
-  }
-
   ${COMMON_BREAKPOINTS};
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h1`
   font-size: 2rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -30,8 +29,9 @@ export const Title = styled.h2`
   ${COMMON_BREAKPOINTS};
 `;
 
-export const SubTitle = styled.h3`
+export const SubTitle = styled.p`
   font-style: italic;
+  font-family: 'Karla', sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   padding-left: 0.5rem;

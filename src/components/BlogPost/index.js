@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import Layout from 'src/components/Layout';
-import { H1, Title, SubTitle, Content } from './styled';
+import { HomeLink, Title, SubTitle, Content } from './styled';
 import './index.css';
 
 const BlogPost = ({ data }) => {
@@ -10,9 +10,9 @@ const BlogPost = ({ data }) => {
   return (
     <Layout>
       <div className="blog">
-        <H1>
+        <HomeLink>
           <Link to="/">Brian Han</Link>
-        </H1>
+        </HomeLink>
         <Title>{post.frontmatter.title}</Title>
         <SubTitle>{post.frontmatter.subtitle}</SubTitle>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />

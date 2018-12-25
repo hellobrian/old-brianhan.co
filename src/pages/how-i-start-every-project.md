@@ -1,5 +1,5 @@
 ---
-date: '2018-12-23'
+date: '2018-12-25'
 publish: true
 title: 'How I Start Every Project'
 ---
@@ -63,7 +63,7 @@ echo node_modules > .gitignore
 
 Create an **.nvmrc** file with the node version you want to use for this project. For personal projects, I just write `stable` in this file.
 
-In the ["Deeper Shell Integration"](https://github.com/creationix/nvm#deeper-shell-integration) section of NVM's readme, you can learn how to customize your **.bashrc** or **.zshrc** file so that NVM will automatically change your node version to the one listed in the project's **.nvmrc** file.
+In the [Deeper Shell Integration](https://github.com/creationix/nvm#deeper-shell-integration) section of NVM's readme, you can learn how to customize your **.bashrc** or **.zshrc** file so that NVM will automatically change your node version to the one listed in the project's **.nvmrc** file.
 
 ```bash
 touch .nvmrc
