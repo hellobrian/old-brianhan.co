@@ -15,7 +15,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        excerptCustom
+        subtitle
         date
       }
     }

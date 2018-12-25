@@ -26,7 +26,7 @@ export const query = graphql`
             title
             # date(fromNow: true)
             date(formatString: "DD MMMM YYYY", locale: "us")
-            excerptCustom
+            subtitle
             publish
           }
         }

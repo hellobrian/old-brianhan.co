@@ -22,7 +22,7 @@ const Home = ({
           node: {
             id,
             excerpt,
-            frontmatter: { title, date, excerptCustom, publish },
+            frontmatter: { title, date, subtitle, publish },
             fields: { slug },
           },
         }) =>
@@ -30,7 +30,7 @@ const Home = ({
             <BlogCard
               key={id}
               title={title}
-              excerpt={excerptCustom || excerpt}
+              excerpt={subtitle || excerpt}
               date={date}
               to={slug}
             />

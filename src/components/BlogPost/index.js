@@ -14,7 +14,7 @@ const BlogPost = ({ data }) => {
           <Link to="/">Brian Han</Link>
         </H1>
         <Title>{post.frontmatter.title}</Title>
-        <SubTitle>{post.frontmatter.excerptCustom}</SubTitle>
+        <SubTitle>{post.frontmatter.subtitle}</SubTitle>
         <Content dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>

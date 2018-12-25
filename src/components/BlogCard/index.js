@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import StyledLink from 'src/components/StyledLink';
 import { Root, Title, Date } from './styled';
 
-const BlogCard = ({ title, excerpt, date, to }) => {
+const BlogCard = ({ title, subtitle, date, to }) => {
   return (
     <Root>
       <Title>
         <StyledLink to={to}>{title}</StyledLink>
       </Title>
       <Date>{date}</Date>
-      <p>{excerpt}</p>
+      <p>{subtitle}</p>
     </Root>
   );
 };
@@ -18,7 +18,7 @@ const BlogCard = ({ title, excerpt, date, to }) => {
 BlogCard.propTypes = {
   title: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
-  excerpt: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };
 
