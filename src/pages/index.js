@@ -1,15 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import HomePage from 'src/components/HomePage';
+import Home from 'src/components/Home';
 
-const IndexPage = ({ data }) => <HomePage data={data} />;
+const HomePage = ({ data }) => <Home data={data} />;
 
-IndexPage.propTypes = {
+HomePage.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default IndexPage;
+export default HomePage;
 
 export const query = graphql`
   query {

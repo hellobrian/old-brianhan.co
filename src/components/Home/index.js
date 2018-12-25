@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Layout from 'src/components/Layout/';
 import BlogCard from 'src/components/BlogCard';
-import NameSpan from 'src/components/NameSpan';
+import Name from 'src/components/Name';
+import { BREAKPOINTS } from 'src/utils';
 
 export const H1 = styled.h1`
   padding-bottom: 1rem;
@@ -14,20 +15,13 @@ export const H1 = styled.h1`
     font-size: 1.5rem;
   }
 
-  @media screen and (min-width: 600px) {
-    margin-left: auto;
-    margin-right: auto;
-    width: 500px;
-  }
-
   @media screen and (min-width: 800px) {
-    width: 600px;
     font-size: 2rem;
   }
 
-  @media screen and (min-width: 1200px) {
-    width: 700px;
-  }
+  ${BREAKPOINTS.minWidth600};
+  ${BREAKPOINTS.minWidth800};
+  ${BREAKPOINTS.minWidth1200};
 `;
 
 export const Intro = styled.div`
@@ -43,33 +37,21 @@ export const Blogs = styled.div`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 
-  @media screen and (min-width: 600px) {
-    margin-left: auto;
-    margin-right: auto;
-    width: 500px;
-  }
-
-  @media screen and (min-width: 800px) {
-    width: 600px;
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: 700px;
-  }
+  ${BREAKPOINTS.minWidth600};
+  ${BREAKPOINTS.minWidth800};
+  ${BREAKPOINTS.minWidth1200};
 `;
 
-const HomePage = ({
+const Home = ({
   data: {
     allMarkdownRemark: { edges },
   },
 }) => (
   <Layout>
     <H1>
-      <span>
-        <NameSpan>Brian Han</NameSpan>
-        <div>is a front-end developer.</div>
-        <div>Building things for people on the internet.</div>
-      </span>
+      <Name>Brian Han</Name>
+      <div>is a front-end developer.</div>
+      <div>Building things for people on the internet.</div>
     </H1>
     <Blogs>
       {edges.map(
@@ -95,8 +77,8 @@ const HomePage = ({
   </Layout>
 );
 
-HomePage.propTypes = {
+Home.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default HomePage;
+export default Home;

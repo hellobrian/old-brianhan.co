@@ -12,7 +12,7 @@ const Root = styled.div`
 `;
 
 const Title = styled.h2`
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     font-size: 1.25rem;
   }
 `;

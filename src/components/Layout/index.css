@@ -33,6 +33,7 @@
     var(--salmon--light) 99%
   );
 }
+
 @keyframes fadein {
   from {
     opacity: 0;
