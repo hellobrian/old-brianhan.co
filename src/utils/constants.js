@@ -26,3 +26,9 @@ export const BREAKPOINTS = {
     }
   `,
 };
+
+export const COMMON_BREAKPOINTS = `
+  ${BREAKPOINTS.minWidth600};
+  ${BREAKPOINTS.minWidth800};
+  ${BREAKPOINTS.minWidth1200};
+`;

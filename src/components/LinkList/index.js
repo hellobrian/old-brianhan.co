@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StyledLink from 'src/components/StyledLink';
-import { BREAKPOINTS, LINKS } from 'src/utils';
+import { COMMON_BREAKPOINTS, LINKS } from 'src/utils';
 
 export const StyledList = styled.ul`
   list-style-type: none;
@@ -13,10 +13,8 @@ export const StyledList = styled.ul`
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
-  
-  ${BREAKPOINTS.minWidth600}
-  ${BREAKPOINTS.minWidth800}
-  ${BREAKPOINTS.minWidth1200}
+
+  ${COMMON_BREAKPOINTS}
 `;
 
 const LinkList = () => (

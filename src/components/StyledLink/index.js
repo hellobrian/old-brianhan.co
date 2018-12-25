@@ -1,31 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-
-const styles = `
-  display: inline-block;
-  text-decoration: none;
-  color: currentColor;
-`;
-
-const StyledSpan = styled.span`
-  background-repeat: no-repeat;
-  background-image: var(--gradient--link);
-  background-size: 100% 3px;
-  background-position: 0 100%;
-  padding-bottom: 2px;
-`;
+import { Span, StyledGatsbyLink, ExternalLink } from './styled';
 
 const StyledLink = ({ href, to, children, ...props }) =>
   href === '' ? (
-    <Link css={styles} to={to} {...props}>
-      <StyledSpan>{children}</StyledSpan>
-    </Link>
+    <StyledGatsbyLink to={to} {...props}>
+      <Span>{children}</Span>
+    </StyledGatsbyLink>
   ) : (
-    <a css={styles} href={href} {...props}>
-      <StyledSpan>{children}</StyledSpan>
-    </a>
+    <ExternalLink href={href} {...props}>
+      <Span>{children}</Span>
+    </ExternalLink>
   );
 
 StyledLink.propTypes = {

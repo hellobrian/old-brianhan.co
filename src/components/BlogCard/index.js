@@ -1,25 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import StyledLink from 'src/components/StyledLink';
-
-const Root = styled.div`
-  margin-bottom: 4rem;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-`;
-
-const Title = styled.h2`
-  @media (max-width: 800px) {
-    font-size: 1.25rem;
-  }
-`;
-
-const Date = styled.p`
-  font-family: 'Karla', sans-serif;
-`;
+import { Root, Title, Date } from './styled';
 
 const BlogCard = ({ title, excerpt, date, to }) => {
   return (
