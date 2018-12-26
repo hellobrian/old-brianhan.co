@@ -9,11 +9,6 @@ export const StyledList = styled.ul`
   padding: 0;
   width: 100%;
 
-  @media screen and (min-width: 600px) {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
   ${COMMON_BREAKPOINTS}
 `;
 

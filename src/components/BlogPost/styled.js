@@ -9,6 +9,10 @@ export const HomeLink = styled.p`
   margin-bottom: 1rem;
   padding-left: 0.5rem;
 
+  @media screen and (min-width: 600px) {
+    padding-left: 0;
+  }
+
   @media screen and (min-width: 800px) {
     font-size: 2rem;
   }
@@ -22,6 +26,10 @@ export const Title = styled.h1`
   padding-right: 0.5rem;
   width: 100%;
 
+  @media screen and (min-width: 600px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
   @media screen and (min-width: 800px) {
     font-size: 2.5rem;
   }
@@ -37,6 +45,11 @@ export const SubTitle = styled.p`
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   width: 100%;
+
+  @media screen and (min-width: 600px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   @media screen and (min-width: 800px) {
     font-size: 1.5rem;

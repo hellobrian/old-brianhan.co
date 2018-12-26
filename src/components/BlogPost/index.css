@@ -15,14 +15,17 @@
   padding-right: 0;
 }
 
-.blog p {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.blog h1 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+@media screen and (max-width: 600px) {
+  .blog h1,
+  .blog h2,
+  .blog h3,
+  .blog h4,
+  .blog h5,
+  .blog h6,
+  .blog p {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }
 
 .blog h2,
@@ -31,8 +34,6 @@
 .blog h5,
 .blog h6 {
   display: inline-block;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
   position: relative;
 }
 
