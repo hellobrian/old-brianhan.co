@@ -18,10 +18,10 @@ class BlogPost extends React.Component {
     return (
       <Layout>
         <div className="blog">
-          <HomeLink>
-            <Link to="/">Brian Han</Link>
-          </HomeLink>
           <header>
+            <HomeLink>
+              <Link to="/">Brian Han</Link>
+            </HomeLink>
             <Title>{post.frontmatter.title}</Title>
           </header>
           <SubTitle>{post.frontmatter.subtitle}</SubTitle>

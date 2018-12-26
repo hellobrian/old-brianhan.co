@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Layout from 'src/components/Layout/';
 import BlogCard from 'src/components/BlogCard';
 import Name from 'src/components/Name';
-import { H1, Blogs } from './styled';
+import { NameWrapper, Blogs } from './styled';
 
 const Home = ({
   data: {
@@ -11,11 +11,11 @@ const Home = ({
   },
 }) => (
   <Layout>
-    <H1>
+    <NameWrapper>
       <Name>Brian Han</Name>
       <div>is a front-end developer.</div>
       <div>Building things for people on the internet.</div>
-    </H1>
+    </NameWrapper>
     <Blogs>
       {edges.map(
         ({
@@ -29,9 +29,10 @@ const Home = ({
           publish && (
             <BlogCard
               key={id}
-              title={title}
-              excerpt={subtitle || excerpt}
               date={date}
+              excerpt={excerpt}
+              subtitle={subtitle}
+              title={title}
               to={slug}
             />
           ),
