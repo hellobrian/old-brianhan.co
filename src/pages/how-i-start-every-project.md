@@ -2,9 +2,8 @@
 date: '2018-12-25'
 publish: true
 title: 'How I Start Every Project'
+subtitle: 'A quick guide to starting new frontend projects'
 ---
-
-> The tutorial parts of this article is only going to work with Mac or Linux. Sorry Windows.
 
 ## New Computer Setup
 

@@ -2,7 +2,7 @@
 title: 'Setting Up Prettier For Your Team'
 date: '2018-11-22'
 subtitle: 'Automatically format your frontend code and save your team from daily code style discussions.'
-publish: true
+publish: false
 ---
 
 When I join a new team or start a new project, the first thing I try to do is setup Prettier, which is a tool that automatically formats the syntax of your code. It works with a bunch of languages and you can make it work in a few different ways. Getting caught up in an argument about semicolons or making comments on someone's pull request about indents isn't the best use of time.

@@ -1,6 +1,7 @@
 ---
 title: 'React from Scratch: Webpack and Babel'
 date: '2018-12-05'
+publish: false
 ---
 
 ## A quick word on Node.js
@@ -107,7 +108,7 @@ And the `script` points to our index.js file, which is where our react app will 
 
 ```html {8,9}
 <!-- src/index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>React from Scratch</title>
