@@ -7,7 +7,7 @@ export const PageRoot = styled.div`
   align-items: center;
 `;
 
-export const Main = styled.main`
+export const Main = styled.div`
   position: relative;
   z-index: 1;
   padding-bottom: 3rem;
