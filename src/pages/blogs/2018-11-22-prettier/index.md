@@ -98,6 +98,9 @@ In this article, we'll work off of the barebones project. Clone it and `cd` into
 ```bash
 git clone git@github.com:hellobrian/every-new-project.git prettier-example
 cd prettier-example
+
+# remove commits from cloned 
+rm -rf .git && git init project
 ```
 
 Here are the packages we're going to use:
@@ -134,12 +137,14 @@ You'll have a **package.json** file that looks like this.
 }
 ```
 
-And we'll need some test files to work with. Let's reuse the **example.js** and **example.css** files from the [Making the case for Prettier](#making-the-case-for-prettier).
+## Copy Example Files
+
+We'll need some example code to work with. Let's reuse the **example.js** and **example.css** files from the [Demo with Prettier Playground](#demo-with-prettier-playground).
 
 Make a new **src** directory, then copy and paste example files to it.
 
 ```bash
-mkdir src
+mkdir src && touch src/example.{js,css}
 ```
 
 ### Confirming Husky Setup Hooks
@@ -231,7 +236,7 @@ html {
 
 Let's move that `prettier` script into an npm script and make it work with the "pre-commit" git hook.
 
-```json{2-4}
+```json{2-9}
 {
   "scripts": {
     "prettier": "prettier --write src/**/*.{js,css}"
@@ -252,7 +257,7 @@ Keep reading 🐶
 
 ## Using Prettier with Husky and lint-staged
 
-```json{10-13}
+```json{7,10-14}
 {
   "scripts": {
     "prettier": "prettier --write src/**/*.{js,css}"
@@ -363,3 +368,12 @@ Here I specified in `overrides` that Markdown files should use double quotes, bu
 ## Run Prettier Once on All Source Files
 
 Once you have all of this setup, you can run Prettier on all the source files you want to target so that everything is consistently formatted in your pull request. Doing this will ensure that all of your teammates will get the formatting changes once so that future pull requests from teammates don't have unneeded diffs, which can create a lot of noise during code review.
+
+## Conclusion
+
+That's about as much as I can elaborate on Prettier.
+
+You can find the finished example code here on my [GitHub](https://github.com/hellobrian/prettier-example/blob/master/README.md).
+
+Thanks for reading!
+

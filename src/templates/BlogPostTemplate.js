@@ -20,12 +20,10 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout>
         <div className="blog">
-          <header>
-            <HomeLink>
-              <Link to="/">Brian Han</Link>
-            </HomeLink>
-            <Title>{frontmatter.title}</Title>
-          </header>
+          <HomeLink>
+            <Link to="/">Brian Han</Link>
+          </HomeLink>
+          <Title>{frontmatter.title}</Title>
           {frontmatter.subtitle && <SubTitle>{frontmatter.subtitle}</SubTitle>}
           <Content dangerouslySetInnerHTML={{ __html: html }} />
         </div>
