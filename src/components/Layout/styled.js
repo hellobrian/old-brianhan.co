@@ -10,6 +10,7 @@ export const PageRoot = styled.div`
 export const Main = styled.div`
   position: relative;
   z-index: 1;
+  overflow-x: hidden;
   padding-bottom: 3rem;
   padding-top: 3rem;
   width: 100%;
