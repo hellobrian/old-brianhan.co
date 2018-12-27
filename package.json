@@ -2,6 +2,9 @@
   "name": "brianhan.co",
   "description": "personal website",
   "version": "1.0.0",
+  "engines": {
+    "node": "~10.15.0"
+  },
   "author": "Brian Han",
   "dependencies": {
     "gatsby": "^2.0.52",
