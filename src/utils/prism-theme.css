@@ -150,3 +150,16 @@ pre[data-line] {
   float: left;
   min-width: 100%;
 }
+
+.gatsby-highlight::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.gatsby-highlight::-webkit-scrollbar-thumb {
+  background: rgb(130, 170, 255);
+}
+
+.gatsby-highlight::-webkit-scrollbar-track {
+  background: #011627;
+}
