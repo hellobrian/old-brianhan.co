@@ -1,65 +1,39 @@
 ---
-title: "Setting Up Prettier For Your Team"
+title: "You should use Prettier with a pre-commit hook"
 date: "2018-11-22"
 subtitle: "Automatically format your frontend code and save your team from daily code style discussions."
 publish: false
-path: "/setting-up-prettier-for-your-team"
+path: "/prettier-with-a-pre-commit-hook"
 ---
 
-When I join a new team or start a new project, the first thing I try to do is setup Prettier, which is a tool that automatically formats the syntax of your code. It works with a bunch of languages and you can make it work in a few different ways. Getting caught up in an argument about semicolons or making comments on someone's pull request about indents isn't the best use of time.
+## The Problem
 
-In this article, I'm going to guide you through how you can integrate Prettier into your team's workflow. Before we get into details, here's a quick overview of what you can do:
+Using Prettier in your text editor is probably good enough if you're working alone.
+But once you're working on a team with lots of people, well, there's always someone who has a different IDE and it's not maintainable to ask everyone to install a plugin for Prettier.
+The nice thing about this setup is that you can set this up for your whole team by yourself.
 
-Talk to your team about Prettier.
+## Getting Started
 
-- Tell them what it is
-- Explain why it's going to help
-- Show them how it works
-- Mention that it works with ESLint
+Assuming you're using `git`, `node` and `npm` or `yarn`, then you should be good to continue.
+If you want to follow along in a barebones project, I have one setup for you that has barely anything in it.
 
-Set up [Prettier using a pre-commit hook](https://prettier.io/docs/en/precommit.html)
+Go ahead and clone this project and change into it.
 
-- IDE agnostic, and one person can set this up for everyone in a single pull request
+```bash
+git clone git@github.com:hellobrian/every-new-project.git prettier-example
+cd prettier-example
+```
 
-Turn off ESLint's formatting rules with [eslint-config-prettier](https://prettier.io/docs/en/eslint.html#turn-off-eslint-s-formatting-rules)
-
-- A one-line fix and now you have Prettier handling all the formatting rules
-
-Finally, submit a pull request including all the newly formatted files so that all the pull requests after yours will always get automatically formatted.
-
-## What you need to get started
-
-- **git**: version control for your code
-- **.gitignore**: a list of files ignored by git
-- **node**: JavaScript runtime outside of the browser (version 8 or newer will work best)
-- **npm**: package manager that comes with node
-- **package.json**: a manifest file for you to declare packages from npm and run npm scripts
-
-## Using Prettier with a "pre-commit" hook
-
-I think this is the best and simplest way to get Prettier adopted by your team. Your team should be standardized around git and you can leverage this by automatically using Prettier whenever someone uses `git commit`.
-
-This solution uses three packages:
+Then we're going to install the following:
 
 - **prettier**: An opinionated and automatic code formatter
 - **lint-staged**: A tool to run linters against staged git files
 - **husky**: Gives you easy access to git hooks via npm scripts
 
-Here's a **package.json** lifted straight from the [Prettier docs](https://prettier.io/docs/en/precommit.html):
+Use `npm` or `yarn` to install as `devDependencies`
 
-```json
-{
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "linters": {
-      "*.{js,json,css,md}": ["prettier --write", "git add"]
-    }
-  }
-}
+```bash
+npm i prettier lint-staged husky -D
 ```
 
 ## Prettier isn't just meant for JS

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import Layout from 'src/components/Layout';
 import { HomeLink, Title, SubTitle, Content } from './styled';
+import './index.css';
 
 class BlogPostTemplate extends React.Component {
   componentDidMount() {

@@ -38,10 +38,11 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.p`
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-style: italic;
   font-family: 'Karla', sans-serif;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.25rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   width: 100%;
@@ -52,7 +53,7 @@ export const SubTitle = styled.p`
   }
 
   @media screen and (min-width: 800px) {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   ${COMMON_BREAKPOINTS};
