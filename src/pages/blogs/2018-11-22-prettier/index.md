@@ -1,8 +1,8 @@
 ---
-title: "You should use Prettier with a pre-commit hook"
-date: "2018-11-22"
+title: "You Should Use Prettier with a Pre-commit Hook"
+date: "2018-12-27"
 subtitle: "Automatically format your frontend code and save your team from daily code style discussions."
-publish: false
+publish: true
 path: "/prettier-with-a-pre-commit-hook"
 ---
 

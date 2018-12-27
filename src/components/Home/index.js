@@ -24,16 +24,17 @@ const Home = ({
             excerpt,
             frontmatter: { title, date, subtitle, publish, path },
           },
-        }) => (
-          <BlogCard
-            key={id}
-            date={date}
-            excerpt={excerpt}
-            subtitle={subtitle}
-            title={title}
-            to={path}
-          />
-        ),
+        }) =>
+          publish && (
+            <BlogCard
+              key={id}
+              date={date}
+              excerpt={excerpt}
+              subtitle={subtitle}
+              title={title}
+              to={path}
+            />
+          ),
       )}
     </Blogs>
   </Layout>
