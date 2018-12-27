@@ -1,8 +1,9 @@
 ---
-date: '2018-12-25'
+date: "2018-12-25"
 publish: true
-title: 'How I Start Every Project'
-subtitle: 'A quick guide to starting new frontend projects'
+title: "How I Start Every Project"
+subtitle: "A quick guide to starting new frontend projects"
+path: "/how-i-start-every-project"
 ---
 
 ## New Computer Setup

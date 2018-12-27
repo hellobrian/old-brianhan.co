@@ -19,15 +19,13 @@ export const query = graphql`
         node {
           id
           excerpt
-          fields {
-            slug
-          }
           frontmatter {
             title
             # date(fromNow: true)
             date(formatString: "DD MMMM YYYY", locale: "us")
             subtitle
             publish
+            path
           }
         }
       }

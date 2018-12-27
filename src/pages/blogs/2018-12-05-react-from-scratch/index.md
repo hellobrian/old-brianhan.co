@@ -1,7 +1,8 @@
 ---
-title: 'React from Scratch: Webpack and Babel'
-date: '2018-12-05'
+title: "React from Scratch: Webpack and Babel"
+date: "2018-12-05"
 publish: false
+path: "/react-from-scratch"
 ---
 
 ## A quick word on Node.js
@@ -124,12 +125,12 @@ Here's our basic react app, we have a Hello component and it gets rendered with 
 
 ```js
 // src/index.js
-import React from 'react';
-import { render } from 'react-dom';
+import React from "react";
+import { render } from "react-dom";
 
 const Hello = () => <h1>Hello</h1>;
 
-render(<Hello />, document.getElementById('root'));
+render(<Hello />, document.getElementById("root"));
 ```
 
 ## Webpack setup
@@ -153,14 +154,14 @@ touch webpack.config.js
 
 ```js
 // webpack.config.js
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
   },
   plugins: [new HtmlWebpackPlugin()],
 };

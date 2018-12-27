@@ -22,20 +22,18 @@ const Home = ({
           node: {
             id,
             excerpt,
-            frontmatter: { title, date, subtitle, publish },
-            fields: { slug },
+            frontmatter: { title, date, subtitle, publish, path },
           },
-        }) =>
-          publish && (
-            <BlogCard
-              key={id}
-              date={date}
-              excerpt={excerpt}
-              subtitle={subtitle}
-              title={title}
-              to={slug}
-            />
-          ),
+        }) => (
+          <BlogCard
+            key={id}
+            date={date}
+            excerpt={excerpt}
+            subtitle={subtitle}
+            title={title}
+            to={path}
+          />
+        ),
       )}
     </Blogs>
   </Layout>
