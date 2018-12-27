@@ -1,3 +1,6 @@
+.blog {
+  overflow-x: hidden;
+}
 /* src/components/StyledLink */
 .blog a:not(.heading) {
   background-image: var(--gradient--link);

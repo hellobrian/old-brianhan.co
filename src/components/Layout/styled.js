@@ -1,10 +1,8 @@
 import styled from 'styled-components';
 
 export const PageRoot = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: block;
+  margin: 0 auto;
 `;
 
 export const Main = styled.div`
@@ -12,5 +10,4 @@ export const Main = styled.div`
   z-index: 1;
   padding-bottom: 3rem;
   padding-top: 3rem;
-  width: 100%;
 `;

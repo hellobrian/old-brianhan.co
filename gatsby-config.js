@@ -11,6 +11,13 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-root-import',
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
@@ -51,25 +58,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Karla`,
-            variants: [`400`, `700`],
-          },
-          {
-            family: `Merriweather`,
-            variants: [`400`, `700`],
-          },
-        ],
+        google: {
+          families: ['Karla:400,700', 'Merriweather:400,700'],
+        },
       },
     },
     {

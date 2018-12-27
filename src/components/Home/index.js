@@ -22,8 +22,7 @@ const Home = ({
           node: {
             id,
             excerpt,
-            frontmatter: { title, date, subtitle, publish },
-            fields: { slug },
+            frontmatter: { title, date, subtitle, publish, path },
           },
         }) =>
           publish && (
@@ -33,7 +32,7 @@ const Home = ({
               excerpt={excerpt}
               subtitle={subtitle}
               title={title}
-              to={slug}
+              to={path}
             />
           ),
       )}

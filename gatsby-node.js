@@ -24,14 +24,19 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
+  const blogPostTemplate = path.resolve(`src/templates/BlogPostTemplate.js`);
+
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+          limit: 1000
+        ) {
           edges {
             node {
-              fields {
-                slug
+              frontmatter {
+                path
               }
             }
           }
@@ -40,11 +45,9 @@ exports.createPages = ({ graphql, actions }) => {
     `).then((result) => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
-          path: node.fields.slug,
-          component: path.resolve(`./src/templates/BlogPostTemplate.js`),
-          context: {
-            slug: node.fields.slug,
-          },
+          path: node.frontmatter.path,
+          component: blogPostTemplate,
+          context: {},
         });
       });
       resolve();
