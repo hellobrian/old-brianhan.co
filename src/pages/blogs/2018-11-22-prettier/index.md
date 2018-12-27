@@ -8,27 +8,31 @@ path: "/prettier-with-a-pre-commit-hook"
 
 ## The Problem
 
-Using Prettier in your text editor is probably good enough if you're working alone.
-But once you're working on a team with lots of people, well, there's always someone who has a different IDE and it's not maintainable to ask everyone to install a plugin for Prettier.
-The nice thing about this setup is that you can set this up for your whole team by yourself.
+When you're working on a project with lots of people, it's not easy convincing everyone to start using a new tool. You're going to run into problems where you want everyone to use Prettier, but the main painpoint is that it's not maintainable to ask every team member to install a Prettier plugin for their specific text editor.
+
+## Making the case for Prettier
+
+1. Setting it up is easy - one person can do it for everyone
+2. Integrates with ESLint
+3. Supports formatting for lots of file types: CSS, JSON, Markdown, and [more](https://prettier.io/docs/en/index.html)
 
 ## Getting Started
 
-Assuming you're using `git`, `node` and `npm` or `yarn`, then you should be good to continue.
-If you want to follow along in a barebones project, I have one setup for you that has barely anything in it.
+Assuming you're using `git`, `node` and `npm` (or `yarn`), then you should be good to continue.
+If you want to follow along in a barebones project, I have one setup for you here on my [GitHub](https://github.com/hellobrian/every-new-project).
 
-Go ahead and clone this project and change into it.
+Clone the project and change into it.
 
 ```bash
 git clone git@github.com:hellobrian/every-new-project.git prettier-example
 cd prettier-example
 ```
 
-Then we're going to install the following:
+Here are the packages we're going to use:
 
-- **prettier**: An opinionated and automatic code formatter
-- **lint-staged**: A tool to run linters against staged git files
-- **husky**: Gives you easy access to git hooks via npm scripts
+- [**prettier**](https://github.com/prettier/prettier): An opinionated and automatic code formatter
+- [**lint-staged**](https://github.com/okonet/lint-staged): A tool to run linters against staged git files
+- [**husky**](https://github.com/typicode/husky): Gives you easy access to git hooks via npm scripts
 
 Use `npm` or `yarn` to install as `devDependencies`
 
@@ -36,43 +40,216 @@ Use `npm` or `yarn` to install as `devDependencies`
 npm i prettier lint-staged husky -D
 ```
 
-## Prettier isn't just meant for JS
+You'll have a **package.json** file that looks like this.
 
-You can use Prettier on CSS files, Markdown files, and a bunch of others too! You can see a full list here on the [Prettier's landing page](https://prettier.io/).
-
-For example, maybe you're real fancy and using TypeScript, JSX, Sass and MDX.
-Well, here's how you can target all those files.
-
-```json{4}
+```json
 {
-  "lint-staged": {
-    "linters": {
-      "*.{ts,jsx,scss,mdx}": ["prettier --write", "git add"]
+  "name": "prettier-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^1.2.1",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3"
+  }
+}
+```
+
+And we'll need some test files to work with. Let's create a **src** directory with `.css` and `.js` file, both badly formatted.
+
+```bash
+mkdir src && touch src/index.{js,css}
+```
+
+**index.js**
+
+<!-- prettier-ignore -->
+```js
+$("#speedPercent").on("input", event => {
+$(".output").value =      event.target.value + "%"    ;
+})
+
+$("#grid").on("click", event => {
+if (event.target && event.target.matches("button.banana")) {
+
+const points =     parseInt(event.target.dataset.points, 10);
+state = {        ...state, score: state.score + points };
+setScoreInnerHTML(state);
+
+const span    =       event.target.querySelector("span");
+span.classList.add("exit-animation");
+span.on('animationend', ()   =>    {
+event.target.parentNode.removeChild(event.target)})
+}
+})
+
+const mutationObserver    = observer(state)
+mutationObserver.observe($("#grid"), {attributes: false,childList: true,subtree: true});
+```
+
+**index.css**
+
+<!-- prettier-ignore -->
+```css
+html {
+box-sizing: border-box;
+font-size: 16px;
+}
+
+*,
+ *:before, *:after {
+box-sizing: inherit;
+}
+
+        .banana > span:after {
+        content: attr(data-points) "pts"     ;
+        font-size:    0.875rem;
+        position:    absolute;
+        top: 50%    ;
+        left:     -40%;
+        background-color:     var(--white-50)    ;
+        padding:    2px 10px;
+        color: rgba(1,    1,   1, 1);
+        border-radius:     4px;
+        }
+
+```
+
+### Confirming Husky Setup Hooks
+
+Quick aside: since we installed Husky, you can confirm that it created new `git` hooks for you by peeking into your project's **.git** files.
+
+```bash
+ls .git/hooks
+less .git/hooks/pre-commit
+```
+
+Husky won't overwrite any existing hooks that may already exist on your project. You should see some kind of console output in your terminal if Husky was unable to set things up correctly.
+
+### Seeing Prettier in Action
+
+In your terminal, we can use `npx` to try out `prettier`:
+
+```bash
+npx prettier --write src/**/*.{js,css}
+```
+
+- The `--write` flag tells `prettier` to format files in place
+- The `src/**/*.{js,css}` pattern will target all JavaScript and CSS files in the **src** directory and subdirectories.
+
+Notice the change to our files:
+
+- spacing is normalized
+- indents are fixed
+- semicolons are added consistently
+- no more mixing of single and double quotes
+
+**index.js**
+
+```js
+$("#speedPercent").on("input", (event) => {
+  $(".output").value = event.target.value + "%";
+});
+
+$("#grid").on("click", (event) => {
+  if (event.target && event.target.matches("button.banana")) {
+    const points = parseInt(event.target.dataset.points, 10);
+    state = { ...state, score: state.score + points };
+    setScoreInnerHTML(state);
+
+    const span = event.target.querySelector("span");
+    span.classList.add("exit-animation");
+    span.on("animationend", () => {
+      event.target.parentNode.removeChild(event.target);
+    });
+  }
+});
+
+const mutationObserver = observer(state);
+mutationObserver.observe($("#grid"), {
+  attributes: false,
+  childList: true,
+  subtree: true,
+});
+```
+
+**index.css**
+
+```css
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.banana > span:after {
+  content: attr(data-points) "pts";
+  font-size: 0.875rem;
+  position: absolute;
+  top: 50%;
+  left: -40%;
+  background-color: var(--white-50);
+  padding: 2px 10px;
+  color: rgba(1, 1, 1, 1);
+  border-radius: 4px;
+}
+```
+
+## Using Prettier with Husky
+
+Let's move that `prettier` script into an npm script and make it work with the "pre-commit" git hook.
+
+```json{2-5}
+{
+  "scripts": {
+    "prettier": "prettier --write src/**/*.{js,css}"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier"
     }
   }
 }
 ```
 
-## Targeting files for Prettier via lint-staged
+This setup will run `npm run prettier` whenever you run `git commit`. But Prettier is going to target all the files according to the target pattern we gave it, which is all the JavaScript and CSS files in our **src** directory. Keep reading.
 
-Let's look at the target pattern we're using with lint-staged: `*.{js,json,css,md}`.
+## Using Prettier with lint-staged and Husky
 
-This is going to target all of those files with those extensions anywhere in your project.
-You can refer to the [lint-staged docs on filtering files here.](https://github.com/okonet/lint-staged#filtering-files)
+```json{7-10}
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,css}": ["prettier --write", "git add"]
+    }
+  }
+}
+```
 
-But since we're using git is our way to use Prettier, it's super important to rely on your .gitignore file to make sure that you're not accidentally committing things like, node_modules or dist or whichever folder holds all of your bundled production code.
+This is why we want lint-staged so that we only run Prettier on staged files.
+Couple things to note here, we can remove the `prettier` script (optional) and move it into the `"linters"` object. The target pattern is the key and the value is an array of executables.
+Note the `git add` is used after `prettier --write` so that the changes from Prettier get staged.
 
-Again, when git ignores something because it's in your .gitignore file, then Prettier should ignore it too.
+## Many ways to ignore files
 
-So, it should be okay to let `lint-staged` target all the files in you project - I personally like this because I can target my src files and some commonly used root files like:
-
-- webpack.config.js
-- package.json
-- README.md
-
-## More ways to ignore files
-
-Maybe you think using a .gitignore and lint-staged isn't quite enough. That's fine, you can configure lint-staged to be extra diligent in targeting and ignoring the files you want.
+There are a lot of ways for Prettier to ignore files
 
 You can target src files only.
 
@@ -114,65 +291,3 @@ Heck, you can even add an `ignore` key here too because...safety!
   }
 }
 ```
-
-<!-- ## What is the code _actually_ doing?
-
-Here's the `husky` part of the code.
-
-```json
-{
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
-}
-```
-
-Remember, `husky` gives us access to `git` hooks, specifically, the `pre-commit` hook.
-In this case, `lint-staged` gets executed automatically before `git commit` thanks to this `pre-commit` hook.
-
-Here's the `lint-staged` code in package.json.
-
-```json
-{
-  "lint-staged": {
-    "linters": {
-      "*.{js,json,css,md}": ["prettier --write", "git add"]
-    }
-  }
-}
-```
-
-When our code runs `lint-staged` it triggers `prettier` and `git add` but _only_ on staged files.
-For example, let's say I have two files when I run `git add myFile.js`, then `myFile.js` is staged and `prettier` runs only on `myFile.js` only.
-
-`"*.{js,json,css,md}"` is a target pattern; this means we're targetting all files in our project with the following extensions: `js`,`json`,`css`, and `md`.
-
-`["prettier --write", "git add"]` is a list of scripts to run when `lint-staged` gets called
-
-- `prettier --write`: edit the targetted files in-place
-- `git add`: since we edited the files with `prettier --write`, stage the files again. -->
-
-## ESLint integration
-
-Like I mentioned at the beginning, I recommend using both `prettier` and `eslint` and turn off ESLint's formatting rules with `eslint-config-prettier`
-
-It took me a while to actually...read the actual Prettier [website](https://prettier.io/docs/en/comparison.html) but when I did, I was totally in love with how they explained themselves in the context of linters.
-
-> Linters have two categories of rules:
->
-> Formatting rules: eg: max-len, no-mixed-spaces-and-tabs, keyword-spacing, comma-style...
->
-> Prettier alleviates the need for this whole category of rules! Prettier is going to reprint the entire program from scratch in a consistent way, so it's not possible for the programmer to make a mistake there anymore :)
->
-> Code-quality rules: eg no-unused-vars, no-extra-bind, no-implicit-globals, prefer-promise-reject-errors...
-
-I've been passively using ESLint and Prettier for a couple years and I never made this distinction until reading this!
-With that said, I say let Prettier and ESLint work in their respective categories:
-
-Let Prettier handle all the formatting rules
-
-ESLint can warn or yell at us about all the code-quality rules
-
-And turn off ESLint's formatting rules because that's Prettier's job now.
