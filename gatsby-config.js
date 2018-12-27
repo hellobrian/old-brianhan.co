@@ -58,18 +58,11 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        fonts: [
-          {
-            family: `Karla`,
-            variants: [`400`, `700`],
-          },
-          {
-            family: `Merriweather`,
-            variants: [`400`, `700`],
-          },
-        ],
+        google: {
+          families: ['Karla:400,700', 'Merriweather:400,700'],
+        },
       },
     },
     {
