@@ -1,9 +1,9 @@
 ---
 title: "You Should Use Prettier with a Pre-commit Hook"
-date: "2018-12-27"
 subtitle: "Seamlessly integrate Prettier into your existing development workflow and learn how it all works together"
-publish: true
+date: "2018-12-27"
 path: "/prettier-with-a-pre-commit-hook"
+publish: true
 ---
 
 ## The Problem
@@ -171,7 +171,7 @@ Notice the change to our files:
 - semicolons are added consistently
 - no more mixing of single and double quotes
 
-**index.js**
+**example.js**
 
 ```js
 $("#speedPercent").on("input", (event) => {
@@ -200,7 +200,7 @@ mutationObserver.observe($("#grid"), {
 });
 ```
 
-**index.css**
+**example.css**
 
 ```css
 html {
@@ -231,7 +231,7 @@ html {
 
 Let's move that `prettier` script into an npm script and make it work with the "pre-commit" git hook.
 
-```json{2-5}
+```json{2-4}
 {
   "scripts": {
     "prettier": "prettier --write src/**/*.{js,css}"
@@ -244,12 +244,19 @@ Let's move that `prettier` script into an npm script and make it work with the "
 }
 ```
 
-This setup will run `npm run prettier` whenever you run `git commit`. But Prettier is going to target all the files according to the target pattern we gave it, which is all the JavaScript and CSS files in our **src** directory. Keep reading.
+This setup will run `npm run prettier` whenever you run `git commit`, which makes Husky the piece of this setup that makes it easy for everyone on your team to use Prettier.
 
-## Using Prettier with lint-staged and Husky
+But notice that all the files get reformatted when we really just want staged files to get the Prettier treatment.
 
-```json{7-10}
+Keep reading 🐶
+
+## Using Prettier with Husky and lint-staged
+
+```json{10-13}
 {
+  "scripts": {
+    "prettier": "prettier --write src/**/*.{js,css}"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -263,35 +270,40 @@ This setup will run `npm run prettier` whenever you run `git commit`. But Pretti
 }
 ```
 
-This is why we want lint-staged so that we only run Prettier on staged files.
-Couple things to note here, we can remove the `prettier` script (optional) and move it into the `"linters"` object. The target pattern is the key and the value is an array of executables.
-Note the `git add` is used after `prettier --write` so that the changes from Prettier get staged.
+Adding lint-staged here let's us run Prettier on staged files only so that the files you actually commit to git will be affected.
 
-## Many ways to ignore files
+Let's breakdown how to read the lint-staged config.
+
+- The target pattern becomes a key in the "linters"` object.
+- The value is now an array of commands that will get executed where `prettier --write` and `git add` get called one after the other.
+- The `git add` command gets added since the `prettier` command will reformat all the staged files according to the target pattern and will re-add them right before you write your commit message
+
+## Ignoring and Targeting Specific Files
 
 There are a lot of ways for Prettier to ignore files
 
-You can target src files only.
+So far, we've been targeting **src** files only, and this will inherently ignore other directories.
 
 ```json{4}
 {
   "lint-staged": {
     "linters": {
-      "src/**/*.{js,json,css,md}": ["prettier --write", "git add"]
+      "src/**/*.{js,css}": ["prettier --write", "git add"]
     }
   }
 }
 ```
 
-Specific files works too, like some common files outside of `src`.
+You can also add specific files too, like some common files outside of **src**.
 
-```json{4-6}
+```json{4-7}
 {
   "lint-staged": {
     "linters": {
-      "src/**/*.{js,json,css,md}": ["prettier --write", "git add"],
+      "src/**/*.{js,css}": ["prettier --write", "git add"]
       "webpack.config.js": ["prettier --write", "git add"],
-      "package.json": ["prettier --write", "git add"]
+      "package.json": ["prettier --write", "git add"],
+      "*.md": ["prettier --write", "git add"]
     }
   }
 }
@@ -299,15 +311,55 @@ Specific files works too, like some common files outside of `src`.
 
 Heck, you can even add an `ignore` key here too because...safety!
 
-```json{8}
+```json{9}
 {
   "lint-staged": {
     "linters": {
-      "src/**/*.{js,json,css,md}": ["prettier --write", "git add"],
+      "src/**/*.{js,css}": ["prettier --write", "git add"],
       "webpack.config.js": ["prettier --write", "git add"],
-      "package.json": ["prettier --write", "git add"]
+      "package.json": ["prettier --write", "git add"],
+      "*.md": ["prettier --write", "git add"]
     },
-    "ignore": ["node_modules", "dist/**/*.{js,json,css,md}"]
+    "ignore": ["node_modules", "dist", "package-lock.json"]
   }
 }
 ```
+
+Or you can create a **.prettierignore** file at the root of your project, which works just like a **.gitignore** file:
+
+```
+node_modules
+dist
+package-lock.json
+```
+
+## Sharing a Prettier config
+
+If you don't want to use the default config, you can create a **.prettierrc** file with your own config and overrides.
+
+Here I specified in `overrides` that Markdown files should use double quotes, but all other files targeted should use single quotes.
+
+```json
+{
+  "arrowParens": "always",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "jsxSingleQuote": false,
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}
+```
+
+## Run Prettier Once on All Source Files
+
+Once you have all of this setup, you can run Prettier on all the source files you want to target so that everything is consistently formatted in your pull request. Doing this will ensure that all of your teammates will get the formatting changes once so that future pull requests from teammates don't have unneeded diffs, which can create a lot of noise during code review.
