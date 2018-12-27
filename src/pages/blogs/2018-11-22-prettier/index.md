@@ -1,27 +1,99 @@
 ---
 title: "You Should Use Prettier with a Pre-commit Hook"
 date: "2018-12-27"
-subtitle: "Automatically format your frontend code and save your team from daily code style discussions."
+subtitle: "Seamlessly integrate Prettier into your existing development workflow and learn how it all works together"
 publish: true
 path: "/prettier-with-a-pre-commit-hook"
 ---
 
 ## The Problem
 
-When you're working on a project with lots of people, it's not easy convincing everyone to start using a new tool. You're going to run into problems where you want everyone to use Prettier, but the main painpoint is that it's not maintainable to ask every team member to install a Prettier plugin for their specific text editor.
+It's difficult for everyone to commit to using a new tool. Specifically with Prettier, it's not maintainable to ask every team member to install a new plugin and stay in-sync with a common Prettier config.
+
+It's best to make it easy for everyone and introduce Prettier seamlessly without anyone having to spend any effort to make it work.
 
 ## Making the case for Prettier
 
-1. Setting it up is easy - one person can do it for everyone
+Maybe you have teammates who are still skeptical about Prettier.
+
+The [Prettier](https://prettier.io/) website already makes a great case for why you should use it. But I've had more success highlighting these reasons:
+
+1. Setting it up is easy &mdash; one person can do it for everyone
 2. Integrates with ESLint
-3. Supports formatting for lots of file types: CSS, JSON, Markdown, and [more](https://prettier.io/docs/en/index.html)
+3. Integrates with Git Hooks via Husky
+4. Supports formatting for lots of file types: CSS, JSON, Markdown, and [more](https://prettier.io/docs/en/index.html)
+
+## Demo with Prettier Playground
+
+Showing is usually better than telling.
+
+You can quickly demo Prettier in action for your team with the [Prettier Playground](https://prettier.io/playground/). For good measure, here's some badly formatted JavaScript and CSS for you to play with too.
+
+**example.js**
+
+<!-- prettier-ignore -->
+```js
+      $("#speedPercent").on("input", event => {
+  $(".output").value =      event.target.value + "%"    ;
+})
+
+$("#grid").on("click", event => {
+if (event.target && event.target.matches("button.banana")) {
+
+    const points =     parseInt(   event.target.dataset.points, 10     )  ;
+state = {        ...state, score: state.score + points };
+    setScoreInnerHTML(state);
+
+const span    =       event.target.querySelector("span");
+    span.classList.add("exit-animation");
+span.on('animationend', ()   =>    {
+event.target.parentNode.removeChild(event.target)})
+    }
+  })
+
+        const mutationObserver    = observer(state)
+mutationObserver.observe($("#grid"), {attributes: false,childList: true,subtree: true});
+```
+
+**example.css**
+
+<!-- prettier-ignore -->
+```css
+    html {
+            box-sizing: border-box;
+font-size: 16px    ;
+}
+
+*,     *:before,     *:after {
+      box-sizing:       inherit ;
+      }
+
+        .banana > span:after {
+        content: attr(data-points) "pts"     ;
+        font-size:    0.875rem;
+    position:    absolute;
+        top: 50%    ;
+  left:     -40%;
+        background-color:     var(--white-50)    ;
+        padding:    2px 10px;
+      color: rgba(1,    1,   1, 1);
+        border-radius:     4px;
+            }
+
+```
 
 ## Getting Started
 
-Assuming you're using `git`, `node` and `npm` (or `yarn`), then you should be good to continue.
-If you want to follow along in a barebones project, I have one setup for you here on my [GitHub](https://github.com/hellobrian/every-new-project).
+The rest of this article will be a guided tutorial where we will cover the following:
 
-Clone the project and change into it.
+- How to setup Prettier with a pre-commit hook
+- Understanding the different tools used to make this work
+
+Assuming you're using `git`, `node` and `npm` (or `yarn`), then you should be good to continue.
+
+You can start with a [barebones project](https://github.com/hellobrian/every-new-project) or work in an existing project.
+
+In this article, we'll work off of the barebones project. Clone it and `cd` into it.
 
 ```bash
 git clone git@github.com:hellobrian/every-new-project.git prettier-example
@@ -62,64 +134,12 @@ You'll have a **package.json** file that looks like this.
 }
 ```
 
-And we'll need some test files to work with. Let's create a **src** directory with `.css` and `.js` file, both badly formatted.
+And we'll need some test files to work with. Let's reuse the **example.js** and **example.css** files from the [Making the case for Prettier](#making-the-case-for-prettier).
+
+Make a new **src** directory, then copy and paste example files to it.
 
 ```bash
-mkdir src && touch src/index.{js,css}
-```
-
-**index.js**
-
-<!-- prettier-ignore -->
-```js
-$("#speedPercent").on("input", event => {
-$(".output").value =      event.target.value + "%"    ;
-})
-
-$("#grid").on("click", event => {
-if (event.target && event.target.matches("button.banana")) {
-
-const points =     parseInt(event.target.dataset.points, 10);
-state = {        ...state, score: state.score + points };
-setScoreInnerHTML(state);
-
-const span    =       event.target.querySelector("span");
-span.classList.add("exit-animation");
-span.on('animationend', ()   =>    {
-event.target.parentNode.removeChild(event.target)})
-}
-})
-
-const mutationObserver    = observer(state)
-mutationObserver.observe($("#grid"), {attributes: false,childList: true,subtree: true});
-```
-
-**index.css**
-
-<!-- prettier-ignore -->
-```css
-html {
-box-sizing: border-box;
-font-size: 16px;
-}
-
-*,
- *:before, *:after {
-box-sizing: inherit;
-}
-
-        .banana > span:after {
-        content: attr(data-points) "pts"     ;
-        font-size:    0.875rem;
-        position:    absolute;
-        top: 50%    ;
-        left:     -40%;
-        background-color:     var(--white-50)    ;
-        padding:    2px 10px;
-        color: rgba(1,    1,   1, 1);
-        border-radius:     4px;
-        }
-
+mkdir src
 ```
 
 ### Confirming Husky Setup Hooks
@@ -131,7 +151,7 @@ ls .git/hooks
 less .git/hooks/pre-commit
 ```
 
-Husky won't overwrite any existing hooks that may already exist on your project. You should see some kind of console output in your terminal if Husky was unable to set things up correctly.
+Husky won't overwrite any existing hooks that may already exist in your project. You should see some kind of console output in your terminal if Husky was unable to set things up correctly.
 
 ### Seeing Prettier in Action
 
