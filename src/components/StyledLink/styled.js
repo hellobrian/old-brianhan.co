@@ -12,7 +12,6 @@ export const Span = styled.span`
   background-image: var(--gradient--link);
   background-size: 100% 3px;
   background-position: 0 100%;
-  padding-bottom: 2px;
 `;
 
 export const StyledGatsbyLink = styled(Link)`

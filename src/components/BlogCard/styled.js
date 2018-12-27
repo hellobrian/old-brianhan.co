@@ -9,6 +9,9 @@ export const Root = styled.div`
 `;
 
 export const Title = styled.h2`
+  line-height: 1.5;
+  padding-bottom: 0;
+
   @media (max-width: 800px) {
     font-size: 1.25rem;
   }
