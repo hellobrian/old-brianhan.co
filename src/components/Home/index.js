@@ -5,22 +5,32 @@ import BlogCard from 'src/components/BlogCard';
 import { NameWrapper } from './styled';
 import { COMMON_BREAKPOINTS } from 'src/utils';
 
+export const text = {
+  name: `Brian Han`,
+  description: `is a front-end developer.`,
+  mission: `Building things for people on the internet.`,
+};
+
+export const Name = () => (
+  <NameWrapper>
+    <div
+      css={`
+        color: var(--blue);
+      `}>
+      {text.name}
+    </div>
+    <div>{text.description}</div>
+    <div>{text.mission}</div>
+  </NameWrapper>
+);
+
 const Home = ({
   data: {
     allMarkdownRemark: { edges },
   },
 }) => (
   <Layout>
-    <NameWrapper>
-      <div
-        css={`
-          color: var(--blue);
-        `}>
-        Brian Han
-      </div>
-      <div>is a front-end developer.</div>
-      <div>Building things for people on the internet.</div>
-    </NameWrapper>
+    <Name />
     <div
       css={`
         padding-left: 0.5rem;
