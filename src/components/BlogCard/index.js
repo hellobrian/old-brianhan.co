@@ -6,11 +6,9 @@ const BlogCard = ({ title, subtitle, excerpt, date, to, href }) => {
   return (
     <div
       css={`
-        margin-bottom: 4rem;
-        padding-bottom: 1rem;
         padding-left: 2rem;
         padding-right: 2rem;
-        padding-top: 3rem;
+        margin-bottom: 4rem;
         min-width: 400px;
 
         &:last-child {
@@ -23,6 +21,10 @@ const BlogCard = ({ title, subtitle, excerpt, date, to, href }) => {
 
         @media screen and (min-width: 800px) {
           box-shadow: var(--card-shadow);
+          padding-bottom: 1rem;
+          padding-left: 2rem;
+          padding-right: 2rem;
+          padding-top: 3rem;
         }
       `}>
       <h2
@@ -47,15 +49,7 @@ const BlogCard = ({ title, subtitle, excerpt, date, to, href }) => {
         `}>
         {date}
       </p>
-      <p
-        css={`
-          display: none;
-          @media screen and (min-width: 600px) {
-            display: inline-block;
-          }
-        `}>
-        {subtitle || excerpt}
-      </p>
+      <p>{subtitle || excerpt}</p>
     </div>
   );
 };

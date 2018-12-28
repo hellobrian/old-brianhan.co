@@ -16,13 +16,10 @@ exports[`BlogCard renders correctly 1`] = `
 }
 
 .c0 {
-  border-radius: 30px;
-  box-shadow: var(--card-shadow);
-  margin-bottom: 4rem;
-  padding-bottom: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top: 3rem;
+  margin-bottom: 4rem;
+  min-width: 400px;
 }
 
 .c0:last-child {
@@ -39,6 +36,22 @@ exports[`BlogCard renders correctly 1`] = `
   font-family: 'Karla',sans-serif;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+@media screen and (min-width:400px) {
+  .c0 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width:800px) {
+  .c0 {
+    box-shadow: var(--card-shadow);
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+  }
 }
 
 @media (max-width:800px) {
