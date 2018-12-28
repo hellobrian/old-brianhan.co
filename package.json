@@ -26,11 +26,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
-    "@storybook/addon-actions": "^4.0.8",
-    "@storybook/addon-knobs": "^4.0.8",
-    "@storybook/addon-links": "^4.0.8",
-    "@storybook/addons": "^4.0.8",
-    "@storybook/react": "^4.0.8",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "babel-plugin-styled-components": "^1.10.0",
@@ -53,9 +48,7 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "format": "prettier --config .prettierrc --ignore-path .prettierignore --write '**/*.{js,json,md}'",
-    "lint": "eslint -c .eslintrc src/**/*.js",
-    "storybook": "start-storybook -p 6006 --quiet --ci",
-    "build-storybook": "build-storybook"
+    "lint": "eslint -c .eslintrc src/**/*.js"
   },
   "repository": {
     "type": "git",

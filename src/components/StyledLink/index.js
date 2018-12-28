@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { Span, StyledGatsbyLink, ExternalLink } from './styled';
+import { Span } from './styled';
 
 export const styles = `
   display: inline-block;
