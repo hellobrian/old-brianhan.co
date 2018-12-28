@@ -8,8 +8,17 @@ import { COMMON_BREAKPOINTS } from 'src/utils';
 export const text = {
   name: `Brian Han`,
   description: `is a front-end developer.`,
-  mission: `Building things for people on the internet.`,
+  mission: `Building and writing things for people on the internet.`,
 };
+
+export const otherBlogPosts = [
+  {
+    date: `26 February 2018`,
+    title: `Hot Reloading with create-react-app without ejecting`,
+    subtitle: `...and without react-app-rewired`,
+    href: `https://medium.com/@brianhan/hot-reloading-cra-without-eject-b54af352c642`,
+  },
+];
 
 export const Name = () => (
   <NameWrapper>
@@ -36,6 +45,13 @@ const Home = ({
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         ${COMMON_BREAKPOINTS};
+
+        @media screen and (min-width: 1600px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 4rem;
+          width: 1000px;
+        }
       `}>
       {edges.map(
         ({
@@ -56,6 +72,15 @@ const Home = ({
             />
           ),
       )}
+      {otherBlogPosts.map((blog, index) => (
+        <BlogCard
+          key={index}
+          date={blog.date}
+          subtitle={blog.subtitle}
+          title={blog.title}
+          href={blog.href}
+        />
+      ))}
     </div>
   </Layout>
 );

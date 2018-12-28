@@ -9,6 +9,10 @@
   --salmon: #ff9a9e;
   --salmon--light: #fecfef;
   --salmon--light--rgba50: rgba(254, 207, 239, 0.5);
+  --shadow: rgba(101, 31, 62, 0.1);
+
+  /* Box Shadow */
+  --card-shadow: var(--shadow) 20px 50px 100px -5px;
 
   /* Gradients */
   --gradient--link: linear-gradient(

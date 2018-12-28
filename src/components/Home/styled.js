@@ -10,8 +10,8 @@ export const NameWrapper = styled.div`
   font-weight: 700;
   line-height: 1.1;
   padding-bottom: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 
   @media screen and (min-width: 400px) {
     font-size: 1.5rem;
@@ -19,6 +19,10 @@ export const NameWrapper = styled.div`
 
   @media screen and (min-width: 800px) {
     font-size: 2rem;
+  }
+  @media screen and (min-width: 1600px) {
+    font-size: 3rem;
+    letter-spacing: -0.1rem;
   }
 
   ${COMMON_BREAKPOINTS};

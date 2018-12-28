@@ -2,4 +2,4 @@
 
 # brianhan.co
 
-Website built with gatsby
+Personal website and blog

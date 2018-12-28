@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogCard renders correctly 1`] = `
+.c3 {
+  background-repeat: no-repeat;
+  background-image: var(--gradient--link);
+  background-size: 100% 3px;
+  background-position: 0 100%;
+}
+
+.c2 {
+  display: inline-block;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: currentColor;
+}
+
+.c0 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 4rem;
+  min-width: 400px;
+}
+
+.c0:last-child {
+  margin-bottom: 0;
+}
+
+.c1 {
+  line-height: 1.5;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.c4 {
+  font-family: 'Karla',sans-serif;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+@media screen and (min-width:400px) {
+  .c0 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width:800px) {
+  .c0 {
+    box-shadow: var(--card-shadow);
+    padding-bottom: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+  }
+}
+
+@media (max-width:800px) {
+  .c1 {
+    font-size: 1.25rem;
+  }
+}
+
+<div
+  class="c0"
+>
+  <h2
+    class="c1"
+  >
+    <a
+      class="c2"
+      href="/"
+    >
+      <span
+        class="c3"
+      >
+        title
+      </span>
+    </a>
+  </h2>
+  <p
+    class="c4"
+  >
+    date
+  </p>
+  <p>
+    subtitle
+  </p>
+</div>
+`;
