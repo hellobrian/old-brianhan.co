@@ -8,7 +8,7 @@ import { COMMON_BREAKPOINTS } from 'src/utils';
 export const text = {
   name: `Brian Han`,
   description: `is a front-end developer.`,
-  mission: `Building things for people on the internet.`,
+  mission: `Building and writing things for people on the internet.`,
 };
 
 export const Name = () => (

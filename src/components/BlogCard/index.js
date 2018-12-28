@@ -6,7 +6,13 @@ const BlogCard = ({ title, subtitle, excerpt, date, to }) => {
   return (
     <div
       css={`
+        border-radius: 30px;
+        box-shadow: var(--card-shadow);
         margin-bottom: 4rem;
+        padding-bottom: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 3rem;
 
         &:last-child {
           margin-bottom: 0;
