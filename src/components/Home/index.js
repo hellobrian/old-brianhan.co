@@ -45,6 +45,13 @@ const Home = ({
         padding-left: 0.5rem;
         padding-right: 0.5rem;
         ${COMMON_BREAKPOINTS};
+
+        @media screen and (min-width: 1600px) {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-gap: 4rem;
+          width: 1000px;
+        }
       `}>
       {edges.map(
         ({

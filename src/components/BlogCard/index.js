@@ -6,13 +6,12 @@ const BlogCard = ({ title, subtitle, excerpt, date, to, href }) => {
   return (
     <div
       css={`
-        border-radius: 30px;
-        box-shadow: var(--card-shadow);
         margin-bottom: 4rem;
         padding-bottom: 1rem;
         padding-left: 2rem;
         padding-right: 2rem;
         padding-top: 3rem;
+        min-width: 400px;
 
         &:last-child {
           margin-bottom: 0;
@@ -20,6 +19,10 @@ const BlogCard = ({ title, subtitle, excerpt, date, to, href }) => {
 
         @media screen and (min-width: 400px) {
           margin-bottom: 1rem;
+        }
+
+        @media screen and (min-width: 800px) {
+          box-shadow: var(--card-shadow);
         }
       `}>
       <h2
