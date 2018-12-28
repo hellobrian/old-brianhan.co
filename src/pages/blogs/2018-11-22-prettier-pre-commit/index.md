@@ -99,7 +99,7 @@ In this article, we'll work off of the barebones project. Clone it and `cd` into
 git clone git@github.com:hellobrian/every-new-project.git prettier-example
 cd prettier-example
 
-# remove commits from cloned 
+# remove commits from cloned
 rm -rf .git && git init project
 ```
 
@@ -376,4 +376,3 @@ That's about as much as I can elaborate on Prettier.
 You can find the finished example code here on my [GitHub](https://github.com/hellobrian/prettier-example/blob/master/README.md).
 
 Thanks for reading!
-
