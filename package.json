@@ -60,6 +60,11 @@
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm test"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hellobrian/brianhan.co"
