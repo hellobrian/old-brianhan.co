@@ -22,6 +22,7 @@ export const NameWrapper = styled.div`
   }
   @media screen and (min-width: 1600px) {
     font-size: 3rem;
+    letter-spacing: -0.1rem;
   }
 
   ${COMMON_BREAKPOINTS};
