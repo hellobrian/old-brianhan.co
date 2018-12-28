@@ -56,9 +56,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "dev:gatsby": "gatsby develop",
     "dev:test": "jest --watchAll",
-    "dev": "npm-run-all --parallel dev:*",
+    "dev": "gatsby develop",
     "test": "jest",
     "prettier": "prettier --write **/*.{js,css,json,md}",
     "lint": "eslint -c .eslintrc src/**/*.js"
