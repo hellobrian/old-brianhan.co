@@ -57,7 +57,8 @@
     "dev": "gatsby develop",
     "format": "prettier --config .prettierrc --ignore-path .prettierignore --write '**/*.{js,json,md}'",
     "lint": "eslint -c .eslintrc src/**/*.js",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "repository": {
     "type": "git",
