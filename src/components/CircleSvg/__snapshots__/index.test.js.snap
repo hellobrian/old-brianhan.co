@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CircleSvg renders correctly 1`] = `
+.c0 {
+  background-image: var(--gradient--salmon);
+  width: 7rem;
+  height: 7rem;
+  position: fixed;
+  border-radius: 50%;
+  top: -1rem;
+  left: -1rem;
+}
+
+<svg
+  class="c0"
+/>
+`;
