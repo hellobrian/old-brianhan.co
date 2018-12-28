@@ -1,15 +1,22 @@
 import React from 'react';
 import SEO from 'src/components/SEO';
 import CircleSvg from 'src/components/CircleSvg';
-import { PageRoot, Main } from './styled';
 import './index.css';
 
 export default ({ children }) => (
   <>
     <SEO />
-    <PageRoot>
+    <div>
       <CircleSvg />
-      <Main>{children}</Main>
-    </PageRoot>
+      <div
+        css={`
+          position: relative;
+          z-index: 1;
+          padding-bottom: 3rem;
+          padding-top: 3rem;
+        `}>
+        {children}
+      </div>
+    </div>
   </>
 );

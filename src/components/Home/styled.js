@@ -23,10 +23,3 @@ export const NameWrapper = styled.div`
 
   ${COMMON_BREAKPOINTS};
 `;
-
-export const Blogs = styled.div`
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-
-  ${COMMON_BREAKPOINTS};
-`;

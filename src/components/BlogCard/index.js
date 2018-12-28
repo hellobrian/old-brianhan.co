@@ -1,17 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledLink from 'src/components/StyledLink';
-import { Root, Title, Date } from './styled';
 
 const BlogCard = ({ title, subtitle, excerpt, date, to }) => {
   return (
-    <Root>
-      <Title>
+    <div
+      css={`
+        margin-bottom: 4rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      `}>
+      <h2
+        css={`
+          line-height: 1.5;
+          padding-bottom: 0;
+          margin-bottom: 0;
+
+          @media (max-width: 800px) {
+            font-size: 1.25rem;
+          }
+        `}>
         <StyledLink to={to}>{title}</StyledLink>
-      </Title>
-      <Date>{date}</Date>
+      </h2>
+      <p
+        css={`
+          font-family: 'Karla', sans-serif;
+          margin-top: 5px;
+          margin-bottom: 5px;
+        `}>
+        {date}
+      </p>
       <p>{subtitle || excerpt}</p>
-    </Root>
+    </div>
   );
 };
 

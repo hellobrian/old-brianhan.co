@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from 'src/components/Layout/';
 import BlogCard from 'src/components/BlogCard';
-import Name from 'src/components/Name';
-import { NameWrapper, Blogs } from './styled';
+import { NameWrapper } from './styled';
+import { COMMON_BREAKPOINTS } from 'src/utils';
 
 const Home = ({
   data: {
@@ -12,11 +12,21 @@ const Home = ({
 }) => (
   <Layout>
     <NameWrapper>
-      <Name>Brian Han</Name>
+      <div
+        css={`
+          color: var(--blue);
+        `}>
+        Brian Han
+      </div>
       <div>is a front-end developer.</div>
       <div>Building things for people on the internet.</div>
     </NameWrapper>
-    <Blogs>
+    <div
+      css={`
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        ${COMMON_BREAKPOINTS};
+      `}>
       {edges.map(
         ({
           node: {
@@ -36,7 +46,7 @@ const Home = ({
             />
           ),
       )}
-    </Blogs>
+    </div>
   </Layout>
 );
 

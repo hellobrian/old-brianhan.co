@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link } from 'gatsby';
 import Layout from 'src/components/Layout';
-import { HomeLink, Title, SubTitle, Content } from './styled';
+import { HomeLink, Title, SubTitle } from './styled';
+import { COMMON_BREAKPOINTS } from 'src/utils';
 import './index.css';
 
 class BlogPostTemplate extends React.Component {
@@ -13,10 +14,9 @@ class BlogPostTemplate extends React.Component {
     );
   }
   render() {
-    const { data } = this.props;
     const {
       markdownRemark: { frontmatter, html },
-    } = data;
+    } = this.props.data;
     return (
       <Layout>
         <div className="blog">
@@ -25,7 +25,13 @@ class BlogPostTemplate extends React.Component {
           </HomeLink>
           <Title>{frontmatter.title}</Title>
           {frontmatter.subtitle && <SubTitle>{frontmatter.subtitle}</SubTitle>}
-          <Content dangerouslySetInnerHTML={{ __html: html }} />
+          <div
+            css={`
+              width: 100%;
+              ${COMMON_BREAKPOINTS}
+            `}
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
         </div>
       </Layout>
     );
