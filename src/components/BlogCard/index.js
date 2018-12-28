@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StyledLink from 'src/components/StyledLink';
 
-const BlogCard = ({ title, subtitle, excerpt, date, to }) => {
+const BlogCard = ({ title, subtitle, excerpt, date, to, href }) => {
   return (
     <div
       css={`
@@ -17,6 +17,10 @@ const BlogCard = ({ title, subtitle, excerpt, date, to }) => {
         &:last-child {
           margin-bottom: 0;
         }
+
+        @media screen and (min-width: 400px) {
+          margin-bottom: 1rem;
+        }
       `}>
       <h2
         css={`
@@ -28,7 +32,9 @@ const BlogCard = ({ title, subtitle, excerpt, date, to }) => {
             font-size: 1.25rem;
           }
         `}>
-        <StyledLink to={to}>{title}</StyledLink>
+        <StyledLink to={to} href={href}>
+          {title}
+        </StyledLink>
       </h2>
       <p
         css={`
@@ -38,7 +44,15 @@ const BlogCard = ({ title, subtitle, excerpt, date, to }) => {
         `}>
         {date}
       </p>
-      <p>{subtitle || excerpt}</p>
+      <p
+        css={`
+          display: none;
+          @media screen and (min-width: 600px) {
+            display: inline-block;
+          }
+        `}>
+        {subtitle || excerpt}
+      </p>
     </div>
   );
 };
@@ -48,7 +62,13 @@ BlogCard.propTypes = {
   excerpt: PropTypes.string,
   subtitle: PropTypes.string,
   title: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
+  to: PropTypes.string,
+  href: PropTypes.string,
+};
+
+BlogCard.defaultProps = {
+  to: '',
+  href: '',
 };
 
 export default BlogCard;

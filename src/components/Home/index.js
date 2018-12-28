@@ -11,6 +11,15 @@ export const text = {
   mission: `Building and writing things for people on the internet.`,
 };
 
+export const otherBlogPosts = [
+  {
+    date: `26 February 2018`,
+    title: `Hot Reloading with create-react-app without ejecting`,
+    subtitle: `...and without react-app-rewired`,
+    href: `https://medium.com/@brianhan/hot-reloading-cra-without-eject-b54af352c642`,
+  },
+];
+
 export const Name = () => (
   <NameWrapper>
     <div
@@ -56,6 +65,15 @@ const Home = ({
             />
           ),
       )}
+      {otherBlogPosts.map((blog, index) => (
+        <BlogCard
+          key={index}
+          date={blog.date}
+          subtitle={blog.subtitle}
+          title={blog.title}
+          href={blog.href}
+        />
+      ))}
     </div>
   </Layout>
 );

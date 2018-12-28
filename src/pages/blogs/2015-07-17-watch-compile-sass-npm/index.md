@@ -6,7 +6,9 @@ path: "/watch-compile-sass-npm"
 publish: true
 ---
 
-> Originally published years ago on [Medium](https://medium.com/@brianhan/watch-compile-your-sass-with-npm-9ba2b878415b)
+> This article was originally published years ago on [Medium](https://medium.com/@brianhan/watch-compile-your-sass-with-npm-9ba2b878415b).
+> These days, I think [Parcel](https://parceljs.org/) is the best way to watch and compile your Sass code.
+> I have a short article on how to get setup here: [Parcel for your Sass](/parcel-for-your-sass)
 
 ![npm-logo](https://cdn-images-1.medium.com/max/800/1*0fr3PbT2XqjsMD52sc2-NQ.png)
 
@@ -39,7 +41,7 @@ If you’re on a Mac, I recommend installing Homebrew, a package manager for mac
 
 After installing this, you can install Node.js by doing:
 
-```
+```bash
 $ brew install node
 ```
 
@@ -47,7 +49,7 @@ If you want more details on installing Node.js, check out [this article from Tre
 
 Getting Started Open terminal and create a new folder for our project.
 
-```
+```bash
 $ mkdir portfolio && cd portfolio
 ```
 
