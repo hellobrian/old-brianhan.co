@@ -3,7 +3,7 @@ title: "Using Prettier with a Pre-commit Hook"
 subtitle: "Seamlessly integrate Prettier into your existing development workflow and learn how it all works together"
 date: "2018-12-27"
 path: "/prettier-with-a-pre-commit-hook"
-publish: true
+draft: false
 ---
 
 ## The Problem

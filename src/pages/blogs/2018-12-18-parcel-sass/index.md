@@ -2,8 +2,8 @@
 title: "Parcel for your Sass"
 subtitle: "...and all your other frontend needs!"
 date: "2018-12-18"
-publish: true
 path: "/parcel-for-your-sass"
+draft: false
 ---
 
 Parcel is a really great alternative to Webpack. If I decide I want to use SCSS in my project, I usually reach for Parcel as my preferred way of compiling SCSS to CSS.

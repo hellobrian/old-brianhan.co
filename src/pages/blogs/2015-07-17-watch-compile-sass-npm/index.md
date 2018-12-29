@@ -3,7 +3,7 @@ title: Watch & Compile your Sass with NPM
 subtitle: Using node-sass for all your Sass things
 date: 2015-07-17
 path: "/watch-compile-sass-npm"
-publish: true
+draft: false
 ---
 
 > This article was originally published years ago on [Medium](https://medium.com/@brianhan/watch-compile-your-sass-with-npm-9ba2b878415b).

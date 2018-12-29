@@ -1,8 +1,8 @@
 ---
 title: "React from Scratch: Webpack and Babel"
 date: "2018-12-05"
-publish: false
 path: "/react-from-scratch"
+draft: true
 ---
 
 ## A quick word on Node.js
