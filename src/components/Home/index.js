@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BlogList from 'src/components/BlogList/';
 import Layout from 'src/components/Layout/';
-import BlogCard from 'src/components/BlogCard';
 import { NameWrapper } from './styled';
 import { COMMON_BREAKPOINTS } from 'src/utils';
 
@@ -10,15 +10,6 @@ export const text = {
   description: `is a front-end developer.`,
   mission: `Building and writing things for people on the internet.`,
 };
-
-export const otherBlogPosts = [
-  {
-    date: `26 February 2018`,
-    title: `Hot Reloading with create-react-app without ejecting`,
-    subtitle: `...and without react-app-rewired`,
-    href: `https://medium.com/@brianhan/hot-reloading-cra-without-eject-b54af352c642`,
-  },
-];
 
 export const Name = () => (
   <NameWrapper>
@@ -53,34 +44,7 @@ const Home = ({
           width: 1000px;
         }
       `}>
-      {edges.map(
-        ({
-          node: {
-            id,
-            excerpt,
-            frontmatter: { title, date, subtitle, publish, path },
-          },
-        }) =>
-          publish && (
-            <BlogCard
-              key={id}
-              date={date}
-              excerpt={excerpt}
-              subtitle={subtitle}
-              title={title}
-              to={path}
-            />
-          ),
-      )}
-      {otherBlogPosts.map((blog, index) => (
-        <BlogCard
-          key={index}
-          date={blog.date}
-          subtitle={blog.subtitle}
-          title={blog.title}
-          href={blog.href}
-        />
-      ))}
+      <BlogList edges={edges} />
     </div>
   </Layout>
 );
