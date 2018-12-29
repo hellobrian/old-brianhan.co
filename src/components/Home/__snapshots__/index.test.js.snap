@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Name should match snapshot 1`] = `
+.c0 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Karla',sans-serif;
+  -webkit-letter-spacing: -0.05rem;
+  -moz-letter-spacing: -0.05rem;
+  -ms-letter-spacing: -0.05rem;
+  letter-spacing: -0.05rem;
+  margin-bottom: 1.666rem;
+  font-weight: 700;
+  line-height: 1.1;
+  padding-bottom: 1rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.c1 {
+  color: var(--blue);
+}
+
+@media screen and (min-width:400px) {
+  .c0 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width:800px) {
+  .c0 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width:1600px) {
+  .c0 {
+    font-size: 3rem;
+    -webkit-letter-spacing: -0.1rem;
+    -moz-letter-spacing: -0.1rem;
+    -ms-letter-spacing: -0.1rem;
+    letter-spacing: -0.1rem;
+  }
+}
+
+@media screen and (min-width:600px) {
+  .c0 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+  }
+}
+
+@media screen and (min-width:800px) {
+  .c0 {
+    width: 600px;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .c0 {
+    width: 700px;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    Brian Han
+  </div>
+  <div>
+    is a front-end developer.
+  </div>
+  <div>
+    Building and writing things for people on the internet.
+  </div>
+</div>
+`;

@@ -9,4 +9,9 @@ describe(`Name`, () => {
     expect(getByText(text.description)).toBeInTheDocument();
     expect(getByText(text.mission)).toBeInTheDocument();
   });
+
+  it(`should match snapshot`, () => {
+    const { container } = render(<Name />);
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
