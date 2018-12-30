@@ -3,8 +3,9 @@ module.exports = {
     title: 'Brian Han',
     description: 'Brian is a front-end developer based in Austin, TX',
     url: 'https://www.brianhan.co',
-    image: '/images/brianhan.png',
+    image: 'src/images/brianhan.png',
     twitterUsername: '@_brianhan',
+    facebookAppID: '',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -4,6 +4,7 @@ subtitle: "...and all your other frontend needs!"
 date: "2018-12-18"
 path: "/parcel-for-your-sass"
 draft: false
+image: "./parcel.jpg"
 ---
 
 ![Photo by Leone Venter on Unsplash](./parcel.jpg)
