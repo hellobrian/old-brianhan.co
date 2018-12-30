@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from 'src/components/Layout';
 import BlogPost from 'src/components/BlogPost';
+import SEO from 'src/components/SEO';
 
 class BlogPostTemplate extends Component {
   static propTypes = {
@@ -19,14 +20,15 @@ class BlogPostTemplate extends Component {
   render() {
     const {
       markdownRemark: {
-        frontmatter: { title, subtitle },
+        frontmatter: { title, subtitle, path, date },
         html,
       },
     } = this.props.data;
 
     return (
       <Layout>
-        <BlogPost title={title} subtitle={subtitle} html={html} />
+        <SEO title={title} description={subtitle} pathname={path} />
+        <BlogPost title={title} subtitle={subtitle} html={html} date={date} />
       </Layout>
     );
   }
@@ -40,6 +42,7 @@ export const query = graphql`
         title
         subtitle
         date(formatString: "DD MMMM YYYY", locale: "us")
+        path
       }
     }
   }
