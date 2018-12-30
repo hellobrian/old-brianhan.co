@@ -6,6 +6,10 @@ path: "/parcel-for-your-sass"
 draft: false
 ---
 
+![Photo by Leone Venter on Unsplash](./parcel.jpg)
+
+<small style="font-family: Karla, sans-serif;">Photo by Leone Venter on [Unsplash](https://unsplash.com/photos/mTkXSSScrzw)</small>
+
 Parcel is a really great alternative to Webpack. If I decide I want to use SCSS in my project, I usually reach for Parcel as my preferred way of compiling SCSS to CSS.
 
 ## Install

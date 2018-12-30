@@ -6,7 +6,9 @@ path: "/how-i-start-every-project"
 draft: false
 ---
 
-![Photo by Clément H on Unsplash](./computer.jpg)
+![Photo by Jefferson Santos on Unsplash](./sunrise.jpg)
+
+<small style="font-family: Karla, sans-serif;">Photo by Jefferson Santos on [Unsplash](https://unsplash.com/photos/V9sv7QrDUgc)</small>
 
 ## New Computer Setup
 
