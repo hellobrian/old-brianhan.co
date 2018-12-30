@@ -19,11 +19,10 @@ class BlogPostTemplate extends Component {
 
   render() {
     const {
-      markdownRemark: {
-        frontmatter: { title, subtitle, path, date, image },
-        html,
-      },
+      markdownRemark: { frontmatter, html },
     } = this.props.data;
+
+    const { title, subtitle, path, date, image } = frontmatter;
 
     return (
       <Layout>
@@ -31,7 +30,8 @@ class BlogPostTemplate extends Component {
           title={title}
           description={subtitle}
           pathname={path}
-          image={image.publicURL}
+          // image={image.publicURL}
+          article={true}
         />
         <BlogPost title={title} subtitle={subtitle} html={html} date={date} />
       </Layout>

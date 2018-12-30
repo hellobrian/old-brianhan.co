@@ -3,6 +3,20 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
+const query = graphql`
+  query SEO {
+    site {
+      siteMetadata {
+        defaultTitle: title
+        defaultDescription: description
+        siteUrl: url
+        defaultImage: image
+        twitterUsername
+      }
+    }
+  }
+`;
+
 const SEO = ({ title, description, image, pathname, article }) => (
   <StaticQuery
     query={query}
@@ -72,17 +86,3 @@ SEO.defaultProps = {
 };
 
 export default SEO;
-
-const query = graphql`
-  query SEO {
-    site {
-      siteMetadata {
-        defaultTitle: title
-        defaultDescription: description
-        siteUrl: url
-        defaultImage: image
-        twitterUsername
-      }
-    }
-  }
-`;
