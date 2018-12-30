@@ -6,6 +6,8 @@ path: "/prettier-with-a-pre-commit-hook"
 draft: false
 ---
 
+![prettier](./prettier-logo.png)
+
 ## The Problem
 
 It's difficult for everyone to commit to using a new tool. Specifically with Prettier, it's not maintainable to ask every team member to install a new plugin and stay in-sync with a common Prettier config.

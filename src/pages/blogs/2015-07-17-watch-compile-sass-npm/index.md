@@ -10,7 +10,7 @@ draft: false
 > These days, I think [Parcel](https://parceljs.org/) is the best way to watch and compile your Sass code.
 > I have a short article on how to get setup here: [Parcel for your Sass](/parcel-for-your-sass)
 
-![npm-logo](https://cdn-images-1.medium.com/max/800/1*0fr3PbT2XqjsMD52sc2-NQ.png)
+![npm](./npm.png)
 
 I build a lot of websites and simple prototypes using Node.js and Sass.
 
@@ -22,7 +22,7 @@ I’m also kind of lazy.
 
 Have you ever wanted to write a single starting command for your app? In the best case scenario, for simple projects, my terminal usually looks like this:
 
-![iterm](https://cdn-images-1.medium.com/max/800/1*jldAraopNj972njyWe71Fg.png)
+![iterm](./terminal-with-3-windows.png)
 
 - One window for git
 - One window for gulp
@@ -80,7 +80,7 @@ touch scss/main.scss .gitignore
 
 Now your file structure should look like this:
 
-![your-file-structure-should-look-like-this](https://cdn-images-1.medium.com/max/800/1*21kxMu-JL__TXtFo5QLzJw.png)
+![your-file-structure-should-look-like-this](./file-structure.png)
 
 ## Simple Sass compiler and watcher
 
@@ -156,7 +156,7 @@ npm run watch-css
 
 Open up your text editor and start writing some more styles in your **main.scss** file. Now check your **main.css** file and the terminal. You’ll see that whenever you save new styles to main.scss, those changes will re-compile to create updates to main.css and you’ll see some feedback from your terminal, like this:
 
-![terminal](https://cdn-images-1.medium.com/max/800/1*f6Uw8hOunC31odya6Uk4Lw.png)
+![new terminal](./npm-run-watch-css.png)
 
 So congrats! You’ve built your own sass compiler and watcher that you can start using npm scripts.
 
@@ -213,4 +213,4 @@ Obviously this is missing a lot of stuff that I usually like to have in my proje
 
 Anyway, thanks again for reading. Here are some puppies.
 
-![puppies](https://cdn-images-1.medium.com/max/800/1*l_I1sL8XOWAr_3kjmjMf2w.gif)
+![puppies](./puppies.gif)
