@@ -4,6 +4,7 @@ subtitle: "Seamlessly integrate Prettier into your existing development workflow
 date: "2018-12-27"
 path: "/prettier-with-a-pre-commit-hook"
 draft: false
+image: "./prettier-logo.png"
 ---
 
 ![prettier](./prettier-logo.png)

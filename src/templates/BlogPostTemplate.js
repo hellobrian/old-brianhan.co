@@ -20,14 +20,19 @@ class BlogPostTemplate extends Component {
   render() {
     const {
       markdownRemark: {
-        frontmatter: { title, subtitle, path, date },
+        frontmatter: { title, subtitle, path, date, image },
         html,
       },
     } = this.props.data;
 
     return (
       <Layout>
-        <SEO title={title} description={subtitle} pathname={path} />
+        <SEO
+          title={title}
+          description={subtitle}
+          pathname={path}
+          image={image.publicURL}
+        />
         <BlogPost title={title} subtitle={subtitle} html={html} date={date} />
       </Layout>
     );
@@ -43,6 +48,9 @@ export const query = graphql`
         subtitle
         date(formatString: "DD MMMM YYYY", locale: "us")
         path
+        image {
+          publicURL
+        }
       }
     }
   }
