@@ -6,6 +6,8 @@ path: "/how-i-start-every-project"
 draft: false
 ---
 
+![Photo by Clément H on Unsplash](./computer.jpg)
+
 ## New Computer Setup
 
 Install `hombrew`
