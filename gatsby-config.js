@@ -5,6 +5,7 @@ module.exports = {
     url: 'https://www.brianhan.co',
     image: 'src/images/brianhan.png',
     twitterUsername: '@_brianhan',
+    facebookAppID: '',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
