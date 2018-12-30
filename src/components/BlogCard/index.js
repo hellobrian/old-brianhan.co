@@ -1,32 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import StyledLink from 'src/components/StyledLink';
+import { Card } from './styled';
 
 const BlogCard = ({ title, subtitle, excerpt, date, to, href }) => {
   return (
-    <div
-      css={`
-        padding-left: 2rem;
-        padding-right: 2rem;
-        margin-bottom: 4rem;
-        min-width: 400px;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-
-        @media screen and (min-width: 400px) {
-          margin-bottom: 1rem;
-        }
-
-        @media screen and (min-width: 800px) {
-          box-shadow: var(--card-shadow);
-          padding-bottom: 1rem;
-          padding-left: 2rem;
-          padding-right: 2rem;
-          padding-top: 3rem;
-        }
-      `}>
+    <Card>
       <h2
         css={`
           line-height: 1.5;
@@ -50,7 +29,7 @@ const BlogCard = ({ title, subtitle, excerpt, date, to, href }) => {
         {date}
       </p>
       <p>{subtitle || excerpt}</p>
-    </div>
+    </Card>
   );
 };
 

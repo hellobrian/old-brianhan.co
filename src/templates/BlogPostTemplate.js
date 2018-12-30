@@ -1,46 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from 'src/components/Layout';
-import { HomeLink, Title, SubTitle } from './styled';
-import { COMMON_BREAKPOINTS } from 'src/utils';
-import './index.css';
+import BlogPost from 'src/components/BlogPost';
 
-class BlogPostTemplate extends React.Component {
+class BlogPostTemplate extends Component {
+  static propTypes = {
+    data: PropTypes.object.isRequired,
+  };
+
   componentDidMount() {
     const anchorHeadings = Array.from(document.querySelectorAll('a.heading'));
     anchorHeadings.forEach((element) =>
       element.setAttribute('aria-hidden', 'true'),
     );
   }
+
   render() {
     const {
-      markdownRemark: { frontmatter, html },
+      markdownRemark: {
+        frontmatter: { title, subtitle },
+        html,
+      },
     } = this.props.data;
+
     return (
       <Layout>
-        <div className="blog">
-          <HomeLink>
-            <Link to="/">Brian Han</Link>
-          </HomeLink>
-          <Title>{frontmatter.title}</Title>
-          {frontmatter.subtitle && <SubTitle>{frontmatter.subtitle}</SubTitle>}
-          <div
-            css={`
-              width: 100%;
-              ${COMMON_BREAKPOINTS}
-            `}
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        </div>
+        <BlogPost title={title} subtitle={subtitle} html={html} />
       </Layout>
     );
   }
 }
-
-BlogPostTemplate.propTypes = {
-  data: PropTypes.object.isRequired,
-};
 
 export const query = graphql`
   query($path: String!) {

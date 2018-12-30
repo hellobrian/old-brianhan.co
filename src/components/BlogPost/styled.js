@@ -57,3 +57,8 @@ export const SubTitle = styled.p`
 
   ${COMMON_BREAKPOINTS};
 `;
+
+export const Content = styled.div`
+  width: 100%;
+  ${COMMON_BREAKPOINTS}
+`;
