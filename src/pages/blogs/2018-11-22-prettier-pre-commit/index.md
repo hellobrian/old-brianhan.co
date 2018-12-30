@@ -6,7 +6,7 @@ path: "/prettier-with-a-pre-commit-hook"
 draft: false
 ---
 
-![prettier](./prettier.png)
+![prettier](./prettier-logo.png)
 
 ## The Problem
 
