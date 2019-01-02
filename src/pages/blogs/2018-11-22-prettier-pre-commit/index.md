@@ -1,6 +1,6 @@
 ---
 title: "Using Prettier with a Pre-commit Hook"
-subtitle: "Seamlessly integrate Prettier into your existing development workflow and learn how it all works together"
+subtitle: "In this article, I walkthrough how to integrate Prettier into your existing dev workflow. Spoiler: using a pre-commit hook is the best way for teams to use Prettier together."
 date: "2018-12-27"
 path: "/prettier-with-a-pre-commit-hook"
 draft: false
@@ -11,79 +11,26 @@ image: "./prettier-logo.png"
 
 ## The Problem
 
-It's difficult for everyone to commit to using a new tool. Specifically with Prettier, it's not maintainable to ask every team member to install a new plugin and stay in-sync with a common Prettier config.
-
-It's best to make it easy for everyone and introduce Prettier seamlessly without anyone having to spend any effort to make it work.
+It's difficult for everyone to commit to using a new tool. It's not maintainable to ask every team member to install a new plugin. This is generally the problem with any new tools you want your team to use. If it forces developers to change the way they work at a cost at their velocity and productivity, then it becomes difficult to get people to use something new.
 
 ## Making the case for Prettier
 
-Maybe you have teammates who are still skeptical about Prettier.
-
-The [Prettier](https://prettier.io/) website already makes a great case for why you should use it. But I've had more success highlighting these reasons:
+The [Prettier](https://prettier.io/) website already makes a great case for why you should use it. But I found that people I work with now and in the past have resonated most with these reasons:
 
 1. Setting it up is easy &mdash; one person can do it for everyone
-2. Integrates with ESLint
+2. Integrates with ESLint (more on that in another post)
 3. Integrates with Git Hooks via Husky
 4. Supports formatting for lots of file types: CSS, JSON, Markdown, and [more](https://prettier.io/docs/en/index.html)
+
+In other words, you can make a case to your team where you say,
+
+"Hey, let's use this thing that autoformats all of our code for us. It'll make all of our code reviews easier because code styling will be more consistent. I can set it up for everyone and no one has to change the way they work to make use of it."
 
 ## Demo with Prettier Playground
 
 Showing is usually better than telling.
 
-You can quickly demo Prettier in action for your team with the [Prettier Playground](https://prettier.io/playground/). For good measure, here's some badly formatted JavaScript and CSS for you to play with too.
-
-**example.js**
-
-<!-- prettier-ignore -->
-```js
-      $("#speedPercent").on("input", event => {
-  $(".output").value =      event.target.value + "%"    ;
-})
-
-$("#grid").on("click", event => {
-if (event.target && event.target.matches("button.banana")) {
-
-    const points =     parseInt(   event.target.dataset.points, 10     )  ;
-state = {        ...state, score: state.score + points };
-    setScoreInnerHTML(state);
-
-const span    =       event.target.querySelector("span");
-    span.classList.add("exit-animation");
-span.on('animationend', ()   =>    {
-event.target.parentNode.removeChild(event.target)})
-    }
-  })
-
-        const mutationObserver    = observer(state)
-mutationObserver.observe($("#grid"), {attributes: false,childList: true,subtree: true});
-```
-
-**example.css**
-
-<!-- prettier-ignore -->
-```css
-    html {
-            box-sizing: border-box;
-font-size: 16px    ;
-}
-
-*,     *:before,     *:after {
-      box-sizing:       inherit ;
-      }
-
-        .banana > span:after {
-        content: attr(data-points) "pts"     ;
-        font-size:    0.875rem;
-    position:    absolute;
-        top: 50%    ;
-  left:     -40%;
-        background-color:     var(--white-50)    ;
-        padding:    2px 10px;
-      color: rgba(1,    1,   1, 1);
-        border-radius:     4px;
-            }
-
-```
+If you have teammates who may not be familiar with Prettier, you can quickly demo it with the [Prettier Playground](https://prettier.io/playground/). For good measure, here's some [badly formatted JavaScript and CSS](https://gist.github.com/hellobrian/d17b5de37feda2b6afc954a74c7d7f1e) for you to play with too.
 
 ## Getting Started
 
@@ -142,7 +89,7 @@ You'll have a **package.json** file that looks like this.
 
 ## Copy Example Files
 
-We'll need some example code to work with. Let's reuse the **example.js** and **example.css** files from the [Demo with Prettier Playground](#demo-with-prettier-playground).
+We'll need some example code to work with. Let's reuse the [**example.js** and **example.css** files](https://gist.github.com/hellobrian/d17b5de37feda2b6afc954a74c7d7f1e).
 
 Make a new **src** directory, then copy and paste example files to it.
 
@@ -161,9 +108,9 @@ less .git/hooks/pre-commit
 
 Husky won't overwrite any existing hooks that may already exist in your project. You should see some kind of console output in your terminal if Husky was unable to set things up correctly.
 
-### Seeing Prettier in Action
+### Seeing Prettier in Action Locally
 
-In your terminal, we can use `npx` to try out `prettier`:
+Before we write any npm scripts, we can see Prettier in action using `npx`. In your terminal do the following:
 
 ```bash
 npx prettier --write src/**/*.{js,css}
@@ -374,7 +321,7 @@ Once you have all of this setup, you can run Prettier on all the source files yo
 
 ## Conclusion
 
-That's about as much as I can elaborate on Prettier.
+That's about as much as I can elaborate on Prettier, stay tuned for ESLint integration in another article.
 
 You can find the finished example code here on my [GitHub](https://github.com/hellobrian/prettier-example/blob/master/README.md).
 
