@@ -1,6 +1,6 @@
 ---
 title: "Using Prettier with a Pre-commit Hook"
-subtitle: "In this article, I walkthrough how to integrate Prettier into your existing dev workflow. Spoiler: using a pre-commit hook is the best way for teams to use Prettier together."
+subtitle: "How to integrate Prettier into your existing dev workflow for you and your team and understand all the pieces that make it work."
 date: "2018-12-27"
 path: "/prettier-with-a-pre-commit-hook"
 draft: false
