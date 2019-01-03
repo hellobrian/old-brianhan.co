@@ -1,5 +1,4 @@
-const markdownTemplate = (args) => `
----
+const markdownTemplate = (args) => `---
 title: ${args.title}
 subtitle: ${args.subtitle}
 date: ${args.date}
