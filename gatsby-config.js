@@ -99,6 +99,12 @@ module.exports = {
         omitGoogleFont: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-58228014-1',
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
   ],
