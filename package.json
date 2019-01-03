@@ -43,6 +43,7 @@
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.1",
+    "hygen": "^2.0.4",
     "identity-obj-proxy": "^3.0.0",
     "inquirer": "^6.2.1",
     "jest": "^23.6.0",
@@ -68,8 +69,8 @@
     "test": "jest",
     "prettier": "prettier --write **/*.{js,css,json,md}",
     "lint": "eslint -c .eslintrc src/**/*.js",
-    "create:blog": "node scripts/createBlog.js",
-    "create": "node scripts/createBlog.js"
+    "create:blog": "hygen blog new",
+    "create": "hygen blog new"
   },
   "husky": {
     "hooks": {
