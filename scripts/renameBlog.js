@@ -6,8 +6,9 @@ const questions = require('./questions');
 const markdownTemplate = require('./markdownTemplate');
 
 inquirer.prompt(questions).then((answers) => {
-  const date = new Date();
-  const formattedDate = date.toISOString().split('T')[0];
+  // TODO: get original date from blog folder
+  // const date = new Date();
+  // const formattedDate = date.toISOString().split('T')[0];
   const { title, subtitle } = answers;
   const slug = slugify(title);
   const path = `/${slug}`;
@@ -29,7 +30,7 @@ inquirer.prompt(questions).then((answers) => {
     fs.writeFileSync(`${__dirname}/../src/blogs/${folder}/index.md`, markdown);
     console.log(`
     
-    ==> ✅ New blog folder created: ${folder};
+    ✅ Renamed: NEW_NAME => ${folder};
     
     `);
     shell.exit(0);

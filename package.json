@@ -44,6 +44,7 @@
     "eslint-plugin-react": "^7.11.1",
     "husky": "^1.2.1",
     "identity-obj-proxy": "^3.0.0",
+    "inquirer": "^6.2.1",
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
     "jest-styled-components": "^6.3.1",
@@ -52,7 +53,8 @@
     "prettier": "^1.12.0",
     "react-test-renderer": "^16.7.0",
     "react-testing-library": "^5.4.2",
-    "react-typography": "^0.16.13"
+    "react-typography": "^0.16.13",
+    "shelljs": "^0.8.3"
   },
   "keywords": [
     "gatsby",
@@ -65,7 +67,9 @@
     "dev": "gatsby develop",
     "test": "jest",
     "prettier": "prettier --write **/*.{js,css,json,md}",
-    "lint": "eslint -c .eslintrc src/**/*.js"
+    "lint": "eslint -c .eslintrc src/**/*.js",
+    "create:blog": "node scripts/createBlog.js",
+    "create": "node scripts/createBlog.js"
   },
   "husky": {
     "hooks": {
