@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Spring } from 'react-spring';
+import debounce from 'lodash.debounce';
 
 const StyledButton = styled.button`
   display: inline-flex;
@@ -15,7 +16,7 @@ const StyledButton = styled.button`
   padding: 0;
 `;
 
-class BackToTopButton extends React.Component {
+class BackToTopButton extends React.PureComponent {
   state = {
     windowPosition: null,
     downScrollTriggered: false,
@@ -32,7 +33,7 @@ class BackToTopButton extends React.Component {
     window.removeEventListener('scroll', this.handleScroll);
   }
 
-  handleScroll = (event) => {
+  handleScroll = debounce(() => {
     let previousPosition = this.state.windowPosition;
     let currentPosition = window.pageYOffset;
     let isBottomNow =
@@ -43,9 +44,8 @@ class BackToTopButton extends React.Component {
     } else {
       this.setState({ downScrollTriggered: true });
     }
-
     this.setState({ windowPosition: currentPosition, isBottom: isBottomNow });
-  };
+  }, 120);
 
   scrollToTop = () => {
     window.scroll({
