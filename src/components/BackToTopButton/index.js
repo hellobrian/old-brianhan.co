@@ -38,11 +38,7 @@ class BackToTopButton extends React.Component {
     let isBottomNow =
       window.innerHeight + window.scrollY >= document.body.offsetHeight;
 
-    if (isBottomNow) {
-      this.setState({ downScrollTriggered: true });
-    }
-
-    if (previousPosition > currentPosition) {
+    if (previousPosition > currentPosition && !isBottomNow) {
       this.setState({ downScrollTriggered: false });
     } else {
       this.setState({ downScrollTriggered: true });
