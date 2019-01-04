@@ -6,8 +6,8 @@ const StyledButton = styled.button`
   display: inline-flex;
   align-items: center;
   position: fixed;
-  right: 1rem;
-  bottom: 0;
+  right: 2rem;
+  bottom: 1rem;
   z-index: 1;
   appearance: none;
   border: none;
