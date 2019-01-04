@@ -19,6 +19,7 @@ class BackToTopButton extends React.Component {
   state = {
     windowPosition: null,
     downScrollTriggered: false,
+    isBottom: false,
   };
 
   componentDidMount() {
@@ -34,6 +35,12 @@ class BackToTopButton extends React.Component {
   handleScroll = (event) => {
     let previousPosition = this.state.windowPosition;
     let currentPosition = window.pageYOffset;
+    let isBottomNow =
+      window.innerHeight + window.scrollY >= document.body.offsetHeight;
+
+    if (isBottomNow) {
+      this.setState({ downScrollTriggered: true });
+    }
 
     if (previousPosition > currentPosition) {
       this.setState({ downScrollTriggered: false });
@@ -41,7 +48,7 @@ class BackToTopButton extends React.Component {
       this.setState({ downScrollTriggered: true });
     }
 
-    this.setState({ windowPosition: currentPosition });
+    this.setState({ windowPosition: currentPosition, isBottom: isBottomNow });
   };
 
   scrollToTop = () => {
