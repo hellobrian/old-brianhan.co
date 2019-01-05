@@ -17,10 +17,6 @@ exports[`Name should match snapshot 1`] = `
   padding-right: 2.5rem;
 }
 
-.c1 {
-  color: var(--blue);
-}
-
 @media screen and (min-width:400px) {
   .c0 {
     font-size: 1.5rem;
@@ -66,9 +62,7 @@ exports[`Name should match snapshot 1`] = `
 <div
   class="c0"
 >
-  <div
-    class="c1"
-  >
+  <div>
     Brian Han
   </div>
   <div>

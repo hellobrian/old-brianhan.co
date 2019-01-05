@@ -13,12 +13,7 @@ export const text = {
 
 export const Name = () => (
   <NameWrapper>
-    <div
-      css={`
-        color: var(--blue);
-      `}>
-      {text.name}
-    </div>
+    <div>{text.name}</div>
     <div>{text.description}</div>
     <div>{text.mission}</div>
   </NameWrapper>

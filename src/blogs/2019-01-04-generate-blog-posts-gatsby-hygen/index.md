@@ -1,30 +1,26 @@
 ---
-title: "Re: Create Blog Posts in Gatsby with Hygen"
-subtitle: "I rediscovered hygen and learned that it can be used for more than just generating JS files."
+title: "How to Generate Blog Posts in Gatsby using Hygen"
+subtitle: ""
 date: "2019-01-04"
-path: "/re-create-blog-posts-gatsby-hygen"
+path: "/generate-blog-posts-gatsby-hygen"
 draft: false
 ---
 
-> This is a follow-up to [this post](https://eunjae.me/create-post-on-gatsby-with-hygen/) by Eunjae Lee where he quickly walks through how to use Hygen for creating blog post files on his Gatsby site.
->
-> I recommend reading his post first if you're using [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog).
-
 ## What is Hygen?
 
-[Hygen](https://www.hygen.io/) is this awesome code generator that can create files for you from your command line interface (CLI).
+[Hygen](https://www.hygen.io/) is this awesome code generator that creates files for you from your command line interface (CLI).
 
 ## Rediscovering Hygen
 
 The first time I used Hygen was working on a project at my last job.
 
-One of my teammates taught us how to use the `hygen` CLI so that we could generate React component folders, files and some boilerplate code (tests, stories, containers, etc). I wrongly assumed at the time that Hygen was used just for doing this thing at that's it. Then, I stumbled on a post by Eunjae Lee where he's using it to create blog posts on his Gatsby site.
+One of my teammates taught us how to use it so that we could generate React components without writing any boilerplate, like initial tests, storybook files, etc.
 
-## The way I structure and format my blog posts is annoying to maintain manually
+But, I never realized I could do the same with my blog posts until I came across Eunjae Lee's [original post](https://eunjae.me/create-post-on-gatsby-with-hygen/) about it.
 
-I'm a big fan of component folder structure and I decided to do the same thing with my blog posts. The reason is that I can keep all blog post related files co-located. This isn't anything new, I feel like people have been doing this on their Jekyll sites for a while.
+## The Problem
 
-My Gatsby site has a file structure like this:
+I like my naming conventions but they're annoying to maintain.
 
 ```
 src/blogs
@@ -35,21 +31,21 @@ src/blogs
     └── index.md
 ```
 
-- I keep all my blogs in their own folders
-- Each blog folder is named with a date and title delimited by dashes. In other words, they're "dasherized"
-- The index.md is the actual file where I write my blog
-- All other files are usually images
+- I keep each blog in its own folder, like a React component.
+- Each blog folder is given a "dasherized" name using a date and title.
+- The **index.md** is where I write my blog
+- All other related files are co-located with **index.md**, usually images.
 
-And here's how I write my frontmatter, which is the data for my blog posts:
+The same problem applies to how I write my frontmatter, which is the data for my blog posts:
 
 **index.md**
 
 ```md
 ---
-title: "Using Hygen to Create Blog Posts"
-subtitle: "Hygen lets you create files and folders consistently using cli. I learned how to do this on my gatsby site."
+title: "How to Generate Blog Posts in Gatsby using Hygen"
+subtitle: "This is a nice subtitle for my blog post"
 date: "2019-01-04"
-path: "/using-hygen-to-create-blog-posts"
+path: "/generate-blog-posts-gatsby-hygen"
 draft: false
 ---
 ```
@@ -58,11 +54,9 @@ I decided that I consistently want to format my data like this:
 
 - Capitalize every word in `title` except for words like, "to, and, a, the, etc"
 - Sentence-case the `subtitle`, where the first word is capitalized.
-- Dasherize the `path` and prepend it with a slash (`/`)
+- Dasherize the `path` and pre-pend it with a slash (`/`)
 
-## Getting Started with Hygen
-
-I'm just going to walkthrough what I did to make hygen work on my gatsby site. You may have to do additional setup if you plan to follow along.
+## Quickly Getting Started with Hygen
 
 Initialize Hygen and create a new generator called blog using `npx`.
 
@@ -81,14 +75,16 @@ _templates/blog
     └── slugify.js (aka the function we use to dasherize strings)
 ```
 
-Note to myself: Read the docs because the knowledge was here all along at http://www.hygen.io/generators/#prompting-arguments.
+## Creating a CLI for Generating Blog Posts
 
-Here are the prompts that I wrote.
+You can create a **prompts.js** file to define any questions you want to ask yourself whenever you run your hygen script.
+
+We want to be able to write a title and subtitle when prompted so that we can generate boilerplate code for blog posts. If you're familiar with [inquirer.js](https://github.com/SBoudrias/Inquirer.js/) for creating CLIs in Node.js, then this should look familiar.
 
 **prompt.js**
 
 ```js
-// using slugify function from a gist I found:
+// Using slugify function from a gist I found:
 // https://gist.github.com/matthagemann/382adfc57adbd5af078dc93feef01fe1
 
 const slugify = require("./slugify");
@@ -110,6 +106,28 @@ module.exports = {
           },
         ])
         .then(({ title, subtitle }) => {
+          console.log({ title, subtitle });
+        });
+    });
+  },
+};
+```
+
+## Using Input in Template
+
+We can do all the work inside the `.then` block of code
+
+**prompt.js**
+
+```js{9-19}
+module.exports = {
+  prompt: ({ prompter }) => {
+    return new Promise((resolve, reject) => {
+      prompter
+        .prompt([
+          ...
+        ])
+        .then(({ title, subtitle }) => {
           const date = new Date().toISOString().split("T")[0];
           const slug = slugify(title);
           const folderName = `${date}-${slug}`;
@@ -127,9 +145,9 @@ module.exports = {
 };
 ```
 
-Focusing on the `.then` block of code &mdash; this is where I get to format my input from the CLI so that I don't have to format this stuff manually every time I create a new blog post.
+When the `Promise` from this `prompt` method resolves, that new data can be interpolated into `index.ejs.t`, which is the template for **index.md**.
 
-When the `Promise` from this `prompt` method resolves, I can interpolate the variables into `index.ejs.t`.
+**index.ejs.t**
 
 ```ejs
 ---
@@ -145,11 +163,9 @@ draft: true
 
 ```
 
-This template won't get confused by two blocks of frontmatter!
+Fun fact: this template doesn't get confused by two blocks of frontmatter!
 
-- The first block is utilized to tell Hygen where to create the new blog post
-  - `folderName` gets interpolated
-  - `index.md` will always be called `index.md`
+- The first block tells Hygen where to create the new blog post using `to:`. The `folderName` variable is the only value that gets interpolated.
 - The next block of frontmatter will be treated as the [body](http://www.hygen.io/templates) that gets written to `index.md`
   - There are built-in [helpers](http://www.hygen.io/templates#helpers-and-inflections) via the [inflections](https://github.com/dreamerslab/node.inflection) library, which gives us sentence-casing and titlizing for free and it works _most_ of the time.
 
