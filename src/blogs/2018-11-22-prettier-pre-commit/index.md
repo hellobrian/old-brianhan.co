@@ -325,4 +325,8 @@ That's about as much as I can elaborate on Prettier, stay tuned for ESLint integ
 
 You can find the finished example code here on my [GitHub](https://github.com/hellobrian/prettier-example/blob/master/README.md).
 
+Also, this article was recently featured here:
+
+- [Learn By Doing Newsletter Volume #36](https://www.kylegalbraith.com/learn-by-doing/volume/36/how-do-you-feel-about-cplusplus.html)
+
 Thanks for reading!

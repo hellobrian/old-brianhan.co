@@ -3,13 +3,9 @@
 }
 /* src/components/StyledLink */
 .blog a:not(.heading) {
-  background-image: var(--gradient--link);
-  background-position: 0 115%;
-  background-repeat: no-repeat;
-  background-size: 100% 0.375rem;
-  color: currentColor;
+  color: var(--blue);
   display: inline-block;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .blog .heading {
