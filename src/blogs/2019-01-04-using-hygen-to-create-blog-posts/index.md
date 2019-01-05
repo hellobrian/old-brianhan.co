@@ -1,6 +1,6 @@
 ---
 title: "Re: Create Blog Posts in Gatsby with Hygen"
-subtitle: "Hygen lets you create files and folders consistently using cli. I learned how to do this on my gatsby site."
+subtitle: "I rediscovered hygen and learned that it can be used for more than just generating JS files."
 date: "2019-01-04"
 path: "/re-create-blog-posts-gatsby-hygen"
 draft: false
@@ -14,17 +14,15 @@ draft: false
 
 [Hygen](https://www.hygen.io/) is this awesome code generator that can create files for you from your command line interface (CLI).
 
-## Discovering Hygen
+## Rediscovering Hygen
 
-The first time I tried this out was working on a project for work. One of my teammates set up Hygen for us so that we could generate React component folders and files consistently with some boilerplate code (tests, stories, containers, etc).
+The first time I used Hygen was working on a project at my last job.
 
-I kind of just thought it was cool and moved on and never thought about it again until I stumbled on a post by Eunjae Lee. He's using Hygen to create blog posts on his Gatsby site.
-
-This kind of blew my mind because I wrongly assumed that Hygen was just for JavaScript files. Doh!
+One of my teammates taught us how to use the `hygen` CLI so that we could generate React component folders, files and some boilerplate code (tests, stories, containers, etc). I wrongly assumed at the time that Hygen was used just for doing this thing at that's it. Then, I stumbled on a post by Eunjae Lee where he's using it to create blog posts on his Gatsby site.
 
 ## The way I structure and format my blog posts is annoying to maintain manually
 
-I'm a big fan of component folder structure and I decided to do the same thing with my blog posts. The reason is that I can keep all blog post related files co-located. This isn't anything new, I feel like people have been doing this on the Jekyll sites for a while.
+I'm a big fan of component folder structure and I decided to do the same thing with my blog posts. The reason is that I can keep all blog post related files co-located. This isn't anything new, I feel like people have been doing this on their Jekyll sites for a while.
 
 My Gatsby site has a file structure like this:
 
@@ -38,7 +36,7 @@ src/blogs
 ```
 
 - I keep all my blogs in their own folders
-- Each blog folder is named with a date and title delimited by dashes aka "dasherized"
+- Each blog folder is named with a date and title delimited by dashes. In other words, they're "dasherized"
 - The index.md is the actual file where I write my blog
 - All other files are usually images
 
@@ -58,11 +56,9 @@ draft: false
 
 I decided that I consistently want to format my data like this:
 
-- every word in `title` to be capitalized except for words like, "to, and, a, the, etc"
-- the `subtitle` to be sentence-cased, where the first word is capitalized.
-- and the `path` should be dasherized with a prepended slash (`/`)
-
-Ugh, so verbose and specific! I'm sorry!
+- Capitalize every word in `title` except for words like, "to, and, a, the, etc"
+- Sentence-case the `subtitle`, where the first word is capitalized.
+- Dasherize the `path` and prepend it with a slash (`/`)
 
 ## Getting Started with Hygen
 
