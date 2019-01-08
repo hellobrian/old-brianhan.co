@@ -3,7 +3,7 @@ title: "You Might Not Need Windows Subsystem for Linux to Get Setup with Node.js
 subtitle: "If you're coming from a Mac and you want to start developing on a Windows machine, here's how I setup my PC to create a development setup that I'm pretty happy with."
 date: "2019-01-08"
 path: "/you-might-not-need-wsl-for-nodejs"
-draft: true
+draft: false
 ---
 
 ## Overview
