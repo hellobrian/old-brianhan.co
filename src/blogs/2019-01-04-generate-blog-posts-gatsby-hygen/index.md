@@ -4,7 +4,12 @@ subtitle: ""
 date: "2019-01-04"
 path: "/generate-blog-posts-gatsby-hygen"
 draft: false
+image: "./stamp.jpg"
 ---
+
+![Photo by Hannes Wolf on Unsplash](./stamp.jpg)
+
+<small style="font-family: Karla, sans-serif;">Photo by Hannes Wolf on [Unsplash](https://unsplash.com/photos/n2ILm0aTCYo)</small>
 
 ## What is Hygen?
 
