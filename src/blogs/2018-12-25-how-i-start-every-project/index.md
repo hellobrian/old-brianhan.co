@@ -7,9 +7,9 @@ draft: false
 image: "./sunrise.jpg"
 ---
 
-![Photo by Jefferson Santos on Unsplash](./sunrise.jpg)
+![Photo by Jefferson Santos on Unsplash](./how-i-start-crop.jpg)
 
-<small style="font-family: Karla, sans-serif;">Photo by Jefferson Santos on [Unsplash](https://unsplash.com/photos/V9sv7QrDUgc)</small>
+<small style="font-family: Karla, sans-serif;">Photo by Jefferson Santos on [Unsplash](https://unsplash.com/photos/V9sv7QrDUgc) (Cropped)</small>
 
 ## New Computer Setup
 
