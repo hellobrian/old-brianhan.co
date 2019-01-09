@@ -30,7 +30,7 @@ class BlogPostTemplate extends Component {
           title={title}
           description={subtitle}
           pathname={path}
-          // image={image.publicURL}
+          image={image ? image.publicURL : ''}
           article={true}
         />
         <BlogPost title={title} subtitle={subtitle} html={html} date={date} />

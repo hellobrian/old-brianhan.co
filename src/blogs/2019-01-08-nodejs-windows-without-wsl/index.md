@@ -4,6 +4,7 @@ subtitle: "I failed a lot trying to use WSL to replicate the dev environment I u
 date: "2019-01-08"
 path: "/nodejs-windows-without-wsl"
 draft: false
+image: "./windows-image-crop.jpg"
 ---
 
 ![Photo by Samuel Zeller on Unsplash](./windows-image-crop.jpg)

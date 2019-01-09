@@ -4,7 +4,7 @@ title: "How I Start Every Project"
 subtitle: "A quick guide to starting new frontend projects"
 path: "/how-i-start-every-project"
 draft: false
-image: "./sunrise.jpg"
+image: "./how-i-start-crop.jpg"
 ---
 
 ![Photo by Jefferson Santos on Unsplash](./how-i-start-crop.jpg)
