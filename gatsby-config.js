@@ -12,6 +12,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-root-import',
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

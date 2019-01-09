@@ -60,5 +60,11 @@ export const SubTitle = styled.p`
 
 export const Content = styled.div`
   width: 100%;
+
+  span.gatsby-resp-image-wrapper {
+    width: 100vw;
+    left: -0.5rem;
+  }
+
   ${COMMON_BREAKPOINTS}
 `;
