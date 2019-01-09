@@ -1,6 +1,6 @@
 ---
 title: "Setting up a Node.js Environment on Windows without the Linux Subsystem is not bad at all"
-subtitle: "I failed a many attempts trying to use WSL to replicate the dev environment I use on my Mac. Then something weird happened: I ditched the fancy subsystem and now I'm happily doing dev things on my PC."
+subtitle: "I failed a lot trying to use WSL to replicate the dev environment I use on my Mac. Then something weird happened: I ditched the fancy subsystem and now I'm happily doing dev things on my PC."
 date: "2019-01-08"
 path: "/nodejs-windows-without-wsl"
 draft: false
