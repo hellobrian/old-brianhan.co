@@ -7,7 +7,17 @@ import SEO from 'src/components/SEO';
 
 class BlogPostTemplate extends Component {
   static propTypes = {
-    data: PropTypes.object.isRequired,
+    data: PropTypes.shape({
+      markdownRemark: PropTypes.shape({
+        frontmatter: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          subtitle: PropTypes.string.isRequired,
+          path: PropTypes.string.isRequired,
+          date: PropTypes.string.isRequired,
+        }),
+        html: PropTypes.string.isRequired,
+      }),
+    }),
   };
 
   componentDidMount() {
@@ -30,7 +40,7 @@ class BlogPostTemplate extends Component {
           title={title}
           description={subtitle}
           pathname={path}
-          image={image ? image.publicURL : ''}
+          image={image ? image.childImageSharp.resize.src : ''}
           article={true}
         />
         <BlogPost title={title} subtitle={subtitle} html={html} date={date} />
@@ -49,7 +59,13 @@ export const query = graphql`
         date(formatString: "DD MMMM YYYY", locale: "us")
         path
         image {
-          publicURL
+          childImageSharp {
+            resize {
+              height
+              width
+              src
+            }
+          }
         }
       }
     }
