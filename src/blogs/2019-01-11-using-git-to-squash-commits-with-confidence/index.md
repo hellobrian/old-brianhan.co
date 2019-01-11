@@ -1,6 +1,6 @@
 ---
 title: "Using Git to Squash Commits with Confidence"
-subtitle: "Let's say you've been happily using git merge your whole life and you join a new team and all of a sudden everyone's saying you gotta rebase and squash your commits. Don't panic! Here are some tips that I've learned to get more comfortable squashing and rebasing in git."
+subtitle: "Let's say you've been happily using git merge your whole career and you join a new team and all of a sudden everyone's saying you gotta rebase and squash your commits. Don't panic! Here are some tips that I've learned to get more comfortable squashing and rebasing in git."
 date: "2019-01-11"
 path: "/using-git-to-squash-commits-with-confidence"
 draft: false
