@@ -1,7 +1,7 @@
 ---
 title: Using Git to Squash Commits with Confidence
 date: 2019-01-11
-description: Let's say you've been happily using git merge your whole career and you join a new team and all of a sudden everyone's saying you gotta rebase and squash your commits. Don't panic! Here are some tips that I've learned to get more comfortable squashing and rebasing in git.
+description: Learning rebase can be a bit scary at first. Here are some tips that helped me to get more comfortable squashing and rebasing in git.
 ---
 
 ![Photo by Danielle Peters on Unsplash](./squashes-cropped2.jpg)

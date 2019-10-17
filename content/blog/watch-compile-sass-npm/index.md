@@ -1,6 +1,6 @@
 ---
 title: Watch & Compile your Sass with NPM
-subtitle: Using node-sass for all your Sass things
+description: Using node-sass for all your Sass things
 date: 2015-07-17
 ---
 

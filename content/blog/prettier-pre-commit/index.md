@@ -1,6 +1,6 @@
 ---
 title: Using Prettier with a Pre-commit Hook
-subtitle: How to integrate Prettier into your existing dev workflow for you and your team and understand all the pieces that make it work.
+description: How to integrate Prettier into your existing dev workflow for you and your team and understand all the pieces that make it work.
 date: 2018-12-27
 ---
 

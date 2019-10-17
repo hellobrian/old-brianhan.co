@@ -1,7 +1,7 @@
 ---
-date: 2018-12-25
 title: How I Start Every Project
-subtitle: A short guide for setting up simple frontend projects from scratch
+date: 2018-12-25
+description: A short guide for setting up simple frontend projects from scratch
 ---
 
 ![Photo by Jefferson Santos on Unsplash](./how-i-start-crop.jpg)

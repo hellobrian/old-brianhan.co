@@ -1,6 +1,6 @@
 ---
 title: Parcel for your Sass
-subtitle: If you're not tied to using Webpack, Gulp or Grunt, then using Parcel is one of the best ways to quickly set up a new SCSS project.
+description: If you're not tied to using Webpack, Gulp or Grunt, then using Parcel is one of the best ways to quickly set up a new SCSS project.
 date: 2018-12-18
 ---
 
