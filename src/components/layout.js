@@ -58,7 +58,7 @@ class Layout extends React.Component {
         style={{
           marginLeft: `auto`,
           marginRight: `auto`,
-          maxWidth: rhythm(25),
+          maxWidth: rhythm(24),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
           // dark mode stuff
           backgroundColor: "var(--bg)",
@@ -81,11 +81,11 @@ class Layout extends React.Component {
         </ThemeToggler>
         <header>{header}</header>
         <main>{children}</main>
-        <footer>
+        {/* <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        </footer> */}
       </div>
     )
   }

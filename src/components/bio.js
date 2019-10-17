@@ -7,59 +7,59 @@
 
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+// import Image from "gatsby-image"
 
 import { rhythm } from "../utils/typography"
 
 const Bio = () => {
-  const data = useStaticQuery(graphql`
-    query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-        childImageSharp {
-          fixed(width: 50, height: 50) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          author
-          social {
-            twitter
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query BioQuery {
+  //     avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+  //       childImageSharp {
+  //         fixed(width: 50, height: 50) {
+  //           ...GatsbyImageSharpFixed
+  //         }
+  //       }
+  //     }
+  //     site {
+  //       siteMetadata {
+  //         author
+  //         social {
+  //           twitter
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
-  const { author, social } = data.site.siteMetadata
+  // const { author, social } = data.site.siteMetadata
   return (
     <div
       style={{
         display: `flex`,
-        marginBottom: rhythm(2.5),
+        marginBottom: rhythm(1),
       }}
     >
-      <Image
+      {/* <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author}
         style={{
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
-          minWidth: 50,
+          minWidth: 60,
+          minHeight: 60,
           borderRadius: `100%`,
         }}
         imgStyle={{
           borderRadius: `50%`,
         }}
-      />
+      /> */}
       <p>
-        Written by <strong>{author}</strong> who lives and works in San
-        Francisco building useful things.
-        {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
+        {/* <strong>
+            <a href={`https://twitter.com/${social.twitter}`}>{author}</a>
+          </strong>{" "} */}
+        Front-end developer building and writing things for people on the
+        internet.
       </p>
     </div>
   )

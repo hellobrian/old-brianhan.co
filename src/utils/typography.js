@@ -28,6 +28,7 @@ delete Wordpress2016.googleFonts
 
 const typography = new Typography({
   ...Wordpress2016,
+  baseFontSize: "20px",
   headerFontFamily: ["Karla", "sans-serif"],
   bodyFontFamily: ["Merriweather", "serif"],
   overrideStyles: () => ({
