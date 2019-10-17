@@ -1,18 +1,7 @@
 {
-  "arrowParens": "always",
-  "bracketSpacing": true,
-  "jsxBracketSameLine": true,
-  "jsxSingleQuote": false,
-  "semi": true,
-  "singleQuote": true,
+  "endOfLine": "lf",
+  "semi": false,
+  "singleQuote": false,
   "tabWidth": 2,
-  "trailingComma": "all",
-  "overrides": [
-    {
-      "files": "*.md",
-      "options": {
-        "singleQuote": false
-      }
-    }
-  ]
+  "trailingComma": "es5"
 }
