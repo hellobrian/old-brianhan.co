@@ -9,6 +9,7 @@ module.exports = {
     },
   },
   plugins: [
+    "gatsby-plugin-dark-mode",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -57,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `brianhan.co`,
+        short_name: `brianhan.co`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
