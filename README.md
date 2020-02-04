@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/hellobrian/brianhan.co/tree/master.svg?style=svg)](https://circleci.com/gh/hellobrian/brianhan.co/tree/master)
+![Node.js CI](https://github.com/hellobrian/brianhan.co/workflows/Node.js%20CI/badge.svg)
 
 # brianhan.co
 
