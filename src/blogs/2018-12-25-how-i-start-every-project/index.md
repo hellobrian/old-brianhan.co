@@ -85,7 +85,7 @@ git config user.email "your_email@gmail.com"
 
 Your project's **.git/config** file should have a new user section added.
 
-```conf
+```
 [user]
 	name = Your Name
 	email = your_email@gmail.com

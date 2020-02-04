@@ -9,13 +9,20 @@ class BlogPostTemplate extends Component {
   static propTypes = {
     data: PropTypes.shape({
       markdownRemark: PropTypes.shape({
+        html: PropTypes.string.isRequired,
         frontmatter: PropTypes.shape({
           title: PropTypes.string.isRequired,
           subtitle: PropTypes.string.isRequired,
           path: PropTypes.string.isRequired,
           date: PropTypes.string.isRequired,
+          image: PropTypes.shape({
+            childImageSharp: PropTypes.shape({
+              resize: PropTypes.shape({
+                src: PropTypes.string,
+              }),
+            }),
+          }),
         }),
-        html: PropTypes.string.isRequired,
       }),
     }),
   };
