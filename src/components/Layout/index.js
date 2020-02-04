@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SEO from 'src/components/SEO';
 import CircleSvg from 'src/components/CircleSvg';
-import BackToTopButton from 'src/components/BackToTopButton';
 
 import './index.css';
 
-export default ({ children }) => (
+const Index = ({ children }) => (
   <>
     <SEO />
     <div>
@@ -26,7 +26,12 @@ export default ({ children }) => (
         `}>
         {children}
       </div>
-      <BackToTopButton />
     </div>
   </>
 );
+
+Index.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Index;
