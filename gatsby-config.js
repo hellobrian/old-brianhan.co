@@ -1,11 +1,15 @@
+require('dotenv').config();
+
+const googleAnalytics = process.env.GOOGLE_ANALYTICS;
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Brian Han`,
+    author: `Brian Han`,
+    description: `Writing about frontend development`,
+    siteUrl: `https://www.brianhan.co/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `_brianhan`,
     },
   },
   plugins: [
@@ -50,20 +54,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        trackingId: googleAnalytics,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `brianhan.co`,
+        short_name: `brianhan.co`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
+        background_color: `#ff9a9e`,
+        theme_color: `#ff9a9e`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -75,6 +79,6 @@ module.exports = {
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
-}
+};
