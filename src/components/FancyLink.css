@@ -1,0 +1,11 @@
+.FancyLink {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.FancyLink__span {
+  background-repeat: no-repeat;
+  background-image: var(--gradient--link);
+  background-size: 100% 3px;
+  background-position: 0 100%;
+}
