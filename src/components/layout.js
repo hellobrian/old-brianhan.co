@@ -7,26 +7,6 @@ import 'typeface-karla';
 import 'typeface-merriweather';
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`;
-  let header;
-
-  if (location.pathname === rootPath) {
-    header = (
-      <h1
-        style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
-        }}>
-        <Link to={`/`}>{title}</Link>
-      </h1>
-    );
-  } else {
-    header = (
-      <h3>
-        <Link to={`/`}>{title}</Link>
-      </h3>
-    );
-  }
   return (
     <div
       style={{
@@ -35,7 +15,7 @@ const Layout = ({ location, title, children }) => {
         maxWidth: rhythm(24),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}>
-      <header>{header}</header>
+      <Layout.Header location={location} title={title} />
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
@@ -45,5 +25,28 @@ const Layout = ({ location, title, children }) => {
     </div>
   );
 };
+
+const Header = ({ location, title }) => {
+  const rootPath = `${__PATH_PREFIX__}/`;
+  const homeLink = <Link to={`/`}>{title}</Link>;
+
+  return (
+    <header>
+      {location.pathname === rootPath ? (
+        <h1
+          style={{
+            ...scale(1.5),
+            marginBottom: rhythm(1.5),
+          }}>
+          {homeLink}
+        </h1>
+      ) : (
+        <h3>{homeLink}</h3>
+      )}
+    </header>
+  );
+};
+
+Layout.Header = Header;
 
 export default Layout;
