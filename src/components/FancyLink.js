@@ -15,7 +15,7 @@ export const FancyLink = ({
     'bold',
     'font-family',
     'font-smoothing',
-    'currentColor',
+    'current-color',
     className,
   ].join(' ');
 
