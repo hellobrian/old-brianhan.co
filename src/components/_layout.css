@@ -59,7 +59,8 @@ h5,
 h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.75px !important;
+  font-family: 'Karla', sans-serif !important;
 }
 
 a {

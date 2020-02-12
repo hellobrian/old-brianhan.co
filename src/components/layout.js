@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { rhythm, scale } from '../utils/typography';
-import './layout.css';
-import './prism-theme.css';
+
+// css
+import './_layout.css';
+import './_prism-theme.css';
+import './_docz-overrides.css';
+
+// fonts
 import 'typeface-karla';
 import 'typeface-merriweather';
 
 const Layout = ({ location, title, children }) => {
   return (
     <div
+      className="layout"
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
