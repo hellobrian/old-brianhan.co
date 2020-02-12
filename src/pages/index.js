@@ -1,10 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Bio from '../components/bio';
+import { Bio } from '../components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { FancyLink } from '../components';
-import { rhythm } from '../utils/typography';
+import { Post } from '../components';
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
@@ -32,25 +31,6 @@ const BlogIndex = ({ data, location }) => {
     </Layout>
   );
 };
-
-const Post = ({ title, children, slug, date }) => (
-  <article>
-    <header>
-      <h3
-        style={{
-          marginBottom: rhythm(1 / 4),
-        }}>
-        <FancyLink style={{ boxShadow: `none` }} to={slug}>
-          {title}
-        </FancyLink>
-      </h3>
-      <small>{date}</small>
-    </header>
-    <section>{children}</section>
-  </article>
-);
-
-BlogIndex.Post = Post;
 
 export default BlogIndex;
 
