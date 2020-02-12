@@ -15,7 +15,9 @@ const Layout = ({ location, title, children }) => {
         maxWidth: rhythm(24),
         padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
       }}>
-      <Layout.Header location={location} title={title} />
+      <Layout.Header pathname={location.pathname}>
+        <Link to={`/`}>{title}</Link>
+      </Layout.Header>
       <main>{children}</main>
       <footer>
         © {new Date().getFullYear()}, Built with
@@ -26,22 +28,21 @@ const Layout = ({ location, title, children }) => {
   );
 };
 
-const Header = ({ location, title }) => {
+const Header = ({ pathname, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
-  const homeLink = <Link to={`/`}>{title}</Link>;
 
   return (
     <header>
-      {location.pathname === rootPath ? (
+      {pathname === rootPath ? (
         <h1
           style={{
             ...scale(1.5),
             marginBottom: rhythm(1.5),
           }}>
-          {homeLink}
+          {children}
         </h1>
       ) : (
-        <h3>{homeLink}</h3>
+        <h3>{children}</h3>
       )}
     </header>
   );
