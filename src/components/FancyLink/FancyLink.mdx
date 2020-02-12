@@ -1,0 +1,28 @@
+---
+name: FancyLink
+route: /docz
+docz: true
+---
+
+import { Playground, Props } from 'docz';
+import { FancyLink } from './FancyLink';
+
+# FancyLink
+
+<Playground>
+  {() => {
+    const handleClick = (event) => event.preventDefault();
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', margin: '1rem' }}>
+        {/* Use `href` prop to link to external sites */}
+        <FancyLink onClick={handleClick} style={{ marginBottom: '1rem' }} href="https://github.com/hellobrian">This uses href</FancyLink>
+        {/* Or use `to` prop to use Gatsby Link. */}
+        <FancyLink onClick={handleClick} style={{ marginBottom: '1rem' }} to="/">This uses Link component</FancyLink>
+      </div>
+    )
+  }}
+</Playground>
+
+## Props
+
+<Props of={FancyLink} />

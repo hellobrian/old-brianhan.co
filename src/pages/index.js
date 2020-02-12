@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Bio from '../components/bio';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { FancyLink } from '../components/FancyLink';
+import { FancyLink } from '../components';
 import { rhythm } from '../utils/typography';
 
 const BlogIndex = ({ data, location }) => {
@@ -61,7 +61,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { docz: { eq: false } } }
+    ) {
       edges {
         node {
           excerpt

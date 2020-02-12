@@ -2,6 +2,7 @@
 title: "How to use Parcel for a simple SCSS project"
 subtitle: "...and all your other frontend needs!"
 date: "2018-12-18"
+docz: false
 ---
 
 ![Photo by Leone Venter on Unsplash](./parcel.jpg)
