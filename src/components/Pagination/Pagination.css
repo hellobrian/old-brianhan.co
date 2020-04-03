@@ -1,16 +1,16 @@
-.Pagination li {
-  position: relative;
-  background: var(--gradient--link);
-  padding: 3px;
-  min-width: 200px;
-}
-
 .Pagination > ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   list-style: none;
   padding: 0;
+}
+
+.Pagination > ul > li {
+  position: relative;
+  background: var(--gradient--link);
+  padding: 3px;
+  min-width: 200px;
 }
 
 .Pagination__PageLink {

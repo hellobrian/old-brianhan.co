@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { rhythm, scale } from '../utils/typography';
+import { rhythm, scale } from '../../utils/typography';
 
 // css
-import './_layout.css';
+import './Layout.css';
 import './_prism-theme.css';
 import './_docz-overrides.css';
 
@@ -11,7 +11,7 @@ import './_docz-overrides.css';
 import 'typeface-karla';
 import 'typeface-merriweather';
 
-const Layout = ({ location, title, children }) => {
+export const Layout = ({ location, title, children }) => {
   return (
     <div
       className="layout"
@@ -48,7 +48,7 @@ const Header = ({ pathname, children }) => {
           {children}
         </h1>
       ) : (
-        <h3>{children}</h3>
+        <h3 style={{ color: 'red' }}>{children}</h3>
       )}
     </header>
   );
