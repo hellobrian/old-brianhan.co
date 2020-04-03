@@ -55,7 +55,13 @@ html {
   padding: 0;
 }
 
-h1,
+h1 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.1rem !important;
+  font-family: 'Karla', sans-serif !important;
+}
+
 h2,
 h3,
 h4,
@@ -87,4 +93,11 @@ a {
 
 .current-color {
   color: currentColor;
+}
+
+.normal-link {
+  color: var(--text--body);
+  text-decoration: underline;
+  text-decoration-color: var(--blue);
+  text-decoration-thickness: 2px;
 }
