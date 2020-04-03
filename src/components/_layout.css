@@ -11,6 +11,10 @@
   --salmon--light--rgba50: rgba(254, 207, 239, 0.5);
   --shadow: rgba(101, 31, 62, 0.1);
   --white: #fff;
+  --black: hsla(0, 0, 0, 0.8);
+
+  /* Text */
+  --text--body: var(--black);
 
   /* Box Shadow */
   --card-shadow: var(--shadow) 20px 50px 100px -5px;

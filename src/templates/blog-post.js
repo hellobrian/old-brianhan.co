@@ -1,15 +1,14 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import React from 'react';
+import { graphql, Link } from 'gatsby';
+import { Bio, Pagination } from '../components';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { rhythm, scale } from '../utils/typography';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
+  const post = data.markdownRemark;
+  const siteTitle = data.site.siteMetadata.title;
+  const { previous, next } = pageContext;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -23,8 +22,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               marginTop: rhythm(1),
               marginBottom: 0,
-            }}
-          >
+            }}>
             {post.frontmatter.title}
           </h1>
           <p
@@ -32,8 +30,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               ...scale(-1 / 5),
               display: `block`,
               marginBottom: rhythm(1),
-            }}
-          >
+            }}>
             {post.frontmatter.date}
           </p>
         </header>
@@ -48,37 +45,24 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </footer>
       </article>
 
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
-    </Layout>
-  )
-}
+      <Pagination>
+        {previous && (
+          <Link to={previous.fields.slug} rel="prev">
+            <span>← {previous.frontmatter.title}</span>
+          </Link>
+        )}
 
-export default BlogPostTemplate
+        {next && (
+          <Link to={next.fields.slug} rel="next">
+            <span>{next.frontmatter.title} →</span>
+          </Link>
+        )}
+      </Pagination>
+    </Layout>
+  );
+};
+
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -98,4 +82,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
