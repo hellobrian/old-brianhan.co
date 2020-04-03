@@ -21,7 +21,7 @@ export const FancyLink = ({
 
   if (href) {
     return (
-      <a className={classList} href={href} {...props}>
+      <a data-testid="FancyLink" className={classList} href={href} {...props}>
         <span className="FancyLink__span">{children}</span>
       </a>
     );
@@ -29,7 +29,7 @@ export const FancyLink = ({
 
   if (to) {
     return (
-      <Link className={classList} to={to} {...props}>
+      <Link data-testid="FancyLink" className={classList} to={to} {...props}>
         <span className="FancyLink__span">{children}</span>
       </Link>
     );

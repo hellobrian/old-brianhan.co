@@ -4,7 +4,7 @@ import { FancyLink } from '../FancyLink/FancyLink';
 import { rhythm } from '../../utils/typography';
 
 export const Post = ({ children, date, slug, title }) => (
-  <article>
+  <article data-testid="Post">
     <header>
       <h3
         style={{
