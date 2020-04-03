@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { Bio, Pagination, Layout } from '../components';
-import SEO from '../components/seo';
+import { Bio, Pagination, Layout, SEO } from '../components';
 import { rhythm, scale } from '../utils/typography';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
