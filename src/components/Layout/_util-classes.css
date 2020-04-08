@@ -1,0 +1,24 @@
+.font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.05rem;
+}
+
+.font-family {
+  font-family: 'Karla', sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.current-color {
+  color: currentColor;
+}
+
+.normal-link {
+  color: var(--text--body);
+  text-decoration: underline;
+  text-decoration-color: var(--blue);
+  text-decoration-thickness: 2px;
+}
