@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { SvgCircle } from '../SvgCircle/SvgCircle';
 import { rhythm, scale } from '../../utils/typography';
 
 // css
-import './Layout.css';
+import './_colors.css';
+import './_reset.css';
+import './_util-classes.css';
 import './_prism-theme.css';
 import './_docz-overrides.css';
+import './Layout.css';
 
 // fonts
 import 'typeface-karla';
@@ -13,24 +17,26 @@ import 'typeface-merriweather';
 
 export const Layout = ({ location, title, children }) => {
   return (
-    <div
-      className="layout"
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: rhythm(24),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-      }}>
-      <Layout.Header pathname={location.pathname} title={title} />
-      <main>{children}</main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a className="normal-link" href="https://www.gatsbyjs.org">
-          Gatsby
-        </a>
-      </footer>
-    </div>
+    <>
+      <SvgCircle className="Layout__SvgCircle" />
+      <div
+        className="Layout__Wrapper"
+        style={{
+          maxWidth: rhythm(24),
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          height: '200vh',
+        }}>
+        <Layout.Header pathname={location.pathname} title={title} />
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a className="normal-link" href="https://www.gatsbyjs.org">
+            Gatsby
+          </a>
+        </footer>
+      </div>
+    </>
   );
 };
 

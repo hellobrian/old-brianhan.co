@@ -1,103 +1,30 @@
-:root {
-  /* Colors */
-  --blue: rgb(45, 116, 218);
-  --gray: #ccc;
-  --purple--light: #d887fe;
-  --purple: #b721ff;
-  --turquoise--light: #78e6fe;
-  --turquoise: #21d4fd;
-  --salmon: #ff9a9e;
-  --salmon--light: #fecfef;
-  --salmon--light--rgba50: rgba(254, 207, 239, 0.5);
-  --shadow: rgba(101, 31, 62, 0.1);
-  --white: #fff;
-  --black: hsla(0, 0, 0, 0.8);
-
-  /* Text */
-  --text--body: var(--black);
-
-  /* Box Shadow */
-  --card-shadow: var(--shadow) 20px 50px 100px -5px;
-
-  /* Gradients */
-  --gradient--link: linear-gradient(
-    -20deg,
-    var(--purple) 0%,
-    var(--turquoise) 100%
-  );
-  --gradient--link--fadeOut: linear-gradient(
-    to right,
-    var(--purple) 0%,
-    var(--turquoise) 90%,
-    white 100%
-  );
-  --gradient--link--hover: linear-gradient(
-    -20deg,
-    var(--purple--light) 0%,
-    var(--turquoise--light) 100%
-  );
-  --gradient--salmon: linear-gradient(
-    to top,
-    var(--salmon) 0%,
-    var(--salmon--light) 99%
-  );
+.Layout__Wrapper {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-html {
-  box-sizing: border-box;
+.Layout__SvgCircle {
+  position: fixed;
+  transform: translate3d(-28px, -28px, 0);
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  transition: transform 100ms cubic-bezier(0.4, 0.14, 0.3, 0),
+    width 100ms cubic-bezier(0.4, 0.14, 0.3, 0),
+    height 100ms cubic-bezier(0.4, 0.14, 0.3, 0);
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
+@media screen and (max-width: 1100px) {
+  .Layout__SvgCircle {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    transform: translate3d(-50px, -50px, 0);
+  }
 }
 
-h1 {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.1rem !important;
-  font-family: 'Karla', sans-serif !important;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.75px !important;
-  font-family: 'Karla', sans-serif !important;
-}
-
-a {
-  text-decoration: none;
-}
-
-.font-smoothing {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.05rem;
-}
-
-.font-family {
-  font-family: 'Karla', sans-serif;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.current-color {
-  color: currentColor;
-}
-
-.normal-link {
-  color: var(--text--body);
-  text-decoration: underline;
-  text-decoration-color: var(--blue);
-  text-decoration-thickness: 2px;
+@media screen and (max-width: 900px) {
+  .Layout__SvgCircle {
+    position: absolute;
+  }
 }
