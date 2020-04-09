@@ -26,4 +26,6 @@
 .Pagination__PageLink:focus {
   background: var(--gradient--link);
   color: var(--white);
+  transition: color 200ms var(--cubic-bezier),
+    background 80ms var(--cubic-bezier);
 }

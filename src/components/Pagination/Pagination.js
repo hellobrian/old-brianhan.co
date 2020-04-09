@@ -3,7 +3,7 @@ import './Pagination.css';
 
 export const Pagination = ({ children }) => (
   <nav data-testid="Pagination" className="Pagination">
-    <h3>Read more</h3>
+    <h3>Keep reading</h3>
     <ul>
       {React.Children.toArray(children).map((child, index) => {
         return (
