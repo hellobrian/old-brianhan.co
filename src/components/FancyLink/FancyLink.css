@@ -8,4 +8,17 @@
   background-image: var(--gradient--link);
   background-size: 100% 3px;
   background-position: 0 100%;
+  transition: color 200ms var(--cubic-bezier),
+    background-size 80ms var(--cubic-bezier), padding 80ms var(--cubic-bezier);
+}
+
+.FancyLink:focus {
+  outline: none;
+}
+
+.FancyLink:focus > .FancyLink__span,
+.FancyLink__span:hover {
+  padding: 0.25rem 0.5rem;
+  background-size: 100% 100%;
+  color: var(--white);
 }
