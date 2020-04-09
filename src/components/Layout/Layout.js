@@ -4,7 +4,7 @@ import { SvgCircle } from '../SvgCircle/SvgCircle';
 import { rhythm, scale } from '../../utils/typography';
 
 // css
-import './_colors.css';
+import './_variables.css';
 import './_reset.css';
 import './_util-classes.css';
 import './_prism-theme.css';
@@ -24,7 +24,6 @@ export const Layout = ({ location, title, children }) => {
         style={{
           maxWidth: rhythm(24),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          height: '200vh',
         }}>
         <Layout.Header pathname={location.pathname} title={title} />
         <main>{children}</main>
