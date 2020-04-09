@@ -1,6 +1,6 @@
 ---
 title: "How to use Parcel for a simple SCSS project"
-subtitle: "...and all your other frontend needs!"
+description: "Parcel is the easiest way to use SCSS in any project. This article will walk you through a few simple steps to get started."
 date: "2018-12-18"
 docz: false
 ---

@@ -7,7 +7,7 @@ docz: false
 
 > This article was originally published years ago on [Medium](https://medium.com/@brianhan/watch-compile-your-sass-with-npm-9ba2b878415b).
 > These days, I think [Parcel](https://parceljs.org/) is the best way to watch and compile your Sass code.
-> I have a short article on how to get setup here: [Parcel for your Sass](/parcel-for-your-sass)
+> I have a short article on how to get setup here: [Parcel for your Sass](/2018-12-18-parcel-sass/)
 
 ![npm](./npm.png)
 
