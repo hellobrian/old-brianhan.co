@@ -86,5 +86,6 @@ module.exports = {
         src: 'src/components',
       },
     },
+    `gatsby-plugin-netlify`,
   ],
 };
