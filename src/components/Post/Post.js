@@ -2,9 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FancyLink } from '../FancyLink/FancyLink';
 import { rhythm } from '../../utils/typography';
+import './Post.css';
 
 export const Post = ({ children, date, slug, title }) => (
-  <article data-testid="Post">
+  <article
+    data-testid="Post"
+    className="Post"
+    style={{
+      marginBottom: rhythm(2),
+      paddingTop: rhythm(1.5),
+      paddingLeft: rhythm(1),
+      paddingRight: rhythm(1),
+      paddingBottom: rhythm(1 / 2),
+    }}>
     <header>
       <h3
         style={{
