@@ -4,16 +4,15 @@ import { Bio, Pagination, Layout, SEO } from '../components';
 import { rhythm, scale } from '../utils/typography';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata.title;
+  const post = data.markdownRemark;
+  const { title, description, date } = post.frontmatter;
+  const { excerpt, html } = post;
   const { previous, next } = pageContext;
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={title} description={description || excerpt} />
       <article>
         <header>
           <h1
@@ -21,7 +20,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               marginTop: rhythm(1),
               marginBottom: 0,
             }}>
-            {post.frontmatter.title}
+            {title}
           </h1>
           <p
             style={{
@@ -29,10 +28,10 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               display: `block`,
               marginBottom: rhythm(1),
             }}>
-            {post.frontmatter.date}
+            {date}
           </p>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section dangerouslySetInnerHTML={{ __html: html }} />
         <hr
           style={{
             marginBottom: rhythm(1),
