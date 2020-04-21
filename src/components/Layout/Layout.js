@@ -50,11 +50,12 @@ const Header = ({ pathname, title }) => {
             ...scale(1.5),
             marginBottom: rhythm(1.5),
           }}>
-          {title}
+          <div>{title}</div> is a front-end developer. Building and writing
+          things for people on the internet.
         </h1>
       ) : (
         <h3>
-          <Link to={`/`} className="current-color">
+          <Link to={`/`} className="current-color normal-link">
             {title}
           </Link>
         </h3>
