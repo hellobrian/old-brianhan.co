@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { SvgCircle } from '../SvgCircle/SvgCircle';
+import { SvgCircle, FancyLink } from '../index';
 import { rhythm, scale } from '../../utils/typography';
 
 // css
 import './_variables.css';
-import './_reset.css';
 import './_util-classes.css';
+import './_reset.css';
 import './_prism-theme.css';
 import './_docz-overrides.css';
 import './Layout.css';
@@ -47,17 +46,20 @@ const Header = ({ pathname, title }) => {
       {pathname === rootPath ? (
         <h1
           style={{
-            ...scale(1.5),
+            ...scale(1.1),
             marginBottom: rhythm(1.5),
+            paddingTop: rhythm(1.5),
+            paddingLeft: rhythm(1),
+            paddingRight: rhythm(1),
+            paddingBottom: rhythm(1 / 2),
           }}>
-          <div>{title}</div> is a front-end developer. Building and writing
-          things for people on the internet.
+          <div>{title}</div>
+          <div>is a front-end developer.</div>
+          <div>Building and writing things for people on the internet.</div>
         </h1>
       ) : (
         <h3>
-          <Link to={`/`} className="current-color normal-link">
-            {title}
-          </Link>
+          <FancyLink to="/">{title}</FancyLink>
         </h3>
       )}
     </header>
