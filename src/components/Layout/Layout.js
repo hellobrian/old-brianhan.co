@@ -45,9 +45,8 @@ const Header = ({ pathname, title }) => {
     <header>
       {pathname === rootPath ? (
         <h1
+          className="Layout__Header__Title"
           style={{
-            ...scale(1.1),
-            marginBottom: rhythm(1.5),
             paddingTop: rhythm(1.5),
             paddingLeft: rhythm(1),
             paddingRight: rhythm(1),
