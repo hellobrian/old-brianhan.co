@@ -1,0 +1,27 @@
+[[redirects]]
+  from = "/docz"
+  to = "/docz/bio"
+
+[[redirects]]
+  from = "/prettier-with-a-pre-commit-hook"
+  to = "/2018-11-22-prettier-pre-commit/"
+
+[[redirects]]
+  from = "/parcel-for-your-sass"
+  to = "/2018-12-18-parcel-sass/"
+
+[[redirects]]
+  from = "/watch-compile-sass-npm"
+  to = "/2015-07-17-watch-compile-sass-npm/"
+
+[[redirects]]
+  from = "/using-git-to-squash-commits-with-confidence"
+  to = "/2019-01-11-using-git-to-squash-commits-with-confidence/"
+
+[[redirects]]
+  from = "/generate-blog-posts-gatsby-hygen"
+  to = "/2019-01-04-generate-blog-posts-gatsby-hygen/"
+
+[[redirects]]
+  from = "/nodejs-windows-without-wsl"
+  to = "/2019-01-08-nodejs-windows-without-wsl/"
