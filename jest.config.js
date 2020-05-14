@@ -1,19 +1,10 @@
 module.exports = {
+  setupFilesAfterEnv: ['<rootDir>/jest-configs/setup-test-env.js'],
   transform: {
-    '^.+\\.jsx?$': '<rootDir>/jest-preprocess.js',
+    '^.+\\.(tsx?|jsx?)$': `<rootDir>/jest-configs/jest-preprocess.js`,
   },
+  testPathIgnorePatterns: [`node_modules`, `.cache`, `public`, `.docz`],
   moduleNameMapper: {
-    '.+\\.(css|styl|less|sass|scss)$': 'identity-obj-proxy',
-    '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/__mocks__/fileMock.js',
-    '^src(.*)$': '<rootDir>/src$1',
+    '.+\\.(css|styl|less|sass|scss)$': `identity-obj-proxy`,
   },
-  testPathIgnorePatterns: ['node_modules', '.cache'],
-  transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
-  globals: {
-    __PATH_PREFIX__: '',
-  },
-  testURL: 'http://localhost',
-  setupFilesAfterEnv: [`./jest.setup.js`],
-  setupFiles: ['<rootDir>/loadershim.js'],
 };

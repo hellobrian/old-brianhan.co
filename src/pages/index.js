@@ -1,33 +1,56 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import Home from 'src/components/Home';
+import { Layout, Post, SEO } from '../components';
 
-const HomePage = ({ data }) => <Home data={data} />;
+const BlogIndex = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
 
-HomePage.propTypes = {
-  data: PropTypes.object.isRequired,
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO title="All posts" />
+      {posts.map(({ node }) => {
+        const title = node.frontmatter.title || node.fields.slug;
+        const slug = node.fields.slug;
+        const date = node.frontmatter.date;
+
+        return (
+          <Post key={node.fields.slug} title={title} slug={slug} date={date}>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: node.frontmatter.description || node.excerpt,
+              }}
+            />
+          </Post>
+        );
+      })}
+    </Layout>
+  );
 };
 
-export default HomePage;
+export default BlogIndex;
 
-export const query = graphql`
+export const pageQuery = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { draft: { eq: false } } }
+      filter: { frontmatter: { docz: { eq: false } } }
     ) {
-      totalCount
       edges {
         node {
-          id
           excerpt
+          fields {
+            slug
+          }
           frontmatter {
+            date(formatString: "MMMM DD, YYYY")
             title
-            # date(fromNow: true)
-            date(formatString: "DD MMMM YYYY", locale: "us")
-            subtitle
-            path
+            description
           }
         }
       }

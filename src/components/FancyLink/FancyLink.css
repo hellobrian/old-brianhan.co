@@ -1,0 +1,24 @@
+.FancyLink {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.FancyLink__span {
+  background-repeat: no-repeat;
+  background-image: var(--gradient--link);
+  background-size: 100% 3px;
+  background-position: 0 100%;
+  line-height: 1.25;
+  transition: color 200ms var(--cubic-bezier),
+    background-size 80ms var(--cubic-bezier);
+}
+
+.FancyLink:focus {
+  outline: none;
+}
+
+.FancyLink:focus > .FancyLink__span,
+.FancyLink__span:hover {
+  background-size: 100% 100%;
+  color: var(--white);
+}

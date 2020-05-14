@@ -1,0 +1,49 @@
+:root {
+  /* animation */
+  --cubic-bezier: cubic-bezier(0.4, 0.14, 0.3, 0);
+
+  /* Colors */
+  --blue: rgb(45, 116, 218);
+  --gray: #ccc;
+  --purple--light: #d887fe;
+  --purple: #b721ff;
+  --turquoise--light: #78e6fe;
+  --turquoise: #21d4fd;
+  --salmon: #ff9a9e;
+  --salmon--light: #fecfef;
+  --salmon--light--rgba50: rgba(254, 207, 239, 0.5);
+  --shadow: rgba(101, 31, 62, 0.1);
+  --white: #fff;
+  --black: hsla(0, 0, 0, 0.8);
+  --shadow: rgba(101, 31, 62, 0.1);
+  --card-shadow: var(--shadow) 20px 50px 100px -5px;
+
+  /* Text */
+  --text--body: var(--black);
+
+  /* Box Shadow */
+  --card-shadow: var(--shadow) 20px 50px 100px -5px;
+
+  /* Gradients */
+  --gradient--link: linear-gradient(
+    -20deg,
+    var(--purple) 0%,
+    var(--turquoise) 100%
+  );
+  --gradient--link--fadeOut: linear-gradient(
+    to right,
+    var(--purple) 0%,
+    var(--turquoise) 90%,
+    white 100%
+  );
+  --gradient--link--hover: linear-gradient(
+    -20deg,
+    var(--purple--light) 0%,
+    var(--turquoise--light) 100%
+  );
+  --gradient--salmon: linear-gradient(
+    to top,
+    var(--salmon) 0%,
+    var(--salmon--light) 99%
+  );
+}

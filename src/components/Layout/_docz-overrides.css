@@ -1,0 +1,13 @@
+div[data-testid='playground'] {
+  margin-bottom: 2rem !important;
+}
+
+div[data-testid='live-preview'] {
+  padding: 2rem;
+}
+
+div[data-testid='live-preview'] .fancy-link {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}

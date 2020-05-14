@@ -1,6 +1,6 @@
 import Typography from 'typography';
 
-const baseFontSize = 18;
+const baseFontSize = 20;
 
 const typography = new Typography({
   baseFontSize: `${baseFontSize}px`,
@@ -13,3 +13,5 @@ const typography = new Typography({
 export const rem = (px) => `${px / baseFontSize}rem`;
 
 export default typography;
+export const rhythm = typography.rhythm;
+export const scale = typography.scale;

@@ -1,0 +1,26 @@
+---
+name: Post
+route: /docz/post
+docz: true
+---
+
+import { Playground, Props } from 'docz';
+import { Post } from './Post';
+
+# Post
+
+<Playground>
+  <Post
+    title="This is a title for a blog post"
+    slug="/docz/post"
+    date="December 27, 2018">
+    <p>
+      Post excerpt usually goes here as children. This is where we dangerously
+      set html.
+    </p>
+  </Post>
+</Playground>
+
+## Props
+
+<Props of={Post} />

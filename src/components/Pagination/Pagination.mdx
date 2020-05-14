@@ -1,0 +1,27 @@
+---
+name: Pagination
+route: /docz/pagination
+docz: true
+---
+
+import { Playground, Props } from 'docz';
+import { Pagination } from './Pagination';
+
+# Pagination
+
+This is used in `src/templates/blog-post.js`.
+
+<Playground>
+  <Pagination>
+    <a href="#previous" rel="prev">
+      ← Watch & Compile your Sass with NPM
+    </a>
+    <a href="#next" rel="next">
+      Using Prettier with a Pre-commit Hook →
+    </a>
+  </Pagination>
+</Playground>
+
+## Props
+
+<Props of={Pagination} />

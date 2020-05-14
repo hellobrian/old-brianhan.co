@@ -1,0 +1,9 @@
+.Bio {
+  display: flex;
+  max-width: 700px;
+}
+
+.Bio__Image {
+  border-radius: 100%;
+  min-width: 60px;
+}
