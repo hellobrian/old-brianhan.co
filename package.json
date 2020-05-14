@@ -32,7 +32,7 @@
     "prismjs": "^1.20.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.0.0",
     "react-typography": "^0.16.19",
     "typeface-karla": "0.0.72",
     "typeface-merriweather": "0.0.72",
@@ -45,7 +45,7 @@
     "babel-jest": "^26.0.1",
     "babel-preset-gatsby": "^0.4.2",
     "identity-obj-proxy": "^3.0.0",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.5"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
