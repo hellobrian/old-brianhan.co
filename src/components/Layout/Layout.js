@@ -1,6 +1,6 @@
 import React from 'react';
 import { SvgCircle, FancyLink } from '../index';
-import { rhythm, scale } from '../../utils/typography';
+import { rhythm } from '../../utils/typography';
 
 // css
 import './_variables.css';

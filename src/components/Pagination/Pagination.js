@@ -22,7 +22,7 @@ const PageLink = ({ children }) => {
   }
   return React.cloneElement(children, {
     ...children.props,
-    className: 'Pagination__PageLink font-family bold font-smoothing',
+    className: `Pagination__PageLink font-family bold font-smoothing`,
   });
 };
 
