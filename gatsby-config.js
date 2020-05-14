@@ -1,9 +1,3 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
-
-const googleAnalytics = process.env.GOOGLE_ANALYTICS;
-
 module.exports = {
   siteMetadata: {
     title: `Brian Han`,
@@ -56,7 +50,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: googleAnalytics,
+        trackingId: 'UA-58228014-1',
       },
     },
     `gatsby-plugin-feed`,
