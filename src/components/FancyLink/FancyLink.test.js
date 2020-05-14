@@ -1,5 +1,14 @@
+import React from 'react';
+import { render, screen } from '@testing-library/react';
 import { FancyLink } from './FancyLink';
 
-it('should pass', () => {
-  expect(true).toBe(true);
+test(`FancyLink should render correctly`, () => {
+  render(
+    <FancyLink href="/" data-testid="FancyLink">
+      So Fancy
+    </FancyLink>,
+  );
+
+  const result = screen.getByRole('link', { name: /so fancy/i });
+  expect(result).toBeInTheDocument();
 });
