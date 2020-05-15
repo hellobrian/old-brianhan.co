@@ -33,7 +33,7 @@ a {
   color: var(--blue);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   div.gatsby-highlight {
     position: relative;
     width: 100vw;
