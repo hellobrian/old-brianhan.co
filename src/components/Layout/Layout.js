@@ -17,22 +17,24 @@ import 'typeface-merriweather';
 export const Layout = ({ location, title, children }) => {
   return (
     <>
-      <SvgCircle className="Layout__SvgCircle" />
-      <div
-        className="Layout__Wrapper"
-        style={{
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}>
-        <Layout.Header pathname={location.pathname} title={title} />
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a className="normal-link" href="https://www.gatsbyjs.org">
-            Gatsby
-          </a>
-        </footer>
+      <SvgCircle className="SvgCircle" />
+      <div className="Layout">
+        <div
+          className="Layout__Wrapper"
+          style={{
+            maxWidth: rhythm(24),
+            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          }}>
+          <Layout.Header pathname={location.pathname} title={title} />
+          <main>{children}</main>
+          <footer>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a className="normal-link" href="https://www.gatsbyjs.org">
+              Gatsby
+            </a>
+          </footer>
+        </div>
       </div>
     </>
   );

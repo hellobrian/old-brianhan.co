@@ -32,3 +32,11 @@ a {
   text-decoration: none;
   color: var(--blue);
 }
+
+@media screen and (max-width: 400px) {
+  div.gatsby-highlight {
+    position: relative;
+    width: 100vw;
+    margin-left: -8%;
+  }
+}
