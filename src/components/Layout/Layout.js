@@ -27,13 +27,7 @@ export const Layout = ({ location, title, children }) => {
           }}>
           <Layout.Header pathname={location.pathname} title={title} />
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a className="normal-link" href="https://www.gatsbyjs.org">
-              Gatsby
-            </a>
-          </footer>
+          <footer>© {new Date().getFullYear()} Brian Han</footer>
         </div>
       </div>
     </>
