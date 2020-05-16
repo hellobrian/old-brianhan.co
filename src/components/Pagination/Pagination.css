@@ -8,25 +8,24 @@
 
 .Pagination > ul > li {
   position: relative;
-  background: var(--gradient--link);
-  padding: 3px;
   min-width: 200px;
 }
 
 .Pagination__PageLink {
   display: inline-flex;
   justify-content: center;
-  background: var(--white);
   width: 100%;
   color: var(--text--body);
-  padding: 0 5px;
+  font-size: 1.25rem;
   margin-right: 1rem;
+  outline: 3px solid var(--purple);
 }
 
 .Pagination__PageLink:hover,
 .Pagination__PageLink:focus {
+  outline: 3px solid transparent;
   background: var(--gradient--link);
   color: var(--white);
   transition: color 200ms var(--cubic-bezier),
-    background 80ms var(--cubic-bezier);
+    background 80ms var(--cubic-bezier), border 80ms var(--cubic-bezier);
 }
