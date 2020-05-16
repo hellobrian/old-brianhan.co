@@ -3,6 +3,7 @@ title: "Using Prettier with a Pre-commit Hook"
 description: "How to integrate Prettier into your existing dev workflow for you and your team and understand all the pieces that make it work."
 date: "2018-12-27"
 docz: false
+featuredImage: "./prettier-logo.png"
 ---
 
 ![prettier](./prettier-logo.png)

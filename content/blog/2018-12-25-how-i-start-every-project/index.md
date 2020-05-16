@@ -3,9 +3,10 @@ title: "How I Start Every Project"
 description: "A quick guide to starting new frontend projects"
 date: "2018-12-25"
 docz: false
+featuredImage: "./cover.jpg"
 ---
 
-![Photo by Jefferson Santos on Unsplash](./how-i-start-crop.jpg)
+![Photo by Jefferson Santos on Unsplash](./cover.jpg)
 
 <small style="font-family: Karla, sans-serif;">Photo by Jefferson Santos on [Unsplash](https://unsplash.com/photos/V9sv7QrDUgc) (Cropped)</small>
 

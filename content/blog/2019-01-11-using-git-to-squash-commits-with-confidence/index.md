@@ -3,6 +3,7 @@ title: "Using Git to Squash Commits with Confidence"
 description: "Here are some tips that I've learned to get more comfortable squashing and rebasing in git."
 date: "2019-01-11"
 docz: false
+featuredImage: "./squashes-cropped2.jpg"
 ---
 
 ![Photo by Danielle Peters on Unsplash](./squashes-cropped2.jpg)

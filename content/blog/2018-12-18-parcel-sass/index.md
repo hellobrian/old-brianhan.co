@@ -3,6 +3,7 @@ title: "How to use Parcel for a simple SCSS project"
 description: "Parcel is the easiest way to use SCSS in any project. This article will walk you through a few simple steps to get started."
 date: "2018-12-18"
 docz: false
+featuredImage: "./parcel.jpg"
 ---
 
 ![Photo by Leone Venter on Unsplash](./parcel.jpg)
