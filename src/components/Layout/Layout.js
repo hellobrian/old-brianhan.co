@@ -47,6 +47,7 @@ const Header = ({ pathname, title }) => {
             paddingLeft: rhythm(1),
             paddingRight: rhythm(1),
             paddingBottom: rhythm(1 / 2),
+            marginBottom: rhythm(1 / 4),
           }}>
           <details className="Layout__Details">
             <summary>{title}</summary>
@@ -54,11 +55,11 @@ const Header = ({ pathname, title }) => {
               style={{
                 ...scale(0.5),
                 margin: 0,
-                marginLeft: '24px',
+                marginLeft: 0,
                 padding: rhythm(1),
                 listStyleType: 'none',
                 display: 'grid',
-                gridGap: '8px',
+                gridRowGap: '8px',
               }}>
               <li>
                 <span aria-label="job" role="img">
