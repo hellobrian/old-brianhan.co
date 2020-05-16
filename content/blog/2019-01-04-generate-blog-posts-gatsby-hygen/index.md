@@ -4,6 +4,7 @@ description: "Scaffold arbitrary folders, files and boilerplate code with Hygen.
 date: "2019-01-04"
 docz: false
 featuredImage: "./stamp.jpg"
+draft: false
 ---
 
 ![Photo by Hannes Wolf on Unsplash](./stamp.jpg)

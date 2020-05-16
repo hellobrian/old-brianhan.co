@@ -4,6 +4,7 @@ description: "Parcel is the easiest way to use SCSS in any project. This article
 date: "2018-12-18"
 docz: false
 featuredImage: "./parcel.jpg"
+draft: false
 ---
 
 ![Photo by Leone Venter on Unsplash](./parcel.jpg)

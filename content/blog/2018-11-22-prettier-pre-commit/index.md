@@ -4,6 +4,7 @@ description: "How to integrate Prettier into your existing dev workflow for you 
 date: "2018-12-27"
 docz: false
 featuredImage: "./prettier-logo.png"
+draft: false
 ---
 
 ![prettier](./prettier-logo.png)

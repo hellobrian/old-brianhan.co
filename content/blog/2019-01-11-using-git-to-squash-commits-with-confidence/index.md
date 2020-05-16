@@ -4,6 +4,7 @@ description: "Here are some tips that I've learned to get more comfortable squas
 date: "2019-01-11"
 docz: false
 featuredImage: "./squashes-cropped2.jpg"
+draft: false
 ---
 
 ![Photo by Danielle Peters on Unsplash](./squashes-cropped2.jpg)

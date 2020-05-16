@@ -4,6 +4,7 @@ description: "A quick guide to starting new frontend projects"
 date: "2018-12-25"
 docz: false
 featuredImage: "./cover.jpg"
+draft: false
 ---
 
 ![Photo by Jefferson Santos on Unsplash](./cover.jpg)

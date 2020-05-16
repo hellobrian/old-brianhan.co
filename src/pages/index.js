@@ -47,7 +47,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { docz: { eq: false } } }
+      filter: { frontmatter: { draft: { eq: false }, docz: { eq: false } } }
     ) {
       edges {
         node {

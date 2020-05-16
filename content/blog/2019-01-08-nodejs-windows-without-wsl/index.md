@@ -4,6 +4,7 @@ description: "I failed a lot trying to use WSL to replicate the dev environment 
 date: "2019-01-08"
 docz: false
 featuredImage: "./windows-image-crop.jpg"
+draft: false
 ---
 
 ![Photo by Samuel Zeller on Unsplash](./windows-image-crop.jpg)
