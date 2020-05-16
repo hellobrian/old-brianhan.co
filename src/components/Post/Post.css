@@ -1,3 +1,17 @@
 .Post {
   box-shadow: var(--card-shadow);
 }
+.Post__Header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.75rem;
+}
+
+@media screen and (max-width: 450px) {
+  .Post {
+    padding: 8px !important;
+  }
+  .Post__H3 {
+    font-size: 1.25rem !important;
+  }
+}

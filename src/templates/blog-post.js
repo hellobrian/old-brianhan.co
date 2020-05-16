@@ -6,6 +6,7 @@ import { rhythm, scale } from '../utils/typography';
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const post = data.markdownRemark;
+
   const { title, description, date } = post.frontmatter;
   const { excerpt, html } = post;
   const { previous, next } = pageContext;
@@ -43,13 +44,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </article>
 
       <Pagination>
-        {previous && (
+        {previous && !previous.frontmatter.draft && (
           <Link to={previous.fields.slug} rel="prev">
             <span>← {previous.frontmatter.title}</span>
           </Link>
         )}
 
-        {next && (
+        {next && !next.frontmatter.draft && (
           <Link to={next.fields.slug} rel="next">
             <span>{next.frontmatter.title} →</span>
           </Link>

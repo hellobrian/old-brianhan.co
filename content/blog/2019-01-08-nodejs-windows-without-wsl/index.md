@@ -3,6 +3,8 @@ title: "Setting up a Node.js Environment on a PC without WSL"
 description: "I failed a lot trying to use WSL to replicate the dev environment I use on my Mac. Then something weird happened: I ditched the fancy subsystem and now I'm doing dev things on my PC."
 date: "2019-01-08"
 docz: false
+featuredImage: "./windows-image-crop.jpg"
+draft: false
 ---
 
 ![Photo by Samuel Zeller on Unsplash](./windows-image-crop.jpg)

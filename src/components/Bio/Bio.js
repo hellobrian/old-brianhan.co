@@ -52,13 +52,14 @@ export const Bio = () => {
         }}
       />
       <p>
-        <strong>{author}</strong> is a front-end developer living and working in
-        Austin, Texas.{' '}
+        <strong>{author}</strong> is a UX developer living and working in
+        Austin, Texas. He's quite bad at{' '}
         <a
           className="normal-link"
           href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter.
+          Twitter.
         </a>
+        , but you should follow him anyways.
       </p>
     </div>
   );

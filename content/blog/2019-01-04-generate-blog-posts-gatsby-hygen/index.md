@@ -3,6 +3,8 @@ title: "How to Generate Blog Posts in Gatsby using Hygen"
 description: "Scaffold arbitrary folders, files and boilerplate code with Hygen."
 date: "2019-01-04"
 docz: false
+featuredImage: "./stamp.jpg"
+draft: false
 ---
 
 ![Photo by Hannes Wolf on Unsplash](./stamp.jpg)
