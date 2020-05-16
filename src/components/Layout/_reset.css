@@ -13,7 +13,7 @@ html {
 h1 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.1rem !important;
+  letter-spacing: -0.09rem !important;
   font-family: 'Karla', sans-serif !important;
 }
 
