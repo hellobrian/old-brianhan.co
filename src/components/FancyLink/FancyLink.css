@@ -6,11 +6,11 @@
 .FancyLink__span {
   background-repeat: no-repeat;
   background-image: var(--gradient--link);
-  background-size: 100% 3px;
-  background-position: 0 100%;
+  background-size: 100% 5px;
+  background-position: 0% 100%;
   line-height: 1.25;
-  transition: color 200ms var(--cubic-bezier),
-    background-size 80ms var(--cubic-bezier);
+  transition: background-size 100ms var(--cubic-bezier),
+    color 200ms var(--cubic-bezier);
 }
 
 .FancyLink:focus {
@@ -19,6 +19,14 @@
 
 .FancyLink:focus > .FancyLink__span,
 .FancyLink__span:hover {
-  background-size: 100% 100%;
-  color: var(--white);
+  background-size: 100% 30%;
+  background-image: linear-gradient(
+    50deg,
+    white 0%,
+    var(--purple) 20%,
+    var(--salmon) 40%,
+    var(--turquoise) 80%,
+    white 100%
+  );
+  color: rgb(53, 30, 255);
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { FancyLink } from '../FancyLink/FancyLink';
-import { rhythm } from '../../utils/typography';
+import { rhythm, scale } from '../../utils/typography';
 import './Post.css';
 
 export const Post = (props) => {
@@ -22,6 +22,7 @@ export const Post = (props) => {
       <header>
         <h3
           style={{
+            ...scale(0.75),
             marginBottom: rhythm(1 / 4),
           }}>
           <FancyLink to={slug}>{title}</FancyLink>

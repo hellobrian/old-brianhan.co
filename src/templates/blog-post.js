@@ -43,13 +43,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </article>
 
       <Pagination>
-        {previous && (
+        {previous && !previous.frontmatter.draft && (
           <Link to={previous.fields.slug} rel="prev">
             <span>← {previous.frontmatter.title}</span>
           </Link>
         )}
 
-        {next && (
+        {next && !next.frontmatter.draft && (
           <Link to={next.fields.slug} rel="next">
             <span>{next.frontmatter.title} →</span>
           </Link>
@@ -68,7 +68,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark(
+      fields: { slug: { eq: $slug } }
+      frontmatter: { draft: { eq: false } }
+    ) {
       id
       excerpt(pruneLength: 160)
       html
