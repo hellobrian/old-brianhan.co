@@ -74,7 +74,7 @@ const Header = ({ pathname, title }) => {
               </li>
               <li>
                 <span aria-label="residence" role="img">
-                  >🌮
+                  🌮
                 </span>{' '}
                 Living and working in Austin
               </li>
