@@ -48,7 +48,7 @@ const Header = ({ pathname, title }) => {
             paddingRight: rhythm(1),
             paddingBottom: rhythm(1 / 2),
           }}>
-          <details>
+          <details className="Layout__Details">
             <summary>{title}</summary>
             <ul
               style={{
