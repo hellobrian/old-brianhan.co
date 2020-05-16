@@ -22,8 +22,8 @@
 .Layout__Details > summary {
   background-repeat: no-repeat;
   background-image: none;
-  background-position: 15% 100%;
-  background-size: 50% 0%;
+  background-position: 0% 100%;
+  background-size: 100% 0%;
   transition: background-size 100ms var(--cubic-bezier),
     color 200ms var(--cubic-bezier);
 }
@@ -31,7 +31,7 @@
 .Layout__Details > summary:focus,
 .Layout__Details > summary:hover {
   outline: none;
-  background-position: 15% 100%;
+  background-position: 0% 100%;
   background-size: 50% 10%;
   background-image: linear-gradient(
     50deg,
