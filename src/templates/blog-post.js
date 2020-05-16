@@ -6,6 +6,7 @@ import { rhythm, scale } from '../utils/typography';
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const post = data.markdownRemark;
+
   const { title, description, date } = post.frontmatter;
   const { excerpt, html } = post;
   const { previous, next } = pageContext;
@@ -68,10 +69,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(
-      fields: { slug: { eq: $slug } }
-      frontmatter: { draft: { eq: false } }
-    ) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
       html

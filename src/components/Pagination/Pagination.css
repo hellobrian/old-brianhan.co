@@ -18,14 +18,14 @@
   color: var(--text--body);
   font-size: 1.25rem;
   margin-right: 1rem;
-  outline: 3px solid var(--purple);
+  outline: 4px solid blue;
 }
 
 .Pagination__PageLink:hover,
 .Pagination__PageLink:focus {
-  outline: 3px solid transparent;
+  outline: 4px solid white;
   background: var(--gradient--link);
   color: var(--white);
   transition: color 200ms var(--cubic-bezier),
-    background 80ms var(--cubic-bezier), border 80ms var(--cubic-bezier);
+    background 80ms var(--cubic-bezier);
 }
