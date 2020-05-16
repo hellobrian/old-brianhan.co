@@ -8,9 +8,11 @@
   background-image: var(--gradient--link);
   background-size: 100% 5px;
   background-position: 0% 100%;
-  line-height: 1.25;
   transition: background-size 100ms var(--cubic-bezier),
     color 200ms var(--cubic-bezier);
+
+  font-size: 2rem;
+  line-height: 1.25;
 }
 
 .FancyLink:focus {
@@ -29,4 +31,12 @@
     white 100%
   );
   color: rgb(53, 30, 255);
+}
+
+@media screen and (max-width: 450px) {
+  .FancyLink__span {
+    background-size: 100% 3px;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
 }

@@ -44,3 +44,9 @@
     font-size: 30px;
   }
 }
+
+@media screen and (max-width: 450px) {
+  .Layout__Header__Title {
+    padding: 8px !important;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { FancyLink } from '../FancyLink/FancyLink';
-import { rhythm, scale } from '../../utils/typography';
+import { rhythm } from '../../utils/typography';
 import './Post.css';
 
 export const Post = (props) => {
@@ -19,15 +19,11 @@ export const Post = (props) => {
         paddingRight: rhythm(1),
         paddingBottom: rhythm(1.5),
       }}>
-      <header>
-        <h3
-          style={{
-            ...scale(0.75),
-            marginBottom: rhythm(1 / 4),
-          }}>
+      <header className="Post__Header">
+        <h3 className="Post__H3">
           <FancyLink to={slug}>{title}</FancyLink>
         </h3>
-        <small>{date}</small>
+        <small className="Post__Date">{date}</small>
       </header>
       <section className="section">{children}</section>
       {featuredImage && (
