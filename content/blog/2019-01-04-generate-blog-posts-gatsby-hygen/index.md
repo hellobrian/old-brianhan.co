@@ -62,20 +62,6 @@ A formatted date string to indicate when a blog was updated.
 
 Boolean used in **gatsby-node.js** to distinguish `*.md` files that are for the blog vs for docz. Basically, I'm only querying for markdown so that docz files don't get published to the blog.
 
-**gatsby-node.js**
-
-```
-{
-  allMarkdownRemark(
-    filter: {
-      frontmatter: { docz: { eq: false } }
-      }
-  ) {
-    //...
-  }
-}
-```
-
 I'm using [docz](https://www.docz.site/) as an alternative to [storybook](https://storybook.js.org/) for documenting and prototyping components.
 
 ### featuredImage
