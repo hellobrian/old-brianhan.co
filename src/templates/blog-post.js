@@ -29,7 +29,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
               display: `block`,
               marginBottom: rhythm(1),
             }}>
-            {date}
+            <div style={{ marginTop: rhythm(1 / 4) }}>
+              {!post.frontmatter.updated ? (
+                date
+              ) : (
+                <div title={`Originally posted on: ${date}`}>
+                  <strong>Updated:</strong> {post.frontmatter.updated}{' '}
+                  <span role="img" aria-label="updated">
+                    🎉
+                  </span>
+                </div>
+              )}
+            </div>
           </p>
         </header>
         <section dangerouslySetInnerHTML={{ __html: html }} />
@@ -76,6 +87,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        updated(formatString: "MMMM DD, YYYY")
         description
       }
     }
