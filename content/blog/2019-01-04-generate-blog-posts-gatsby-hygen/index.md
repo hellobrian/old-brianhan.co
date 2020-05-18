@@ -93,19 +93,28 @@ Boolean used to prevent unfinished blogs from being published.
 Initialize Hygen and create a new generator called blog using `npx`.
 
 ```bash
-hygen init self
-hygen generator new --name blog
+npx hygen init self
+npx hygen generator new --name blog
 ```
 
-You should see a new **\_templates** folder created at the root of your project. Change the files so that it matches this structure:
+You should see a new **\_templates** folder created at the root of your project.
 
 ```
-_templates/blog
-└── new
-    ├── index.ejs.t (template for index.md file, originally hello.ejs.t)
-    ├── prompt.js (defines how CLI for inputting title and subtitle)
-    └── slugify.js (aka the function we use to dasherize strings)
+_templates
+├── blog
+│   └── new
+│       └── hello.ejs.t
+└── generator
+    ├── help
+    │   └── index.ejs.t
+    ├── new
+    │   └── hello.ejs.t
+    └── with-prompt
+        ├── hello.ejs.t
+        └── prompt.ejs.t
 ```
+
+I'm going to clean up the folders so we're just left with the things we need to generate blogs.
 
 ## Creating a CLI for Generating Blog Posts
 
