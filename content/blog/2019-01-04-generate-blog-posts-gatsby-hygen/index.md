@@ -64,7 +64,7 @@ Boolean used in **gatsby-node.js** to distinguish `*.md` files that are for the 
 
 **gatsby-node.js**
 
-```js
+```
 {
   allMarkdownRemark(
     filter: {
