@@ -20,9 +20,9 @@ export const Post = (props) => {
         paddingBottom: rhythm(1.5),
       }}>
       <header className="Post__Header">
-        <h3 className="Post__H3">
+        <h2 className="Post__H2">
           <FancyLink to={slug}>{title}</FancyLink>
-        </h3>
+        </h2>
         <small className="Post__Date">{date}</small>
       </header>
       <section className="section">{children}</section>
