@@ -6,7 +6,7 @@ import { rhythm } from '../../utils/typography';
 import './Post.css';
 
 export const Post = (props) => {
-  const { children, date, slug, title, featuredImage } = props;
+  const { children, date, updated, slug, title, featuredImage } = props;
 
   return (
     <article
@@ -20,10 +20,19 @@ export const Post = (props) => {
         paddingBottom: rhythm(1.5),
       }}>
       <header className="Post__Header">
-        <h3 className="Post__H3">
+        <h2 className="Post__H2">
           <FancyLink to={slug}>{title}</FancyLink>
-        </h3>
-        <small className="Post__Date">{date}</small>
+        </h2>
+        {updated ? (
+          <small className="Post__Date">
+            <strong>Updated:</strong> {updated}{' '}
+            <span role="img" aria-label="updated post">
+              🎉
+            </span>
+          </small>
+        ) : (
+          <small className="Post__Date">{date}</small>
+        )}
       </header>
       <section className="section">{children}</section>
       {featuredImage && (
