@@ -56,7 +56,7 @@ draft: false
 
 ### Updated
 
-A formatted date string to indicate when a blog was updated.
+A formatted date string to indicate when a blog was updated. But I'm going to omit this field whenever I create new blog posts.
 
 ### Docz
 
@@ -74,7 +74,7 @@ Boolean used to prevent unfinished blogs from being published.
 
 </details>
 
-## Quickly Getting Started with Hygen
+## Quickly Get Started with Hygen
 
 Initialize Hygen and create a new generator called blog using `npx`.
 
@@ -85,7 +85,7 @@ npx hygen generator new --name blog
 
 You should see a new **\_templates** folder created at the root of your project.
 
-```
+```rust{2-5}
 _templates
 ├── blog
 │   └── new
@@ -100,20 +100,91 @@ _templates
         └── prompt.ejs.t
 ```
 
-I'm going to clean up the folders so we're just left with the things we need to generate blogs.
+Edit **\_templates/blog/new/hello.ejs.t**.
 
-## Creating a CLI for Generating Blog Posts
+```rust
+---
+to: content/blog/YYYY-MM-DD-new-blog/index.md
+---
+---
+title: "title"
+description: "description"
+date: "YYYY-MM-DD"
+docz: false
+featuredImage: "./featuredImage.jpg"
+draft: true
+---
+```
 
-You can create a **prompts.js** file to define any questions you want to ask yourself whenever you run your hygen script.
+Run the hygen command to create a new blog post.
 
-We want to be able to write a title and subtitle when prompted so that we can generate boilerplate code for blog posts. If you're familiar with [inquirer.js](https://github.com/SBoudrias/Inquirer.js/) for creating CLIs in Node.js, then this should look familiar.
+```bash
+npx hygen blog new
+```
+
+A new blog folder and file called **YYYY-MM-DD-new-blog/index.md** will be created.
+
+```rust{2-3}
+content/blog
+└── YYYY-MM-DD-new-blog
+    └── index.md
+```
+
+From this point you could manually edit the folder names and frontmatter manually and start blogging!
+
+Or we can make our hygen command a little smarter.
+
+## Create a CLI for Generating Blog Posts
+
+### Setup files
+
+Create a **prompts.js** and **slugify.js** file in **\_templates/blog/new**. The **prompt.js** file will be used to show prompts in the terminal so we can generate a blog post with all the correct data upfront.
+
+The **slugify.js** file is a helper function we'll be using to slugify our titles to use as a folder name. Here's a [gist](https://gist.github.com/hellobrian/6360f69850280a798452ee21e4267e26) with the slugify code.
+
+```rust{3-4}
+_templates/blog/new
+├── hello.ejs.t
+├── prompt.js
+└── slugify.js
+```
+
+### Getting inputs
 
 **prompt.js**
 
-```js
-// Using slugify function from a gist I found:
-// https://gist.github.com/matthagemann/382adfc57adbd5af078dc93feef01fe1
+```js{6-15}
+module.exports = {
+  prompt: ({ prompter }) => {
+    return new Promise((resolve, reject) => {
+      prompter
+        .prompt([
+          {
+            type: "input",
+            name: "title",
+            message: "Title?",
+          },
+          {
+            type: "input",
+            name: "description",
+            message: "Description?",
+          },
+        ])
+        .then(({ title, description }) => {
+          console.log({ title, description });
+        });
+    });
+  },
+};
+```
 
+### Using inputs for frontmatter data
+
+Inside the `.then` block of code, we can generate date, slug, and folderName.
+
+**prompt.js**
+
+```js{20-30}
 const slugify = require("./slugify");
 
 module.exports = {
@@ -124,46 +195,23 @@ module.exports = {
           {
             type: "input",
             name: "title",
-            message: "What is the title?",
+            message: "Title?",
           },
           {
             type: "input",
-            name: "subtitle",
-            message: "What is the subtitle?",
+            name: "description",
+            message: "Description?",
           },
         ])
-        .then(({ title, subtitle }) => {
-          console.log({ title, subtitle });
-        });
-    });
-  },
-};
-```
-
-## Using Input in Template
-
-We can do all the work inside the `.then` block of code
-
-**prompt.js**
-
-```js{9-19}
-module.exports = {
-  prompt: ({ prompter }) => {
-    return new Promise((resolve, reject) => {
-      prompter
-        .prompt([
-          ...
-        ])
-        .then(({ title, subtitle }) => {
+        .then(({ title, description }) => {
           const date = new Date().toISOString().split("T")[0];
           const slug = slugify(title);
           const folderName = `${date}-${slug}`;
 
           resolve({
             title,
-            subtitle,
+            description,
             date,
-            path: `/${slug}`,
             folderName,
           });
         });
@@ -172,39 +220,39 @@ module.exports = {
 };
 ```
 
-When the `Promise` from this `prompt` method resolves, that new data can be interpolated into `index.ejs.t`, which is the template for **index.md**.
+When the `Promise` from this `prompt` method resolves, that new data can be interpolated into **hello.ejs.t**, which is used as the template for creating **index.md**.
 
-**index.ejs.t**
+**\_templates/blog/new/hello.ejs.t**
 
-```ejs
+```rust{2,5-7}
 ---
-to: src/blogs/<%= folderName %>/index.md
+to: content/blog/<%= folderName %>/index.md
 ---
 ---
 title: "<%= h.inflection.titleize(title) %>"
-subtitle: "<%= h.inflection.capitalize(subtitle) %>"
+description: "<%= h.inflection.capitalize(description) %>"
 date: "<%= date %>"
-path: "<%= path %>"
 draft: true
+docz: false
 ---
-
 ```
 
-Fun fact: this template doesn't get confused by two blocks of frontmatter!
+Also take note of the `h.inflection` helper functions; these come from `hygen` (see [Helpers and Inflections](https://www.hygen.io/templates#helpers-and-inflections)). We're using these to format title and description. It's not perfect but works _most_ of the time.
 
-- The first block tells Hygen where to create the new blog post using `to:`. The `folderName` variable is the only value that gets interpolated.
-- The next block of frontmatter will be treated as the [body](http://www.hygen.io/templates) that gets written to `index.md`
-  - There are built-in [helpers](http://www.hygen.io/templates#helpers-and-inflections) via the [inflections](https://github.com/dreamerslab/node.inflection) library, which gives us sentence-casing and titlizing for free and it works _most_ of the time.
+### We're done! Try it out!
 
-Almost done.
-
-Install Hygen locally with `--save-dev` (or `-D` for short)
+Run the `hygen` command again.
 
 ```bash
-npm i hygen -D
+npx hygen blog new
 ```
 
-Create an npm script and run it.
+Or create an npm script.
+
+```bash
+# yarn add hygen -D
+npm i hygen -D
+```
 
 **package.json**
 

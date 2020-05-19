@@ -1,15 +1,10 @@
 ---
-to: app/hello.js
+to: content/blogs/<%= folderName %>/index.md
 ---
-const hello = ```
-Hello!
-This is your first hygen template.
-
-Learn what it can do here:
-
-https://github.com/jondot/hygen
-```
-
-console.log(hello)
-
-
+---
+title: "<%= h.inflection.titleize(title) %>"
+description: "<%= h.inflection.capitalize(description) %>"
+date: "<%= date %>"
+draft: true
+docz: false
+---

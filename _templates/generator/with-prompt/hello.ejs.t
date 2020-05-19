@@ -1,18 +1,10 @@
 ---
-to: _templates/<%= name %>/<%= action || 'new' %>/hello.ejs.t
+to: content/blogs/<%= folderName %>/index.md
 ---
 ---
-to: app/hello.js
+title: "<%= h.inflection.titleize(title) %>"
+description: "<%= h.inflection.capitalize(description) %>"
+date: "<%= date %>"
+draft: true
+docz: false
 ---
-const hello = ```
-Hello!
-This is your first prompt based hygen template.
-
-Learn what it can do here:
-
-https://github.com/jondot/hygen
-```
-
-console.log(hello)
-
-
