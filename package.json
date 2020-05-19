@@ -67,6 +67,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean && rm -rf .docz",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "create:blog": "hygen blog new"
   }
 }
