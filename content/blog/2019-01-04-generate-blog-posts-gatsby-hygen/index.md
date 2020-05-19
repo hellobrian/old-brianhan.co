@@ -34,7 +34,7 @@ My frontmatter is the same as [gatsby-starter-blog](https://github.com/gatsbyjs/
 
 **index.md**
 
-```md
+```md{5-9}
 ---
 title: "How to Generate Blog Posts in Gatsby using Hygen"
 description: "Scaffold arbitrary folders, files and boilerplate code with Hygen."
@@ -130,15 +130,17 @@ content/blog
     └── index.md
 ```
 
-From this point you could manually edit the folder names and frontmatter manually and start blogging!
+From this point you can manually edit the folder names and frontmatter and start blogging!
 
-Or we can make our hygen command a little smarter.
+But we can also use prompts in our CLI to make our hygen command a little smarter.
 
 ## Create a CLI for Generating Blog Posts
 
 ### Setup files
 
-Create a **prompts.js** and **slugify.js** file in **\_templates/blog/new**. The **prompt.js** file will be used to show prompts in the terminal so we can generate a blog post with all the correct data upfront.
+Create a **prompts.js** and **slugify.js** file in **\_templates/blog/new**.
+
+The **prompt.js** file will be used to show prompts in the terminal so we can generate a blog post with all the correct data upfront.
 
 The **slugify.js** file is a helper function we'll be using to slugify our titles to use as a folder name. Here's a [gist](https://gist.github.com/hellobrian/6360f69850280a798452ee21e4267e26) with the slugify code.
 
@@ -151,7 +153,7 @@ _templates/blog/new
 
 ### Getting inputs
 
-**prompt.js**
+In **prompt.js**, we give two `input` prompts to the `prompt()` method to capture title and description.
 
 ```js{6-15}
 module.exports = {
@@ -180,7 +182,7 @@ module.exports = {
 
 ### Using inputs for frontmatter data
 
-Inside the `.then` block of code, we can generate date, slug, and folderName.
+Inside `.then`, we can generate date, slug, and folderName.
 
 **prompt.js**
 
