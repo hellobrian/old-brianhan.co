@@ -6,39 +6,32 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
-  const updatedPosts = posts.filter(({ node }) => !!node.frontmatter.updated);
-  const datedPosts = posts.filter(({ node }) => !node.frontmatter.updated);
-
-  const render = (blogPosts) =>
-    blogPosts.map(({ node }) => {
-      const title = node.frontmatter.title || node.fields.slug;
-      const slug = node.fields.slug;
-      const date = node.frontmatter.date;
-      const featuredImage = node.frontmatter.featuredImage;
-
-      return (
-        <Post
-          key={node.fields.slug}
-          title={title}
-          slug={slug}
-          updated={node.frontmatter.updated}
-          date={date}
-          featuredImage={featuredImage}>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: node.frontmatter.description || node.excerpt,
-            }}
-          />
-        </Post>
-      );
-    });
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <div>
-        {render(updatedPosts)}
-        {render(datedPosts)}
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug;
+          const slug = node.fields.slug;
+          const date = node.frontmatter.date;
+          const featuredImage = node.frontmatter.featuredImage;
+
+          return (
+            <Post
+              key={node.fields.slug}
+              title={title}
+              slug={slug}
+              updated={node.frontmatter.updated}
+              date={date}
+              featuredImage={featuredImage}>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: node.frontmatter.description || node.excerpt,
+                }}
+              />
+            </Post>
+          );
+        })}
       </div>
     </Layout>
   );
