@@ -24,14 +24,9 @@ export const Post = (props) => {
           <FancyLink to={slug}>{title}</FancyLink>
         </h2>
         {updated ? (
-          <small className="Post__Date">
-            <strong>Updated:</strong> {updated}{' '}
-            <span role="img" aria-label="updated post">
-              🎉
-            </span>
-          </small>
+          <UpdatedDateStamp date={updated} />
         ) : (
-          <small className="Post__Date">{date}</small>
+          <DateStamp date={date} />
         )}
       </header>
       <section className="section">{children}</section>
@@ -43,6 +38,40 @@ export const Post = (props) => {
         />
       )}
     </article>
+  );
+};
+
+const isNew = ({ postDate }) => {
+  const postMonth = new Date(postDate).getMonth();
+  const postYear = new Date(postDate).getFullYear();
+
+  const thisMonth = new Date().getMonth();
+  const thisYear = new Date().getFullYear();
+
+  return `${postMonth}-${postYear}` === `${thisMonth}-${thisYear}`;
+};
+
+const UpdatedDateStamp = ({ date }) => (
+  <small className="Post__Date">
+    <span role="img" aria-label="updated post">
+      🎉
+    </span>{' '}
+    <strong>Updated:</strong> {date}{' '}
+  </small>
+);
+
+const DateStamp = ({ date }) => {
+  const isNewDate = isNew({ postDate: date });
+
+  return isNewDate ? (
+    <small className="Post__Date">
+      <span role="img" aria-label="updated post">
+        ⚡️
+      </span>{' '}
+      <strong>New:</strong> {date}{' '}
+    </small>
+  ) : (
+    <small className="Post__Date">{date}</small>
   );
 };
 
