@@ -2,7 +2,7 @@
 title: "Default Values with GraphQL + FaunaDB"
 description: "Create records with default values using graphql"
 date: "2020-05-25"
-draft: false
+draft: true
 docz: false
 ---
 
