@@ -1,5 +1,5 @@
 ---
-to: content/blogs/<%= folderName %>/index.md
+to: content/blog/<%= folderName %>/index.md
 ---
 ---
 title: "<%= h.inflection.titleize(title) %>"
