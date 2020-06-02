@@ -1,12 +1,12 @@
 export default {
   colors: {
-    background: { body: 'primitives.white.core' },
+    background: { body: 'white.core' },
     text: {
-      body: 'primitives.black.core',
+      body: 'black.transparent',
     },
 
     white: { core: '#fff' },
-    black: { core: 'hsla(0, 0, 0, 0.8)' },
+    black: { core: '#000', transparent: 'rgba(0, 0, 0, 0.8)' },
     blue: { core: 'rgb(45, 116, 218)' },
     gray: { core: '#ccc' },
     purple: {
