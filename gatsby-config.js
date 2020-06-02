@@ -76,13 +76,14 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-theme-docz`,
-      options: {
-        src: 'src/components',
-      },
-    },
+    `gatsby-theme-docz`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-twitter`,
+    {
+      resolve: `gatsby-plugin-theme-ui`,
+      options: {
+        prismPreset: 'night-owl',
+      },
+    },
   ],
 };
