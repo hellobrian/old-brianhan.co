@@ -31,3 +31,7 @@
 [[redirects]]
   from = "/nodejs-windows-without-wsl"
   to = "/2019-01-08-nodejs-windows-without-wsl/"
+
+[[redirects]]
+  from = "/uses"
+  to = "https://yuuzus.netlify.app/"
