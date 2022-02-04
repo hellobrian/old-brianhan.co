@@ -1,17 +1,24 @@
+import { useEffect } from "react";
 import { useLoaderData } from "remix";
 import type { LoaderFunction } from "remix";
 import { gql } from "graphql-request";
 import { marked } from "marked";
+import * as prism from "prismjs";
 
 import { getSanityContent } from "~/utils/getSanityContent";
 
 import styles from "~/styles/blog-slug.css";
+import prismStyles from "~/styles/blog-prism-theme.css";
 
 export function links() {
   return [
     {
       rel: "stylesheet",
       href: styles,
+    },
+    {
+      rel: "stylesheet",
+      href: prismStyles,
     },
   ];
 }
@@ -40,6 +47,11 @@ export let loader: LoaderFunction = async ({ params }) => {
 
 export default function BlogSlug() {
   const blog = useLoaderData();
+
+  useEffect(() => {
+    prism.highlightAll();
+  }, []);
+
   return (
     <div className="BlogSlug">
       <h1 className="BlogSlug__title">{blog.title}</h1>
