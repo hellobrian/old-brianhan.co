@@ -4,9 +4,11 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from "remix";
 import type { MetaFunction } from "remix";
+
+import styles from "~/styles/reset.css";
 
 export const meta: MetaFunction = () => {
   return { title: "New Remix App" };
@@ -19,6 +21,7 @@ export default function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
+        <link rel="stylesheet" href={styles} />
         <Links />
       </head>
       <body>

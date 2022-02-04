@@ -1,0 +1,9 @@
+.BlogSlug {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.BlogSlug__title {
+  text-align: center;
+}
