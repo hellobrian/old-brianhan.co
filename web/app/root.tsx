@@ -5,6 +5,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  createCookie,
 } from "remix";
 import type { MetaFunction } from "remix";
 

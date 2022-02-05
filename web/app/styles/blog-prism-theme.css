@@ -25,7 +25,7 @@ pre[class*="language-"] {
   hyphens: none;
 
   /* overrides */
-  /* background-color: rgb(1, 22, 39);
+  /* background-color: #383a59
    height: fit-content; */
 }
 
@@ -136,20 +136,20 @@ pre[data-line] {
 .BlogSlug pre[class*="language-"] {
   /* float: left; */
   min-width: 100%;
-  background-color: rgb(1, 22, 39);
+  background-color: #282a3f;
   height: fit-content;
   margin-bottom: 16px;
 }
 
-.BlogSlug::-webkit-scrollbar {
+.BlogSlug pre[class*="language-"]::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
-.BlogSlug::-webkit-scrollbar-thumb {
+.BlogSlug pre[class*="language-"]::-webkit-scrollbar-thumb {
   background: rgb(130, 170, 255);
 }
 
-.BlogSlug::-webkit-scrollbar-track {
+.BlogSlug pre[class*="language-"]::-webkit-scrollbar-track {
   background: #011627;
 }
