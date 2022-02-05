@@ -24,5 +24,11 @@ export default {
       title: "Content",
       type: "markdown",
     },
+    {
+      name: "isPublished",
+      type: "boolean",
+      title: "Published",
+      initialValue: false,
+    },
   ],
 };
