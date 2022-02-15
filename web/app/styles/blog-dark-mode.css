@@ -15,17 +15,4 @@
   .isDark ol li::marker {
     color: rgb(182, 182, 182);
   }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  p,
-  a,
-  ul,
-  ol,
-  blockquote {
-    transition: background 200ms, color 200ms;
-  }
 }
