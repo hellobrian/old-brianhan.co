@@ -1,17 +1,17 @@
 export default {
-  name: "page",
   title: "Page",
+  name: "page",
   type: "document",
   fields: [
     {
-      name: "title",
       title: "Page Title",
+      name: "title",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "slug",
       title: "Slug",
+      name: "slug",
       type: "slug",
       validation: (Rule) => Rule.required(),
       options: {
@@ -20,15 +20,25 @@ export default {
       },
     },
     {
-      name: "content",
       title: "Content",
+      name: "content",
       type: "markdown",
     },
     {
+      title: "Published",
       name: "isPublished",
       type: "boolean",
-      title: "Published",
       initialValue: false,
+    },
+    {
+      title: "Tags",
+      type: "array",
+      name: "tags",
+      of: [{ type: "string" }],
+      options: {
+        layout: "tags",
+      },
+      validation: (Rule) => Rule.unique(),
     },
   ],
 };
