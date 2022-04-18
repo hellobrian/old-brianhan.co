@@ -1,0 +1,9 @@
+:root {
+    --color__white: #edeae5;
+    --color__black: #161616;
+
+    --color__bg: var(--color__white);
+    --color__fg: var(--color__black);
+
+    --ff__space-grotesk: 'Space Grotesk', sans-serif;
+}

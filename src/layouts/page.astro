@@ -1,0 +1,53 @@
+---
+// import { Markdown } from 'astro/components';
+import Navbar from '../components/navbar/navbar.astro';
+import Head from '../components/head.astro';
+---
+
+<html lang="en">
+  <Head />
+  <body>
+    <div class="grid">
+      <Navbar />
+      <div class="slot">
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>
+
+<style lang="scss">
+  html {
+    background: #edeae5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-rows: 70px 1fr;
+  }
+
+  .slot {
+    grid-row-start: 2;
+  }
+
+  section.intro {
+    grid-row-start: 2;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    .intro__based {
+      grid-column-start: 2;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 64px;
+      line-height: 1.24;
+      text-align: right;
+      font-weight: 700;
+    }
+
+    p {
+      font-family: 'Inter', sans-serif;
+      font-size: 24px;
+    }
+  }
+</style>

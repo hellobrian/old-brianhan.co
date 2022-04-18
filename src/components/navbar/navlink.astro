@@ -1,0 +1,7 @@
+---
+const { href, pathname } = Astro.props;
+---
+
+<a aria-current="page" {href} class="nav-link">
+  <slot />
+</a>
