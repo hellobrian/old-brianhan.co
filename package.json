@@ -1,35 +1,14 @@
 {
-  "name": "brianhan.co",
-  "version": "1.0.0",
-  "description": "Personal website",
-  "main": "index.js",
+  "name": "@example/minimal",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
+    "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hellobrian/brianhan.co.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hellobrian/brianhan.co/issues"
-  },
-  "homepage": "https://github.com/hellobrian/brianhan.co#readme",
-  "dependencies": {
-    "astro": "^1.0.0-beta.10"
-  },
   "devDependencies": {
-    "@astrojs/react": "^0.1.0",
-    "postcss": "^8.4.12",
-    "prettier-plugin-astro": "^0.0.12",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "sass": "^1.50.0",
-    "tailwindcss": "^3.0.24"
+    "astro": "^1.0.0-beta.12"
   }
 }
