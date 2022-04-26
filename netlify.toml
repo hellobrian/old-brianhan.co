@@ -1,6 +1,10 @@
 [build]
-  command = "yarn build"
-  publish = ".next"
+  command = "yarn build && next export"
+  publish = "out"
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NODE_VERSION = "17"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
