@@ -1,5 +1,3 @@
 const { withContentlayer } = require("next-contentlayer");
 
-module.exports = withContentlayer({
-  target: "serverless",
-});
+module.exports = withContentlayer({});
