@@ -1,4 +1,4 @@
-export default function CloseIcon({ width = 24, height = 24 }) {
+export default function CloseIcon({ width = 24, height = 24, ...props }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +9,7 @@ export default function CloseIcon({ width = 24, height = 24 }) {
       strokeWidth={2}
       width={width}
       height={height}
+      {...props}
     >
       <path
         strokeLinecap="round"
