@@ -7,12 +7,23 @@ export default function Base({ children }) {
     <>
       <BaseHead />
       <div className="page">
-        <Nav />
+        <nav>
+          <Nav />
+        </nav>
         <main>{children}</main>
       </div>
       <style jsx>{`
         .page {
           display: grid;
+          grid-template-rows: 88px 1fr;
+        }
+
+        .page > nav {
+          grid-row-start: 1;
+        }
+
+        .page > main {
+          grid-row-start: 2;
         }
       `}</style>
     </>
