@@ -35,13 +35,10 @@ const Home: NextPage = ({ blogs }: HomeProps) => {
   return (
     <Base>
       <VisuallyHidden as="h1">Brian Han</VisuallyHidden>
-      <Link href="/">
-        <a>Brian Han</a>
-      </Link>
 
-      {blogs.map((blog, idx) => (
+      {/* {blogs.map((blog, idx) => (
         <Blog key={idx} blog={blog} />
-      ))}
+      ))} */}
     </Base>
   );
 };
