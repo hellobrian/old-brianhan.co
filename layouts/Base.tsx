@@ -1,13 +1,20 @@
-import { useState } from "react";
-import MenuButton from "components/MenuButton/MenuButton";
+// components
 import BaseHead from "components/BaseHead";
+import Nav from "components/Nav/Nav";
 
 export default function Base({ children }) {
   return (
     <>
-      <MenuButton />
       <BaseHead />
-      <main>{children}</main>
+      <div className="page">
+        <Nav />
+        <main>{children}</main>
+      </div>
+      <style jsx>{`
+        .page {
+          display: grid;
+        }
+      `}</style>
     </>
   );
 }
