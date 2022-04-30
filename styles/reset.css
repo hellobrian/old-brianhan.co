@@ -17,6 +17,8 @@
 */
 html, body {
   height: 100%;
+  /* https://twitter.com/stackblitz/status/1518924375721873408 */
+  scrollbar-gutter: stable;
 }
 
 /*
