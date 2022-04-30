@@ -21,8 +21,8 @@ export default function MenuButton({
     <motion.button
       type="button"
       onClick={onClick}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+      whileTap={{ scale: 0.8, opacity: 0.5 }}
+      style={{ color: "white" }}
       {...props}
     >
       {isOpen ? <CloseIcon /> : <MenuIcon />}
