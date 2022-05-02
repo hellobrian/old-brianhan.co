@@ -1,0 +1,34 @@
+.container {
+  // reset
+  list-style-type: none;
+  margin: 0;
+
+  // position & sizing
+  position: relative;
+  padding: 0 32px;
+  padding-top: 32px;
+  height: calc(100vh - var(--nav-height));
+
+  // background
+  background-color: var(--color-navy);
+  background-image: url(/layered-waves.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.item {
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: min-content;
+  padding: 0;
+}
+
+.appLink {
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-family: var(--space-grotesk);
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1;
+}

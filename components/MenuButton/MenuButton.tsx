@@ -5,8 +5,7 @@ import { motion, HTMLMotionProps } from "framer-motion";
 import MenuIcon from "components/Icons/MenuIcon";
 import CloseIcon from "components/Icons/CloseIcon";
 
-// https://www.carlrippon.com/Different-ways-to-strongly-type-function-component-props-with-typescript/
-// https://github.com/framer/motion/issues/665#issuecomment-783401005
+// types
 type MenuButtonProps = HTMLMotionProps<"button"> & {
   isOpen?: boolean;
   onClick?: () => void;
@@ -21,8 +20,9 @@ export default function MenuButton({
     <motion.button
       type="button"
       onClick={onClick}
-      whileTap={{ scale: 0.8, opacity: 0.5 }}
-      style={{ color: "white" }}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9, opacity: 0.5 }}
+      style={{ color: "var(--color-white)" }}
       {...props}
     >
       {isOpen ? <CloseIcon /> : <MenuIcon />}
