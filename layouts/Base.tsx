@@ -1,13 +1,15 @@
-import { useEffect } from "react";
 // components
 import BaseHead from "components/BaseHead";
 import Nav from "components/Nav/Nav";
+
+// styles
+import styles from "./Base.module.scss";
 
 export default function Base({ children }) {
   return (
     <>
       <BaseHead />
-      <div className="page">
+      <div className={styles.page}>
         <nav>
           <Nav />
         </nav>
@@ -15,21 +17,6 @@ export default function Base({ children }) {
           <div>{children}</div>
         </main>
       </div>
-      <style jsx>{`
-        .page {
-          display: grid;
-          grid-template-rows: var(--nav-height) 1fr;
-          height: 100vh;
-        }
-
-        .page > nav {
-          grid-row-start: 1;
-        }
-
-        .page > main {
-          grid-row-start: 2;
-        }
-      `}</style>
     </>
   );
 }

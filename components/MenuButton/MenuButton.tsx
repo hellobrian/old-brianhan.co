@@ -5,6 +5,9 @@ import { motion, HTMLMotionProps } from "framer-motion";
 import MenuIcon from "components/Icons/MenuIcon";
 import CloseIcon from "components/Icons/CloseIcon";
 
+// styles
+import styles from "./MenuButton.module.scss";
+
 // types
 type MenuButtonProps = HTMLMotionProps<"button"> & {
   isOpen?: boolean;
@@ -19,10 +22,10 @@ export default function MenuButton({
   return (
     <motion.button
       type="button"
+      className={styles.menuButton}
       onClick={onClick}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9, opacity: 0.5 }}
-      style={{ color: "var(--color-white)" }}
       {...props}
     >
       {isOpen ? <CloseIcon /> : <MenuIcon />}

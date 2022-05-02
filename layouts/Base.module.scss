@@ -1,0 +1,13 @@
+.page {
+  display: grid;
+  grid-template-rows: var(--nav-height) 1fr;
+  height: 100vh;
+}
+
+.page > nav {
+  grid-row-start: 1;
+}
+
+.page > main {
+  grid-row-start: 2;
+}

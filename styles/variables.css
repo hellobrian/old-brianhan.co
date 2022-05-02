@@ -1,9 +1,20 @@
 :root {
+  /* color - hex */
   --color-salmon: #ffc0cb;
-  --color-wine: #C62368;
+  --color-wine: #c62368;
   --color-navy: #001220;
   --color-white: #fff;
-  --inter: 'Inter', sans-serif;
-  --space-grotesk: 'Space Grotesk', sans-serif;
+
+  /* color - roles */
+  --color-bg: var(--color-navy);
+  --color-fg: var(--color-white);
+  --color-primary: var(--color-wine);
+  --color-secondary: var(--color-salmon);
+
+  /* font */
+  --inter: "Inter", sans-serif;
+  --space-grotesk: "Space Grotesk", sans-serif;
+
+  /* size */
   --nav-height: 96px;
 }
