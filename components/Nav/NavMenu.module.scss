@@ -22,20 +22,17 @@
   margin-right: auto;
   width: min-content;
   padding: 0;
+
+  @media screen and (min-width: 672px) {
+    margin: 0;
+  }
 }
 
 .appLink {
-  text-decoration: underline;
-  text-decoration-color: var(--color-primary);
-  text-underline-offset: 0.4rem;
+  text-decoration: none;
   font-size: 1.4rem;
   font-family: var(--space-grotesk);
   font-weight: 500;
   color: var(--color-fg);
   line-height: 1;
-
-  &:hover {
-    text-decoration-thickness: 0.2rem;
-    transition: 1000ms ease;
-  }
 }

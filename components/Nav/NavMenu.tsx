@@ -46,8 +46,6 @@ export default function NavMenu({ isOpen = false, toggle = () => {} }) {
               key={navLink.name}
               className={styles.item}
               variants={item}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
             >
               <AppLink
                 className={styles.appLink}
