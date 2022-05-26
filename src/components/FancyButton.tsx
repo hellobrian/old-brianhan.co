@@ -5,7 +5,7 @@ export default function FancyButton() {
   const increment = () => setCount(count + 1);
   return (
     <button type="button" onClick={increment}>
-      {count}
+      clicked: {count} times
     </button>
   );
 }
