@@ -1,5 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
+import DarkModeButton from '../components/DarkModeButton';
 ---
 
 <html lang="en">
@@ -9,6 +10,7 @@ import BaseHead from '../components/BaseHead.astro';
 </head>
 
 <body>
+  <DarkModeButton client:load />
   <slot />
 </body>
 

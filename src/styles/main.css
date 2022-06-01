@@ -1,0 +1,20 @@
+:root {
+  --color--white: white;
+  --color--black: black;
+
+  --color--dark: var(--color--black);
+  --color--light: var(--color--white);
+
+  --background: var(--color--light);
+  --foreground: var(--color--dark);
+}
+
+.darkmode {
+  --background: var(--color--dark);
+  --foreground: var(--color--light);
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
