@@ -1,0 +1,34 @@
+<button type="button" class="toggle-darkmode">darkmode</button>
+
+
+<script>
+  // Will be rendered into the HTML exactly as written!
+  // ESM imports will not be resolved relative to the file.
+
+  const enableDarkMode = () => {
+    document.body.classList.add("darkmode");
+    localStorage.setItem("darkMode", "enabled");
+  };
+
+  const disableDarkMode = () => {
+    document.body.classList.remove("darkmode");
+    localStorage.removeItem("darkMode");
+  };
+
+  let darkModeSetting = localStorage.getItem("darkMode");
+
+  if (darkModeSetting === "enabled") {
+    enableDarkMode();
+  }
+
+  const darkModeToggle = document.querySelector('.toggle-darkmode')
+
+  darkModeToggle.addEventListener('click', () => {
+    darkModeSetting = localStorage.getItem("darkMode");
+    if (darkModeSetting !== 'enabled') {
+      enableDarkMode()
+    } else {
+      disableDarkMode()
+    }
+  })
+</script>

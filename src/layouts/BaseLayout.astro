@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import DarkModeButton from '../components/DarkModeButton';
+// import DarkModeButton from '../components/DarkModeButton';
+import DarkModeButton from '../components/DarkModeButton.astro';
 ---
 
 <html lang="en">
@@ -10,7 +11,7 @@ import DarkModeButton from '../components/DarkModeButton';
 </head>
 
 <body>
-  <DarkModeButton client:load />
+  <DarkModeButton />
   <slot />
 </body>
 
