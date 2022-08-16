@@ -1,5 +1,17 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+const mdxPosts = await Astro.glob("./**/*.mdx");
 ---
 
-<BaseLayout><h1>blog</h1></BaseLayout>
+<BaseLayout>
+  <h1>blog</h1>
+  <ul>
+    {
+      mdxPosts.map((blogPost) => (
+        <li>
+          <a href={blogPost.url}>{blogPost.frontmatter.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
