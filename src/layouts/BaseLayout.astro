@@ -1,15 +1,16 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import DarkModeButton from "../components/DarkModeButton.astro";
+import BaseFonts from "../components/BaseFonts.astro";
 ---
 
 <html lang="en">
   <head>
     <BaseHead />
+    <BaseFonts />
   </head>
 
   <body>
-    <header>
+    <!-- <header>
       <nav>
         <ul>
           <li><a href="/">home</a></li>
@@ -18,9 +19,9 @@ import DarkModeButton from "../components/DarkModeButton.astro";
         </ul>
         <DarkModeButton />
       </nav>
-    </header>
+    </header> -->
     <slot />
-    <style>
+    <!-- <style>
       :is(ul, li, a) {
         all: unset;
       }
@@ -47,6 +48,6 @@ import DarkModeButton from "../components/DarkModeButton.astro";
       a {
         color: var(--foreground);
       }
-    </style>
+    </style> -->
   </body>
 </html>

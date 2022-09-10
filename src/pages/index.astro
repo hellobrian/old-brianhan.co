@@ -1,7 +1,79 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogCard from "../components/BlogCard.astro";
+// import DarkModeButton from "../components/DarkModeButton.astro";
+import DarkModeButton from "../components/DarkModeButton.astro";
 ---
 
 <BaseLayout>
-  <h1>Astro</h1>
+  <main>
+    <div class="profile">
+      <span><h1>Brian Han</h1><DarkModeButton /></span>
+      <p class="job-description">
+        Senior UX Developer at <a class="company" href="https://indeed.com"
+          >Indeed.com</a
+        >
+      </p>
+    </div>
+
+    <div class="BlogList">
+      <BlogCard
+        href="/styleguide"
+        title="Hacking CSS Animation State and Playback Time"
+        description={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
+      />
+      <BlogCard
+        href="/styleguide"
+        title="Hacking CSS Animation State and Playback Time"
+        description={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
+      />
+      <BlogCard
+        href="/styleguide"
+        title="Hacking CSS Animation State and Playback Time"
+        description={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
+      />
+    </div>
+  </main>
 </BaseLayout>
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    max-width: 670px;
+    margin: 0 auto;
+    margin-top: 48px;
+  }
+
+  .profile {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 48px;
+  }
+
+  span {
+    display: flex;
+    gap: 8px;
+  }
+
+  h1 {
+    margin-left: -2.6px;
+  }
+
+  p.job-description {
+    font-weight: 600;
+  }
+
+  a.company:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1.2px;
+  }
+
+  .BlogList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+</style>
