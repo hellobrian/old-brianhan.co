@@ -3,10 +3,10 @@ import ReadMore from "../components/ReadMore/ReadMore.astro";
 export interface Props {
   href: string;
   title: string;
-  description: string;
+  summary: string;
 }
 
-const { href, title, description } = Astro.props;
+const { href, title, summary } = Astro.props;
 ---
 
 <article>
@@ -14,15 +14,15 @@ const { href, title, description } = Astro.props;
     <a href={href}>{title}</a>
   </h3>
   <p>
-    {description}
+    {summary}
   </p>
-  <ReadMore />
+  <ReadMore href={href} />
 </article>
 
 <style>
   :root {
-    --color--description--dark: #999999;
-    --color--description--light: #474747;
+    --color--summary--dark: #999999;
+    --color--summary--light: #474747;
   }
 
   article {
@@ -43,27 +43,15 @@ const { href, title, description } = Astro.props;
     text-decoration-thickness: 1.2px;
   }
 
-  /* :is(h3 > a, a.read-more):hover {
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1.2px;
-  } */
-
   p {
     font-weight: 500;
   }
 
-  /* a.read-more {
-    font-weight: 600;
-    color: inherit;
-    text-decoration: none;
-  } */
-
   :global(.darkmode p) {
-    color: var(--color--description--dark);
+    color: var(--color--summary--dark);
   }
 
   :global(p) {
-    color: var(--color--description--light);
+    color: var(--color--summary--light);
   }
 </style>

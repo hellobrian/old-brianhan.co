@@ -1,14 +1,15 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogCard from "../components/BlogCard.astro";
-// import DarkModeButton from "../components/DarkModeButton.astro";
 import DarkModeButton from "../components/DarkModeButton.astro";
+
+const mdxPosts = await Astro.glob("./**/*.mdx");
 ---
 
 <BaseLayout>
   <main>
     <div class="profile">
-      <span><h1>Brian Han</h1><DarkModeButton /></span>
+      <span><h1><a href="/">Brian Han</a></h1><DarkModeButton /></span>
       <p class="job-description">
         Senior UX Developer at <a class="company" href="https://indeed.com"
           >Indeed.com</a
@@ -17,20 +18,29 @@ import DarkModeButton from "../components/DarkModeButton.astro";
     </div>
 
     <div class="BlogList">
+      {
+        mdxPosts.map((blogPost) => (
+          <BlogCard
+            href={blogPost.url}
+            title={blogPost.frontmatter.title}
+            summary={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
+          />
+        ))
+      }
       <BlogCard
         href="/styleguide"
         title="Hacking CSS Animation State and Playback Time"
-        description={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
+        summary={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
       />
       <BlogCard
         href="/styleguide"
         title="Hacking CSS Animation State and Playback Time"
-        description={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
+        summary={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
       />
       <BlogCard
         href="/styleguide"
         title="Hacking CSS Animation State and Playback Time"
-        description={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
+        summary={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
       />
     </div>
   </main>
