@@ -1,4 +1,12 @@
 :root {
+  /* width */
+  --width--mobile: 300px;
+  --width--desktop: 670px;
+
+  /* clamp */
+  --max-width: clamp(var(--width--mobile), 60vw, var(--width--desktop));
+
+  /* colors */
   --color--white: white;
   --color--black: #0f0f0f;
 
