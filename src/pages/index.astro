@@ -19,13 +19,15 @@ const mdxPosts = await Astro.glob("./**/*.mdx");
 
     <div class="BlogList">
       {
-        mdxPosts.map((blogPost) => (
-          <BlogCard
-            href={blogPost.url}
-            title={blogPost.frontmatter.title}
-            summary={`I started as a front-end web developer and then became a Flutter developer. I think there were some concepts that helped me adopt Flutter easier. There were also some new concepts that were different.`}
-          />
-        ))
+        mdxPosts
+          .filter((blogPost) => blogPost.frontmatter.published)
+          .map((blogPost) => (
+            <BlogCard
+              href={blogPost.url}
+              title={blogPost.frontmatter.title}
+              summary={blogPost.frontmatter.summary}
+            />
+          ))
       }
       <BlogCard
         href="/styleguide"
