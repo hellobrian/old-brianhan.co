@@ -2,20 +2,19 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogCard from "../components/BlogCard.astro";
 import DarkModeButton from "../components/DarkModeButton.astro";
+import Nav from "../components/Nav.astro";
 
 const mdxPosts = await Astro.glob("./**/*.mdx");
 ---
 
 <BaseLayout>
   <main>
-    <div class="profile">
+    <!-- <div class="profile">
       <span><h1><a href="/">Brian Han</a></h1><DarkModeButton /></span>
-      <p class="job-description">
-        Senior UX Developer at <a class="company" href="https://indeed.com"
-          >Indeed.com</a
-        >
-      </p>
     </div>
+    <div class="nav">
+      <Nav />
+    </div> -->
 
     <div class="BlogList">
       {
@@ -54,32 +53,6 @@ const mdxPosts = await Astro.glob("./**/*.mdx");
     max-width: var(--max-width);
     margin: 48px auto;
     padding-bottom: 48px;
-  }
-
-  .profile {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 48px;
-  }
-
-  span {
-    display: flex;
-    gap: 8px;
-  }
-
-  h1 {
-    margin-left: -2.6px;
-  }
-
-  p.job-description {
-    font-weight: 600;
-  }
-
-  a.company:hover {
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1.2px;
   }
 
   .BlogList {

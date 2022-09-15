@@ -1,6 +1,8 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import BaseFonts from "../components/BaseFonts.astro";
+import DarkModeButton from "../components/DarkModeButton.astro";
+import Nav from "../components/Nav.astro";
 ---
 
 <html lang="en">
@@ -10,44 +12,40 @@ import BaseFonts from "../components/BaseFonts.astro";
   </head>
 
   <body>
-    <!-- <header>
-      <nav>
-        <ul>
-          <li><a href="/">home</a></li>
-          <li><a href="/blog">blog</a></li>
-          <li><a href="/styleguide">styleguide</a></li>
-        </ul>
-        <DarkModeButton />
-      </nav>
-    </header> -->
+    <div class="BaseLayout">
+      <div class="profile">
+        <span><h1><a href="/">Brian Han</a></h1><DarkModeButton /></span>
+      </div>
+      <div class="nav">
+        <Nav />
+      </div>
+    </div>
     <slot />
-    <!-- <style>
-      :is(ul, li, a) {
-        all: unset;
-      }
 
-      :is(nav, ul) {
+    <style>
+      .BaseLayout {
         display: flex;
-        width: 100%;
-        gap: 16px;
-      }
-
-      nav {
-        padding-inline: 16px;
-      }
-
-      ul {
-        height: 40px;
-        gap: 16px;
-        justify-content: flex-end;
         align-items: center;
-        background: var(--background);
-        background: red;
+        gap: 16px;
+        width: var(--max-width);
+        margin: 0 auto;
+        margin-bottom: 48px;
+        padding-top: 48px;
+      }
+      .profile {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
       }
 
-      a {
-        color: var(--foreground);
+      span {
+        display: flex;
+        gap: 4px;
       }
-    </style> -->
+
+      h1 {
+        margin-left: -2.6px;
+      }
+    </style>
   </body>
 </html>
