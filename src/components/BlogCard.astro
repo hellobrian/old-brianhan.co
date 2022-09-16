@@ -1,5 +1,7 @@
 ---
-import ReadMore from "../components/ReadMore.astro";
+import ReadMore from "./ReadMore.astro";
+import Link from "./Link.astro";
+
 export interface Props {
   href: string;
   title: string;
@@ -11,7 +13,7 @@ const { href, title, summary } = Astro.props;
 
 <article>
   <h3>
-    <a href={href}>{title}</a>
+    <Link href={href} variant="heading">{title}</Link>
   </h3>
   <p>
     {summary}
@@ -20,11 +22,6 @@ const { href, title, summary } = Astro.props;
 </article>
 
 <style>
-  :root {
-    --color--summary--dark: #999999;
-    --color--summary--light: #474747;
-  }
-
   article {
     display: flex;
     flex-direction: column;
@@ -32,26 +29,8 @@ const { href, title, summary } = Astro.props;
     max-width: var(--max-width);
   }
 
-  h3 > a {
-    color: var(--foreground);
-    text-decoration: none;
-  }
-
-  h3 > a:hover {
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    text-decoration-thickness: 1.2px;
-  }
-
   p {
     font-weight: 500;
-  }
-
-  :global(.darkmode p) {
-    color: var(--color--summary--dark);
-  }
-
-  :global(p) {
-    color: var(--color--summary--light);
+    color: var(--foreground--muted);
   }
 </style>

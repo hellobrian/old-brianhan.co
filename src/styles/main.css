@@ -9,32 +9,24 @@
   /* colors */
   --color--white: white;
   --color--black: #0f0f0f;
+  --color--slate: #999999;
+  --color--concrete: #474747;
+  --color--aquamarine: rgb(117, 255, 209);
+  --color--teal: rgb(0, 174, 174);
 
-  --color--dark: var(--color--black);
-  --color--light: var(--color--white);
-
-  --background: var(--color--light);
-  --foreground: var(--color--dark);
+  --background: var(--color--white);
+  --foreground: var(--color--black);
+  --foreground--muted: var(--color--slate);
+  --accent: var(--color--teal);
 }
 
 .darkmode {
-  --background: var(--color--dark);
-  --foreground: var(--color--light);
+  --background: var(--color--black);
+  --foreground: var(--color--white);
+  --foreground--muted: var(--color--concrete);
+  --accent: var(--color--aquamarine);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-}
-
-a {
-  color: currentColor;
-  text-decoration: none;
-}
-
-:is(.underline, .hover-underline:hover) {
-  text-decoration: underline;
-  text-underline-offset: 2px;
-  text-decoration-thickness: 1.2px;
-  text-decoration-color: aquamarine;
 }

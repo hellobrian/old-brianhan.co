@@ -1,4 +1,5 @@
 ---
+import Link from "./Link.astro";
 const { pathname } = Astro.url;
 const links = [
   { href: "/", name: "Home" },
@@ -14,16 +15,15 @@ const links = [
       {
         links.map((link) => (
           <li>
-            <a
-              class:list={[
-                "hover-underline",
-                { underline: pathname === link.href },
-                { active: pathname === link.href },
-              ]}
+            <Link
+              className="NavLink"
+              variant="heading"
+              isActive={pathname === link.href}
+              isMuted={pathname !== link.href}
               href={link.href}
             >
               {link.name}
-            </a>
+            </Link>
           </li>
         ))
       }
@@ -32,9 +32,6 @@ const links = [
 </header>
 
 <style>
-  .active {
-    color: var(--foreground);
-  }
   ul {
     display: flex;
     gap: 16px;
@@ -42,13 +39,9 @@ const links = [
     padding: 0;
   }
 
-  li > a {
-    font-weight: "Karla", sans-serif;
-    font-weight: 600;
-    color: var(--color--summary--light);
-  }
-
-  :global(.darkmode li > a):not(.active) {
-    color: var(--color--summary--dark);
+  :is(.muted):hover {
+    color: var(--foreground);
+    transition: colro 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    text-decoration: none;
   }
 </style>

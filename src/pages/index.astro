@@ -1,21 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogCard from "../components/BlogCard.astro";
-import DarkModeButton from "../components/DarkModeButton.astro";
-import Nav from "../components/Nav.astro";
 
 const mdxPosts = await Astro.glob("./**/*.mdx");
 ---
 
-<BaseLayout>
+<BaseLayout title="Brian Han">
   <main>
-    <!-- <div class="profile">
-      <span><h1><a href="/">Brian Han</a></h1><DarkModeButton /></span>
-    </div>
-    <div class="nav">
-      <Nav />
-    </div> -->
-
     <div class="BlogList">
       {
         mdxPosts

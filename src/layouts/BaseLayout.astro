@@ -3,18 +3,31 @@ import BaseHead from "../components/BaseHead.astro";
 import BaseFonts from "../components/BaseFonts.astro";
 import DarkModeButton from "../components/DarkModeButton.astro";
 import Nav from "../components/Nav.astro";
+import Link from "../components/Link.astro";
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <BaseHead />
     <BaseFonts />
+    <title>{title}</title>
   </head>
 
   <body>
+    <div class="dark-mode-button-position">
+      <DarkModeButton />
+    </div>
     <div class="BaseLayout">
       <div class="profile">
-        <span><h1><a href="/">Brian Han</a></h1><DarkModeButton /></span>
+        <span>
+          <h1>Brian Han</h1>
+        </span>
       </div>
       <div class="nav">
         <Nav />
@@ -23,29 +36,32 @@ import Nav from "../components/Nav.astro";
     <slot />
 
     <style>
+      .dark-mode-button-position {
+        width: var(--max-width);
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 48px;
+        position: relative;
+      }
+
       .BaseLayout {
         display: flex;
+        flex-direction: column;
         flex-wrap: wrap;
-        align-items: center;
-        gap: 16px;
+        gap: 4px;
         width: var(--max-width);
         margin: 0 auto;
         margin-bottom: 48px;
-        padding-top: 48px;
+        grid-column-start: 2;
       }
       .profile {
         display: flex;
         flex-direction: column;
         gap: 4px;
       }
-
-      span {
-        display: flex;
-        gap: 4px;
-      }
-
       h1 {
-        margin-left: -2.6px;
+        color: var(--foreground);
+        margin-left: -1.2px;
       }
     </style>
   </body>
