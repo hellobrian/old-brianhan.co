@@ -39,6 +39,9 @@
 </script>
 
 <style>
+  :root {
+    --translate: translateX(-56px) translateY(40px);
+  }
   button {
     all: unset;
     display: flex;
@@ -53,7 +56,7 @@
     height: 32px;
     width: 32px;
     transition: transform 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: translateX(-56px) translateY(40px) rotate(0deg);
+    transform: var(--translate);
   }
 
   button:focus {
@@ -63,12 +66,22 @@
   }
 
   button:hover {
-    transition: transform 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: translateX(-56px) translateY(40px) scale(1.1);
+    transform: var(--translate) scale(1.1);
   }
 
   button:active {
-    transition: transform 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: translateX(-56px) translateY(40px) scale(1);
+    transform: var(--translate) scale(1);
+  }
+
+  @media screen and (max-width: 420px) {
+    :root {
+      --translate: translateX(70vw) translateY(-32px);
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    :root {
+      --translate: translateX(80vw) translateY(-32px);
+    }
   }
 </style>

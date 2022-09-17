@@ -34,9 +34,17 @@ const links = [
 <style>
   ul {
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     list-style: none;
     padding: 0;
+  }
+
+  @media screen and (max-width: 220px) {
+    ul {
+      flex-direction: column;
+      gap: 4px;
+    }
   }
 
   :is(.muted):hover {
