@@ -12,7 +12,7 @@ const { frontmatter, headings } = Astro.props;
         <summary>Table of Corntents</summary>
         <ul>
           {
-            headings.map((heading) => (
+            headings.map((heading: { slug: string; text: string }) => (
               <li>
                 <a href={`#${heading.slug}`}>{heading.text}</a>
               </li>
