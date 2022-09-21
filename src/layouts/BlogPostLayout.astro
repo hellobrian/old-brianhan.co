@@ -1,13 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/blog-post-layout.css";
-const { frontmatter } = Astro.props;
-const { pathname } = Astro.url;
-const posts = await Astro.glob("../pages/blog/**/*.mdx");
-const headings = posts
-  .find((post) => post.url === pathname)
-  .getHeadings()
-  .map((heading) => heading);
+const { frontmatter, headings } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
