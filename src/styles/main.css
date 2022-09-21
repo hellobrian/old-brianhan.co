@@ -1,6 +1,6 @@
 :root {
   /* width */
-  --width--mobile: 300px;
+  --width--mobile: 340px;
   --width--desktop: 670px;
 
   /* clamp */
@@ -10,7 +10,7 @@
   --color--white: white;
   --color--black: #0f0f0f;
   --color--slate: #999999;
-  --color--concrete: #474747;
+  --color--concrete: #7f7f7f;
   --color--aquamarine: rgb(117, 255, 209);
   --color--teal: rgb(0, 174, 174);
 

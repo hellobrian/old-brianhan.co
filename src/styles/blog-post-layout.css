@@ -1,0 +1,91 @@
+.BlogPostLayout {
+  width: var(--max-width);
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 48px;
+}
+
+.BlogPostLayout > p {
+  margin-bottom: 8px;
+}
+
+.BlogPostLayout :is(p, a, li, h1, h2, h3) {
+  color: var(--foreground);
+}
+
+.BlogPostLayout :is(h1, h2, h3) {
+  margin-bottom: 16px;
+}
+
+.BlogPostLayout h1 {
+  font-size: 30px;
+}
+
+.BlogPostLayout h2 {
+  font-size: 24px;
+}
+
+.BlogPostLayout :is(h2, h3) {
+  margin-top: 48px;
+}
+
+.BlogPostLayout :is(ul, img) {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.BlogPostLayout > blockquote :is(p, a) {
+  color: var(--foreground);
+}
+
+:is(.BlogPostLayout a, .BlogPostLayout > blockquote a) {
+  text-decoration: underline;
+  text-underline-offset: 3.4px;
+  text-decoration-thickness: 1.4px;
+  text-decoration-color: var(--foreground--muted);
+}
+
+blockquote {
+  border: 4px solid var(--foreground--muted);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.BlogPostLayout ul {
+  display: grid;
+  gap: 8px;
+}
+
+.BlogPostLayout li::marker {
+  color: var(--foreground--muted);
+}
+
+pre {
+  padding: 16px;
+  /* border-radius: 12px; */
+  margin: 16px 0;
+  overflow: auto;
+}
+
+pre::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: var(--accent);
+}
+
+pre::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+code {
+  font-family: "IBM Plex Mono", monospace;
+  /* white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  overflow: auto; */
+}

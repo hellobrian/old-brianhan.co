@@ -1,35 +1,40 @@
 ---
 import Link from "./Link.astro";
 const { pathname } = Astro.url;
-const links = [
-  { href: "/", name: "Home" },
-  { href: "/blog", name: "Blog" },
-  { href: "/photos", name: "Photos" },
-  { href: "/about", name: "About" },
-];
+// const links = [
+//   { href: "/", name: "Home" },
+//   { href: "/blog/", name: "Blog" },
+//   { href: "/photos/", name: "Photos" },
+//   { href: "/about", name: "About" },
+// ];
 ---
 
-<header>
-  <nav>
-    <ul>
-      {
-        links.map((link) => (
-          <li>
-            <Link
-              className="NavLink"
-              variant="heading"
-              isActive={pathname === link.href}
-              isMuted={pathname !== link.href}
-              href={link.href}
-            >
-              {link.name}
-            </Link>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
-</header>
+<nav>
+  <ul>
+    <li>
+      <Link
+        className="NavLink"
+        variant="heading"
+        isActive={pathname === "/"}
+        isMuted={pathname !== "/"}
+        href="/"
+      >
+        Home
+      </Link>
+    </li>
+    <li>
+      <Link
+        className="NavLink"
+        variant="heading"
+        isActive={pathname === "/blog" || pathname.includes("blog")}
+        isMuted={pathname !== "/blog" && !pathname.includes("blog")}
+        href="/blog"
+      >
+        Blog
+      </Link>
+    </li>
+  </ul>
+</nav>
 
 <style>
   ul {

@@ -1,11 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
+import "../styles/blog-post-layout.css";
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
-  <div class="wrapper">
-    <slot />
-  </div>
+  <main>
+    <article class="BlogPostLayout">
+      <h1>{frontmatter.title}</h1>
+      <slot />
+    </article>
+  </main>
 </BaseLayout>
