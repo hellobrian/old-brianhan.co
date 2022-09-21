@@ -9,7 +9,7 @@ const { frontmatter, headings } = Astro.props;
     <article class="BlogPostLayout">
       <h1>{frontmatter.title}</h1>
       <details>
-        <summary>Table of Corntents</summary>
+        <summary>Table of Contents</summary>
         <ul>
           {
             headings.map((heading: { slug: string; text: string }) => (
