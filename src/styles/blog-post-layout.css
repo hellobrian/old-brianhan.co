@@ -53,7 +53,7 @@ blockquote {
   margin-bottom: 16px;
 }
 
-.BlogPostLayout ul {
+.BlogPostLayout :is(ul, ol) {
   display: grid;
   gap: 8px;
 }
