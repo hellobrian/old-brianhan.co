@@ -29,7 +29,7 @@
   margin-top: 48px;
 }
 
-.BlogPostLayout :is(ul, img) {
+.BlogPostLayout :is(ul, ol, img) {
   margin-top: 24px;
   margin-bottom: 24px;
 }
