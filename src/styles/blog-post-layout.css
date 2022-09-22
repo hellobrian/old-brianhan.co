@@ -5,6 +5,12 @@
   padding-bottom: 48px;
 }
 
+.BlogPostLayout small p {
+  color: var(--foreground--muted);
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+
 .BlogPostLayout > p {
   margin-bottom: 8px;
 }
