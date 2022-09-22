@@ -9,7 +9,7 @@
   margin-bottom: 8px;
 }
 
-.BlogPostLayout :is(p, a, li, h1, h2, h3) {
+.BlogPostLayout :is(p, li, h1, h2, h3) {
   color: var(--foreground);
 }
 
@@ -38,7 +38,8 @@
   color: var(--foreground);
 }
 
-:is(.BlogPostLayout a, .BlogPostLayout > blockquote a) {
+.BlogPostLayout a {
+  color: var(--foreground);
   text-decoration: underline;
   text-underline-offset: 3.4px;
   text-decoration-thickness: 1.4px;
