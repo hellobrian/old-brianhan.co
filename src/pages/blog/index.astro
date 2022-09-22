@@ -6,23 +6,29 @@ const mdxPosts = await Astro.glob("./**/*.mdx");
 ---
 
 <BaseLayout title="blog">
-  <div>
-    <h1>Latest</h1>
-  </div>
+  <main>
+    <div>
+      <h1>Latest</h1>
+    </div>
 
-  <section>
-    {
-      mdxPosts.map((blogPost) => (
-        <BlogCard
-          href={blogPost.url}
-          title={blogPost.frontmatter.title}
-          summary={blogPost.frontmatter.summary}
-        />
-      ))
-    }
-  </section>
+    <section>
+      {
+        mdxPosts.map((blogPost) => (
+          <BlogCard
+            href={blogPost.url}
+            title={blogPost.frontmatter.title}
+            summary={blogPost.frontmatter.summary}
+          />
+        ))
+      }
+    </section>
+  </main>
 </BaseLayout>
 <style>
+  main {
+    padding-bottom: 48px;
+  }
+
   h1 {
     color: var(--foreground);
     margin-left: -1.2px;
