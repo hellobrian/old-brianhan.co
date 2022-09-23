@@ -1,18 +1,12 @@
 .BlogPostLayout {
   display: grid;
-  grid-template-columns:
-    1fr
-    min(var(--max-width), 100%)
-    1fr;
-
-  width: var(--max-width);
-  /* margin: 0 auto; */
+  grid-template-columns: 1fr min(var(--max-width), 100%) 1fr;
   font-family: "Inter", sans-serif;
   padding-bottom: 48px;
 }
 
 .BlogPostLayout > * {
-  grid-column: 2;
+  grid-column: 2 / span 1;
 }
 
 .full-bleed {
