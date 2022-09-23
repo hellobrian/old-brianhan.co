@@ -1,8 +1,23 @@
 .BlogPostLayout {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(var(--max-width), 100%)
+    1fr;
+
   width: var(--max-width);
-  margin: 0 auto;
+  /* margin: 0 auto; */
   font-family: "Inter", sans-serif;
   padding-bottom: 48px;
+}
+
+.BlogPostLayout > * {
+  grid-column: 2;
+}
+
+.full-bleed {
+  width: 100vw;
+  grid-column: 1 / 4;
 }
 
 .BlogPostLayout small p {

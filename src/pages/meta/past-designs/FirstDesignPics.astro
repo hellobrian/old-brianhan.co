@@ -1,0 +1,50 @@
+---
+interface Props {
+  pics: string[];
+}
+const { pics } = Astro.props;
+---
+
+<div class="full-bleed">
+  {
+    pics.map((pic, index) => (
+      <a
+        href={pic}
+        target="_blank"
+        referrerpolicy="no-referrer"
+        data-index={index}
+      >
+        <img src={pic} alt="first design of blog page" style="margin: 0" />
+      </a>
+    ))
+  }
+</div>
+<style>
+  div {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+  }
+
+  [data-index="0"] {
+    grid-column: 3 / span 6;
+  }
+
+  [data-index="1"] {
+    grid-column: span 2;
+  }
+
+  @media (max-width: 768px) {
+    div {
+      padding: 0 16px;
+    }
+    [data-index="0"] {
+      grid-column: 1 / span 12;
+    }
+
+    [data-index="1"] {
+      grid-column: 3 / span 8;
+      grid-row: 2;
+    }
+  }
+</style>
