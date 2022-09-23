@@ -7,7 +7,7 @@ const { pics } = Astro.props;
 
 <div class="full-bleed">
   {
-    pics.map((pic, index) => (
+    pics?.map((pic, index) => (
       <a
         href={pic}
         target="_blank"
