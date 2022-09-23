@@ -33,6 +33,17 @@ const { pathname } = Astro.url;
         Blog
       </Link>
     </li>
+    <li>
+      <Link
+        className="NavLink"
+        variant="heading"
+        isActive={pathname === "/meta" || pathname.includes("meta")}
+        isMuted={pathname !== "/meta" && !pathname.includes("meta")}
+        href="/meta"
+      >
+        Meta
+      </Link>
+    </li>
   </ul>
 </nav>
 

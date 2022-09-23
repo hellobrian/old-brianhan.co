@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Link from "../../components/Link.astro";
+
+const LINKS = [{ href: "/meta/past-designs", name: "Past Designs" }];
+---
+
+<BaseLayout title="meta">
+  <main>
+    <ul>
+      {
+        LINKS.map((link) => (
+          <li>
+            <Link href={link.href} variant="heading">
+              {link.name}
+            </Link>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</BaseLayout>
+<style>
+  main {
+    width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  li::marker {
+    color: var(--foreground--muted);
+  }
+</style>
