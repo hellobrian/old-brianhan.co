@@ -105,3 +105,11 @@ code {
   word-wrap: normal;
   overflow: auto; */
 }
+
+.nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
