@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+
+const mdxPosts = await Astro.glob("./**/*.mdx");
+---
+
+<BaseLayout title="blog">
+  <main>
+    <div>
+      <h1>Latest</h1>
+    </div>
+
+    <section>
+      {
+        mdxPosts.map((blogPost) => (
+          <BlogCard
+            href={blogPost.url}
+            title={blogPost.frontmatter.title}
+            summary={blogPost.frontmatter.summary}
+          />
+        ))
+      }
+    </section>
+  </main>
+</BaseLayout>
+<style>
+  main {
+    padding-bottom: 48px;
+  }
+
+  h1 {
+    color: var(--foreground);
+    margin-left: -1.2px;
+  }
+
+  div {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    margin-bottom: 24px;
+  }
+
+  section {
+    display: grid;
+    gap: 48px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    margin-bottom: 48px;
+  }
+</style>

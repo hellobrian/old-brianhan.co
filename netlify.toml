@@ -1,37 +1,31 @@
 [build]
-  publish = "public"
-
-[[plugins]]
-  package = "netlify-plugin-gatsby-cache"
+    command = "yarn build"
+    publish = "dist"
 
 [[redirects]]
-  from = "/docz"
-  to = "/docz/bio"
+  from = "/2018-11-22-prettier-pre-commit/"
+  to = "/blog/prettier-pre-commit/"
 
 [[redirects]]
-  from = "/prettier-with-a-pre-commit-hook"
-  to = "/2018-11-22-prettier-pre-commit/"
+  from = "/2018-12-18-parcel-sass/"
+  to = "/blog/parcel-sass/"
 
 [[redirects]]
-  from = "/parcel-for-your-sass"
-  to = "/2018-12-18-parcel-sass/"
+  from = "/2015-07-17-watch-compile-sass-npm/"
+  to = "/blog/watch-compile-sass-npm/"
 
 [[redirects]]
-  from = "/watch-compile-sass-npm"
-  to = "/2015-07-17-watch-compile-sass-npm/"
+  from = "/2019-01-04-generate-blog-posts-gatsby-hygen/"
+  to = "/blog/generate-blog-posts-with-hyphen/"
 
 [[redirects]]
-  from = "/using-git-to-squash-commits-with-confidence"
-  to = "/2019-01-11-using-git-to-squash-commits-with-confidence/"
+  from = "/2019-01-08-nodejs-windows-without-wsl/"
+  to = "/blog/nodejs-windows-without-wsl/"
 
 [[redirects]]
-  from = "/generate-blog-posts-gatsby-hygen"
-  to = "/2019-01-04-generate-blog-posts-gatsby-hygen/"
+  from = "/2019-01-11-using-git-to-squash-commits-with-confidence/"
+  to = "/blog/git-squash-commits-with-confidence/"
 
 [[redirects]]
-  from = "/nodejs-windows-without-wsl"
-  to = "/2019-01-08-nodejs-windows-without-wsl/"
-
-[[redirects]]
-  from = "/uses"
-  to = "https://yuuzus.netlify.app/"
+  from = "/2018-12-25-how-i-start-every-project/"
+  to = "/blog/how-i-start-every-project/"

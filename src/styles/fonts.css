@@ -1,0 +1,35 @@
+/* font-family + font-weight */
+:is(h1, h2, h3, h4, h5, h6),
+:is(h1, h2, h3, h4, h5, h6) > a {
+  font-family: "Karla", sans-serif;
+  font-weight: 600;
+}
+
+p,
+a {
+  font-family: "Inter", sans-serif;
+}
+
+/* font-size */
+h1 {
+  font-size: 36px;
+  letter-spacing: -1.2px;
+  line-height: 48px;
+}
+
+h2 {
+  font-size: 36px;
+  letter-spacing: -0.9px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.8px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
