@@ -18,5 +18,10 @@ const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
     <slot />
 
     <Footer />
-  </body>
+  </body><style>
+    body {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+  </style>
 </html>
