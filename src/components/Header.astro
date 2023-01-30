@@ -1,5 +1,6 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
+// import HeaderLink from "./HeaderLink.astro";
+import HeaderLink from "./HeaderLink.svelte";
 import { SITE_TITLE } from "../consts";
 ---
 
@@ -10,10 +11,11 @@ import { SITE_TITLE } from "../consts";
     </h2>
   </a>
   <nav>
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/about">About</HeaderLink>
+    <HeaderLink client:only="svelte" href="/">Home</HeaderLink>
+    <HeaderLink client:only="svelte" href="/blog">Blog</HeaderLink>
+    <HeaderLink client:only="svelte" href="/about">About</HeaderLink>
     <HeaderLink
+      client:only="svelte"
       href="https://twitter.com/_brianhan"
       target="_blank"
       rel="noreferrer noopener"
@@ -21,6 +23,7 @@ import { SITE_TITLE } from "../consts";
       Twitter
     </HeaderLink>
     <HeaderLink
+      client:only="svelte"
       href="https://github.com/hellobrian/"
       target="_blank"
       rel="noreferrer noopener"
