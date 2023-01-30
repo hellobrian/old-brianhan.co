@@ -1,47 +1,58 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Default from "./Default.astro";
 
-type Props = CollectionEntry<'blog'>['data'];
+import "../styles/blog-post.css";
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+type Props = CollectionEntry<"blog">["data"];
+
+const {
+  title,
+  description,
+  pubDate,
+  updated,
+  heroImage,
+  heroImageCredit,
+  heroImageUrl,
+} = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-		</style>
-	</head>
+<Default title={title} description={description}>
+  <main>
+    <article class="blog">
+      {
+        heroImage && (
+          <>
+            <img width={720} height={360} src={heroImage} alt="" />
+            <small style="font-family: Karla, sans-serif;">
+              Photo by {heroImageCredit} (<a href={heroImageUrl}>Unsplash</a>)
+            </small>
+          </>
+        )
+      }
+      <h1 class="title">{title}</h1>
+      {pubDate && <time>{pubDate.toLocaleDateString("en-US")}</time>}
+      {
+        updated && (
+          <div>
+            Last updated on <time>{updated.toLocaleDateString("en-US")}</time>
+          </div>
+        )
+      }
+      <hr />
+      <slot />
+    </article>
+  </main>
+</Default>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				{pubDate && <time>{pubDate}</time>}
-				{
-					updatedDate && (
-						<div>
-							Last updated on <time>{updatedDate}</time>
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
-</html>
+<style>
+  .title {
+    font-size: 2em;
+    margin: 0.25em 0 0;
+  }
+  hr {
+    border-top: 1px solid #ddd;
+    margin: 1rem 0;
+  }
+</style>
