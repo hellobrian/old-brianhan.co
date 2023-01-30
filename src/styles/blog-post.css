@@ -1,0 +1,32 @@
+.blog {
+  display: grid;
+  grid-template-columns: 1fr min(var(--max-width), 100%) 1fr;
+  font-family: "Inter", sans-serif;
+  padding-bottom: 48px;
+}
+
+.blog > * {
+  grid-column: 2 / span 1;
+}
+
+.full-bleed {
+  width: 100vw;
+  grid-column: 1 / 4;
+}
+
+.blog h1 {
+  font-size: 30px;
+}
+
+.blog h2 {
+  font-size: 24px;
+  line-height: 4;
+}
+
+.blog h3 {
+  line-height: 2;
+}
+
+.blog p {
+  margin-bottom: 16px;
+}
