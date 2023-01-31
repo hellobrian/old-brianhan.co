@@ -96,6 +96,9 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
     let currentScrollPos = window.pageYOffset;
 
     if (header) {
+      if (currentScrollPos <= 0) {
+        header.dataset.state = "visible";
+      }
       if (prevScrollpos > currentScrollPos) {
         header.dataset.state = "visible";
       } else {
