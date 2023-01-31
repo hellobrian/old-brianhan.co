@@ -94,12 +94,14 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
 
   const onScroll = throttle(() => {
     let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos === currentScrollPos) return;
 
     if (header) {
-      if (currentScrollPos === 0) {
+      // on safari, the bounce back when scrolling to top causes header to disappear
+      if (currentScrollPos <= 0) {
         header.dataset.state = "visible";
+        return;
       }
+
       if (prevScrollpos > currentScrollPos) {
         header.dataset.state = "visible";
       } else {
