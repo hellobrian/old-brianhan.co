@@ -1,17 +1,6 @@
 .blog {
-  display: grid;
-  grid-template-columns: 1fr min(var(--max-width), 100%) 1fr;
   font-family: "Inter", sans-serif;
   padding-bottom: 48px;
-}
-
-.blog > * {
-  grid-column: 2 / span 1;
-}
-
-.full-bleed {
-  width: 100vw;
-  grid-column: 1 / 4;
 }
 
 .blog h1 {
