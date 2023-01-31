@@ -25,7 +25,7 @@ const today = new Date();
     &copy; {today.getFullYear()} Brian Han. All rights reserved.
   </section>
 </footer>
-<style>
+<style lang="scss">
   footer {
     display: grid;
     grid-template-rows: 1fr auto;
@@ -47,10 +47,8 @@ const today = new Date();
     flex-direction: column;
     justify-content: center;
     gap: 8px;
-  }
 
-  @media screen and (min-width: 625px) {
-    footer .socials ul {
+    @media screen and (min-width: 625px) {
       flex-direction: row;
     }
   }

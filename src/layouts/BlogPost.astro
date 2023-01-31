@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
 import Default from "./Default.astro";
 
 import "../styles/blog-post.css";
@@ -25,9 +24,11 @@ const {
         heroImage && (
           <>
             <img width={720} height={360} src={heroImage} alt="" />
-            <small style="font-family: Karla, sans-serif;">
-              Photo by {heroImageCredit} (<a href={heroImageUrl}>Unsplash</a>)
-            </small>
+            {heroImageCredit && heroImageUrl && (
+              <small style="font-family: Karla, sans-serif;">
+                Photo by {heroImageCredit} (<a href={heroImageUrl}>Unsplash</a>)
+              </small>
+            )}
           </>
         )
       }
@@ -46,7 +47,17 @@ const {
   </main>
 </Default>
 
-<style>
+<style lang="scss">
+  @import "../styles/_mixins";
+  main {
+    margin: 0 auto;
+    @include breakpoint--content-width(700px);
+  }
+
+  article {
+    padding: 16px;
+  }
+
   .title {
     font-size: 2em;
     margin: 0.25em 0 0;

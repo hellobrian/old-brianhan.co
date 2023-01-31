@@ -3,7 +3,17 @@ import Default from "../layouts/Default.astro";
 ---
 
 <Default>
-  <main>
-    <h1><span>👩‍🚀</span> Hello, Astronaut!</h1>
-  </main>
+  <main></main>
 </Default>
+
+<style lang="scss">
+  @import "../styles/_mixins";
+
+  main {
+    margin: 0 auto;
+    padding: 0 16px;
+    width: 100%;
+
+    @include breakpoint--content-width;
+  }
+</style>
