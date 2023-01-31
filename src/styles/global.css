@@ -1,5 +1,6 @@
 :root {
   --ff--unbounded: "Unbounded", cursive;
+  --content-width: 1400px;
 }
 
 a {
