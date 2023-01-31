@@ -1,0 +1,40 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  name: "Twitter" | "GitHub" | "LinkedIn";
+  href: string;
+}
+
+const { name, href } = Astro.props;
+---
+
+<a href={href} target="_blank" rel="noreferrer noopener">
+  <Icon name={name} />
+  <span>{name}</span>
+  <Icon name="external" />
+</a>
+
+<style>
+  a {
+    border: 1px solid currentColor;
+    border-radius: 4px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    padding: 12px;
+  }
+
+  a span {
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 625px) {
+    a {
+      min-width: 200px;
+    }
+  }
+</style>
