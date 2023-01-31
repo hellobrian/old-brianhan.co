@@ -33,7 +33,7 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
     margin: 16px auto;
     padding: 16px 16px;
     width: 100%;
-    transition: top 300ms;
+    transition: translate 300ms;
 
     @include breakpoint--content-width;
   }
@@ -54,37 +54,53 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
     rotate: -10deg;
   }
 
-  .nav-reveal {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 1) 40%,
-      rgba(255, 255, 255, 0.6) 60%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    backdrop-filter: blur(0.5px);
-    top: 0;
+  [data-state="visible"] {
+    translate: 0 0;
+
+    @media screen and (max-width: 1100px) {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(4px);
+    }
   }
 
-  .nav-hide {
-    top: -100px;
+  [data-state="hidden"] {
+    translate: 0 -100%;
   }
 </style>
 
 <script>
   let prevScrollpos = window.pageYOffset;
+
   let header = document.getElementById("navbar");
-  window.onscroll = function () {
+
+  function throttle(func: Function, wait: number) {
+    let waiting = false;
+    return () => {
+      if (waiting) {
+        return;
+      }
+
+      waiting = true;
+
+      setTimeout(() => {
+        func.apply(func, arguments);
+        waiting = false;
+      }, wait);
+    };
+  }
+
+  const onScroll = throttle(() => {
     let currentScrollPos = window.pageYOffset;
+
     if (header) {
       if (prevScrollpos > currentScrollPos) {
-        header.classList.remove("nav-hide");
-        header.classList.add("nav-reveal");
+        header.dataset.state = "visible";
       } else {
-        header.classList.add("nav-hide");
-        header.classList.remove("nav-reveal");
+        header.dataset.state = "hidden";
       }
       prevScrollpos = currentScrollPos;
     }
-  };
+  }, 500);
+
+  window.addEventListener("scroll", onScroll);
 </script>
