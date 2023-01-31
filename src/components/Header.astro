@@ -94,9 +94,10 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
 
   const onScroll = throttle(() => {
     let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos === currentScrollPos) return;
 
     if (header) {
-      if (currentScrollPos <= 0) {
+      if (currentScrollPos === 0) {
         header.dataset.state = "visible";
       }
       if (prevScrollpos > currentScrollPos) {
