@@ -1,48 +1,41 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+import { FIRST_NAME, LAST_NAME } from "../consts";
 ---
 
-<header>
+<header id="navbar">
   <a href="/">
     <h2>
-      {SITE_TITLE}
+      <div>
+        {FIRST_NAME}
+      </div>
+      <div>{LAST_NAME}</div>
     </h2>
   </a>
   <nav>
     <HeaderLink href="/">Home</HeaderLink>
     <HeaderLink href="/about">About</HeaderLink>
     <HeaderLink href="/blog">Blog</HeaderLink>
-    <!-- <HeaderLink
-      href="https://twitter.com/_brianhan"
-      target="_blank"
-      rel="noreferrer noopener"
-    >
-      Twitter
-    </HeaderLink>
-    <HeaderLink
-      href="https://github.com/hellobrian/"
-      target="_blank"
-      rel="noreferrer noopener"
-    >
-      GitHub
-    </HeaderLink> -->
   </nav>
 </header>
 
-<style>
-  header {
-    display: grid;
-    gap: 8px;
-    margin: 16px;
-  }
+<style lang="scss">
+  @import "../styles/_mixins";
 
-  @media (min-width: 500px) {
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 16px auto;
+    padding: 16px 16px;
+    width: 100%;
+    transition: top 300ms;
+
+    @include breakpoint--content-width;
   }
 
   nav {
@@ -52,6 +45,46 @@ import { SITE_TITLE } from "../consts";
 
   h2 {
     font-family: var(--ff--unbounded);
-    white-space: nowrap;
+    line-height: 1;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.8px;
+    text-transform: uppercase;
+    padding: 4px;
+    rotate: -10deg;
+  }
+
+  .nav-reveal {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 40%,
+      rgba(255, 255, 255, 0.6) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    backdrop-filter: blur(0.5px);
+    top: 0;
+  }
+
+  .nav-hide {
+    top: -100px;
   }
 </style>
+
+<script>
+  let prevScrollpos = window.pageYOffset;
+  let header = document.getElementById("navbar");
+  window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+    if (header) {
+      if (prevScrollpos > currentScrollPos) {
+        header.classList.remove("nav-hide");
+        header.classList.add("nav-reveal");
+      } else {
+        header.classList.add("nav-hide");
+        header.classList.remove("nav-reveal");
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  };
+</script>

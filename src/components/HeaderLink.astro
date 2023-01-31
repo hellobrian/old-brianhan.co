@@ -5,7 +5,11 @@ export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
 
 const { href, class: className, isExternal, ...props } = Astro.props;
 const { pathname } = Astro.url;
-const isActive = href === pathname || href === pathname.replace(/\/$/, "");
+let isActive = href === pathname || href === pathname.replace(/\/$/, "");
+
+if (pathname.includes("blog") && href === "/blog") {
+  isActive = true;
+}
 ---
 
 <a href={href} class:list={[className, { active: isActive }]} {...props}>

@@ -6,22 +6,24 @@ import BaseHead from "../components/BaseHead.astro";
 const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
 ---
 
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} image={image} />
   </head>
 
   <body>
-    <Header />
+    <div>
+      <Header />
 
-    <slot />
+      <slot />
 
-    <Footer />
-  </body><style>
-    body {
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-    }
-  </style>
+      <Footer />
+    </div>
+    <style>
+      div {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+      }
+    </style>
+  </body>
 </html>
