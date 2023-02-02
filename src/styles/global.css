@@ -1,6 +1,22 @@
 :root {
+  /* colors */
+  --active: rgb(255, 216, 98);
+  --hover: rgb(218, 218, 218);
+
+  /* font-family */
   --ff--unbounded: "Unbounded", cursive;
+  --ff--firamono: "Fira Mono", monospace;
+
+  /* sizes */
   --content-width: 1400px;
+  --header-height: 88px;
+}
+
+@font-face {
+  font-family: "Fira Mono";
+  font-weight: 400;
+  src: url("/fonts/firamono-regular.woff2") format("woff2"),
+    url("/fonts/firamono-regular.woff") format("woff");
 }
 
 a {
