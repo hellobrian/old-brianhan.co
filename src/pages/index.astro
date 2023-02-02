@@ -3,16 +3,17 @@ import Default from "../layouts/Default.astro";
 ---
 
 <Default>
-  <main></main>
+  <section>
+    <h1>hello</h1>
+  </section>
 </Default>
-
 <style lang="scss">
   @import "../styles/_mixins";
 
-  main {
+  section {
+    background-color: red;
     margin: 0 auto;
-    padding: 0 16px;
-    width: 100%;
+    padding: 16px;
 
     @include breakpoint--content-width;
   }

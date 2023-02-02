@@ -18,44 +18,43 @@ const {
 ---
 
 <Default title={title} description={description}>
-  <main>
-    <article class="blog">
-      {
-        heroImage && (
-          <>
-            <img width={720} height={360} src={heroImage} alt="" />
-            {heroImageCredit && heroImageUrl && (
-              <small>
-                Photo by {heroImageCredit} (<a href={heroImageUrl}>Unsplash</a>)
-              </small>
-            )}
-          </>
-        )
-      }
-      <h1 class="title">{title}</h1>
-      {pubDate && <time>{pubDate.toLocaleDateString("en-US")}</time>}
-      {
-        updated && (
-          <div>
-            Last updated on <time>{updated.toLocaleDateString("en-US")}</time>
-          </div>
-        )
-      }
-      <hr class="title-divider" />
-      <slot />
-    </article>
-  </main>
+  <article class="blog">
+    {
+      heroImage && (
+        <>
+          <img width={720} height={360} src={heroImage} alt="" />
+          {heroImageCredit && heroImageUrl && (
+            <small>
+              Photo by {heroImageCredit} (<a href={heroImageUrl}>Unsplash</a>)
+            </small>
+          )}
+        </>
+      )
+    }
+    <h1 class="title">{title}</h1>
+    {pubDate && <time>{pubDate.toLocaleDateString("en-US")}</time>}
+    {
+      updated && (
+        <div>
+          Last updated on <time>{updated.toLocaleDateString("en-US")}</time>
+        </div>
+      )
+    }
+    <hr class="title-divider" />
+    <slot />
+  </article>
 </Default>
 
 <style lang="scss">
   @import "../styles/_mixins";
-  main {
-    margin: 0 auto;
-    @include breakpoint--content-width(700px);
-  }
-
   .blog {
     padding: 16px;
+    margin: 0 auto;
+    width: 100vw;
+
+    @media screen and (min-width: 580px) {
+      width: 65ch;
+    }
   }
 
   .title {

@@ -26,6 +26,7 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
     position: fixed;
     top: -16px;
     z-index: 100;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,10 +34,14 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
     margin: 16px auto;
     padding: 16px 16px;
     width: 100%;
-    transition: background-color 300ms, backdrop-filter 300ms, translate 300ms,
-      opacity 1000ms;
 
-    @include breakpoint--content-width;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+
+    @media screen and (min-width: 580px) {
+      background-color: transparent;
+      backdrop-filter: blur(0);
+    }
   }
 
   nav {
@@ -53,25 +58,16 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
     text-transform: uppercase;
     padding: 4px;
     rotate: -10deg;
-  }
 
-  [data-state="visible"] {
-    translate: 0 0;
-    opacity: 1;
+    font-size: 16px;
 
-    @media screen and (max-width: 1100px) {
-      background-color: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(4px);
+    @media screen and (min-width: 580px) {
+      font-size: 24px;
     }
-  }
-
-  [data-state="hidden"] {
-    translate: 0 -100%;
-    opacity: 0;
   }
 </style>
 
-<script>
+<!-- <script>
   let prevScrollpos = window.pageYOffset;
 
   let header = document.getElementById("navbar");
@@ -112,4 +108,4 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
   }, 500);
 
   window.addEventListener("scroll", onScroll);
-</script>
+</script> -->

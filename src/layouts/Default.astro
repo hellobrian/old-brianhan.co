@@ -12,14 +12,28 @@ const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
   </head>
 
   <body>
-    <Header />
+    <div>
+      <div class="header">
+        <Header />
+      </div>
 
-    <slot />
+      <main>
+        <slot />
+      </main>
 
-    <Footer />
-    <style>
-      body {
-        margin-top: var(--header-height);
+      <Footer />
+    </div>
+    <style lang="scss">
+      @import "../styles/_mixins";
+
+      div {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 100%;
+      }
+
+      .header {
+        margin-bottom: var(--header-height);
       }
     </style>
   </body>

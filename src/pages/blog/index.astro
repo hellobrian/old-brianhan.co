@@ -10,24 +10,33 @@ const posts = (await getCollection("blog"))
 ---
 
 <Default title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <main>
-    <section>
-      <ul>
-        {
-          posts.map((post) => (
-            <li>
-              <time datetime={post.data.pubDate.toISOString()}>
-                {post.data.pubDate.toLocaleDateString("en-us", {
-                  year: "numeric",
-                  month: "short",
-                  day: "numeric",
-                })}
-              </time>
-              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-  </main>
+  <section>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString("en-us", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </time>
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Default>
+
+<style lang="scss">
+  @import "../../styles/_mixins";
+
+  section {
+    background-color: red;
+    margin: 0 auto;
+
+    @include breakpoint--content-width;
+  }
+</style>
