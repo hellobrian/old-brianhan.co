@@ -1,5 +1,5 @@
 ---
-import FooterSocialLink from "./FooterSocialLink.astro";
+import Icon from "./Icon.astro";
 
 const today = new Date();
 ---
@@ -8,16 +8,31 @@ const today = new Date();
   <section class="socials">
     <ul>
       <li>
-        <FooterSocialLink href="https://twitter.com/_brianhan" name="Twitter" />
+        <a
+          href="https://twitter.com/_brianhan"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Icon name="Twitter" />
+        </a>
       </li>
       <li>
-        <FooterSocialLink href="https://github.com/hellobrian/" name="GitHub" />
+        <a
+          href="https://github.com/hellobrian/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Icon name="GitHub" />
+        </a>
       </li>
       <li>
-        <FooterSocialLink
+        <a
           href="https://www.linkedin.com/in/hellobrian/"
-          name="LinkedIn"
-        />
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Icon name="LinkedIn" />
+        </a>
       </li>
     </ul>
   </section>
@@ -25,13 +40,14 @@ const today = new Date();
     &copy; {today.getFullYear()} Brian Han. All rights reserved.
   </section>
 </footer>
+
 <style lang="scss">
   footer {
     display: grid;
-    grid-template-rows: 1fr auto;
     gap: 32px;
     padding: 8px;
     padding-bottom: 32px;
+    font-family: sans-serif;
   }
 
   footer .copyright {
@@ -44,12 +60,7 @@ const today = new Date();
     padding: 0;
 
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    gap: 8px;
-
-    @media screen and (min-width: 625px) {
-      flex-direction: row;
-    }
+    gap: 16px;
   }
 </style>
