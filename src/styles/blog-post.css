@@ -9,7 +9,8 @@
 
 .blog h2 {
   font-size: 24px;
-  line-height: 4;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .blog h3 {
@@ -17,5 +18,53 @@
 }
 
 .blog p {
+  margin-bottom: 16px;
+}
+
+.blog pre {
+  padding: 16px;
+  margin: 16px 0;
+  overflow: auto;
+}
+
+.blog pre::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.blog pre::-webkit-scrollbar-thumb {
+  background: var(--active);
+}
+
+.blog pre::-webkit-scrollbar-track {
+  background: var(--hover);
+}
+
+.blog code {
+  font-family: var(--ff--firamono);
+}
+
+.blog p > code,
+.blog li > code {
+  font-size: 14px;
+  background-color: var(--hover);
+  border-radius: 4px;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.blog li::marker {
+  color: var(--hover);
+}
+
+.blog :is(ul, ol) {
+  margin: 16px 0;
+  padding: 0 16px;
+}
+
+.blog blockquote {
+  border: 4px solid var(--hover);
+  padding: 16px;
+  border-radius: 12px;
   margin-bottom: 16px;
 }

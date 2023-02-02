@@ -25,7 +25,7 @@ const {
           <>
             <img width={720} height={360} src={heroImage} alt="" />
             {heroImageCredit && heroImageUrl && (
-              <small style="font-family: Karla, sans-serif;">
+              <small>
                 Photo by {heroImageCredit} (<a href={heroImageUrl}>Unsplash</a>)
               </small>
             )}
@@ -41,7 +41,7 @@ const {
           </div>
         )
       }
-      <hr />
+      <hr class="title-divider" />
       <slot />
     </article>
   </main>
@@ -54,7 +54,7 @@ const {
     @include breakpoint--content-width(700px);
   }
 
-  article {
+  .blog {
     padding: 16px;
   }
 
@@ -62,8 +62,9 @@ const {
     font-size: 2em;
     margin: 0.25em 0 0;
   }
-  hr {
+
+  .title-divider {
     border-top: 1px solid #ddd;
-    margin: 1rem 0;
+    margin: 32px 0;
   }
 </style>
