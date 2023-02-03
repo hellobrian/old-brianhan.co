@@ -33,11 +33,11 @@
 }
 
 .blog pre::-webkit-scrollbar-thumb {
-  background: var(--active);
+  background: var(--accent);
 }
 
 .blog pre::-webkit-scrollbar-track {
-  background: var(--hover);
+  background: var(--muted);
 }
 
 .blog code {
@@ -47,14 +47,14 @@
 .blog p > code,
 .blog li > code {
   font-size: 14px;
-  background-color: var(--hover);
+  background-color: var(--muted);
   border-radius: 4px;
   padding: 0 4px;
   line-height: 1;
 }
 
 .blog li::marker {
-  color: var(--hover);
+  color: var(--accent);
 }
 
 .blog :is(ul, ol) {
@@ -63,7 +63,7 @@
 }
 
 .blog blockquote {
-  border: 4px solid var(--hover);
+  border: 4px solid var(--muted);
   padding: 16px;
   border-radius: 12px;
   margin-bottom: 16px;
