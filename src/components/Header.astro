@@ -30,7 +30,6 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
     margin: 16px auto;
     padding: 16px 16px;
     width: 100%;
@@ -46,7 +45,7 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
 
   nav {
     display: flex;
-    gap: 8px;
+    gap: 16px;
   }
 
   h2 {
@@ -66,46 +65,3 @@ import { FIRST_NAME, LAST_NAME } from "../consts";
     }
   }
 </style>
-
-<!-- <script>
-  let prevScrollpos = window.pageYOffset;
-
-  let header = document.getElementById("navbar");
-
-  function throttle(func: Function, wait: number) {
-    let waiting = false;
-    return () => {
-      if (waiting) {
-        return;
-      }
-
-      waiting = true;
-
-      setTimeout(() => {
-        func.apply(func, arguments);
-        waiting = false;
-      }, wait);
-    };
-  }
-
-  const onScroll = throttle(() => {
-    let currentScrollPos = window.pageYOffset;
-
-    if (header) {
-      // on safari, the bounce back when scrolling to top causes header to disappear
-      if (currentScrollPos <= 0) {
-        header.dataset.state = "visible";
-        return;
-      }
-
-      if (prevScrollpos > currentScrollPos) {
-        header.dataset.state = "visible";
-      } else {
-        header.dataset.state = "hidden";
-      }
-      prevScrollpos = currentScrollPos;
-    }
-  }, 500);
-
-  window.addEventListener("scroll", onScroll);
-</script> -->

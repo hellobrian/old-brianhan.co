@@ -24,22 +24,17 @@ if (pathname.includes("blog") && href === "/blog") {
 </a>
 <style>
   a {
-    --padding: 2px 8px;
-
     display: inline-block;
     text-decoration: none;
-    padding: var(--padding);
     border-radius: 8px;
     background-color: transparent;
   }
 
   a.active {
-    background-color: var(--active);
-    padding: var(--padding);
-    border-radius: 8px;
-  }
-
-  a:hover:not(.active) {
-    background-color: var(--hover);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-style: solid;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
   }
 </style>
