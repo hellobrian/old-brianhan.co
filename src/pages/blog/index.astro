@@ -1,50 +1,38 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import BlogCard from "../../components/BlogCard.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import Default from "../../layouts/Default.astro";
 
-const mdxPosts = await Astro.glob("./**/*.mdx");
+const posts = (await getCollection("blog"))
+  .filter((blog) => blog.data.published)
+  .filter((blog) => !blog.data.archived)
+  .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<BaseLayout title="blog">
-  <main>
-    <div>
-      <h1>Latest</h1>
-    </div>
-
-    <section>
+<Default title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <section>
+    <ul>
       {
-        mdxPosts.map((blogPost) => (
-          <BlogCard
-            href={blogPost.url}
-            title={blogPost.frontmatter.title}
-            summary={blogPost.frontmatter.summary}
-          />
+        posts.map((post) => (
+          <li>
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString("en-us", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </time>
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+          </li>
         ))
       }
-    </section>
-  </main>
-</BaseLayout>
-<style>
-  main {
-    padding-bottom: 48px;
-  }
+    </ul>
+  </section>
+</Default>
 
-  h1 {
-    color: var(--foreground);
-    margin-left: -1.2px;
-  }
-
-  div {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    margin-bottom: 24px;
-  }
-
+<style lang="scss">
   section {
-    display: grid;
-    gap: 48px;
-    max-width: var(--max-width);
     margin: 0 auto;
-    margin-bottom: 48px;
+    max-width: 1400px;
   }
 </style>

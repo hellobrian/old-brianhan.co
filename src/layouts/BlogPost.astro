@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Default from "./Default.astro";
+import PhotoWithCredit from "../components/PhotoWithCredit.svelte";
+
+import "../styles/blog-post.css";
+
+type Props = CollectionEntry<"blog">["data"];
+
+const {
+  title,
+  description,
+  pubDate,
+  updated,
+  heroImage,
+  heroImageCredit,
+  heroImageUrl,
+} = Astro.props;
+---
+
+<Default title={title} description={description}>
+  <article class="blog">
+    <PhotoWithCredit
+      heroImage={heroImage}
+      heroImageCredit={heroImageCredit}
+      heroImageUrl={heroImageUrl}
+      client:only="svelte"
+    />
+
+    <h1 class="title">{title}</h1>
+    {pubDate && <time>{pubDate.toLocaleDateString("en-US")}</time>}
+    {
+      updated && (
+        <span class="updated">
+          &mdash; Last updated on{" "}
+          <time>{updated.toLocaleDateString("en-US")}</time>
+        </span>
+      )
+    }
+
+    <hr class="title-divider" />
+    <slot />
+  </article>
+</Default>
+
+<style lang="scss">
+  .blog {
+    padding: 16px;
+    margin: 0 auto;
+    width: 100vw;
+
+    @media screen and (min-width: 580px) {
+      width: 65ch;
+    }
+  }
+
+  .title {
+    font-size: 2em;
+    margin: 0.25em 0 0;
+  }
+
+  .title-divider {
+    border-top: 1px solid #ddd;
+    margin: 32px 0;
+  }
+
+  .updated {
+    font-family: var(--ff--roboto);
+  }
+
+  .photo-credit {
+    color: var(--white);
+    display: flex;
+    justify-content: flex-end;
+
+    small {
+      background-color: var(--black);
+      width: fit-content;
+      padding: 4px;
+      // transform: translateY(-100%);
+    }
+  }
+</style>

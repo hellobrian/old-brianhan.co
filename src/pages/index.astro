@@ -1,40 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogCard from "../components/BlogCard.astro";
-
-const mdxPosts = await Astro.glob("./**/*.mdx");
+import Default from "../layouts/Default.astro";
 ---
 
-<BaseLayout title="Brian Han">
-  <main>
-    <div class="BlogList">
-      {
-        mdxPosts
-          .filter((blogPost) => blogPost.frontmatter.published)
-          .map((blogPost) => (
-            <BlogCard
-              href={blogPost.url}
-              title={blogPost.frontmatter.title}
-              summary={blogPost.frontmatter.summary}
-            />
-          ))
-      }
-    </div>
-  </main>
-</BaseLayout>
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    max-width: var(--max-width);
-    margin: 48px auto;
-    padding-bottom: 48px;
-  }
-
-  .BlogList {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
+<Default>
+  <section>
+    <h1>hello</h1>
+  </section>
+</Default>
+<style lang="scss">
+  section {
+    margin: 0 auto;
+    padding: 16px;
+    max-width: 1400px;
   }
 </style>

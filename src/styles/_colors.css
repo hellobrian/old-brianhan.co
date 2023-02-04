@@ -1,0 +1,13 @@
+:root {
+  /* colors */
+  --yellow: rgb(255, 216, 98);
+  --grey: rgb(218, 218, 218);
+  --green: #10ac84;
+  --orange: #ff9f43;
+  --black: #000;
+  --white: #fff;
+
+  /* roles */
+  --accent: var(--orange);
+  --muted: var(--grey);
+}

@@ -1,0 +1,67 @@
+---
+import Icon from "./Icon.astro";
+
+const today = new Date();
+---
+
+<footer>
+  <section class="socials">
+    <ul>
+      <li>
+        <a
+          href="https://twitter.com/_brianhan"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Icon name="Twitter" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://github.com/hellobrian/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Icon name="GitHub" />
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/hellobrian/"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <Icon name="LinkedIn" />
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="copyright">
+    &copy; {today.getFullYear()} Brian Han. All rights reserved.
+  </section>
+</footer>
+
+<style lang="scss">
+  footer {
+    display: grid;
+    gap: 32px;
+    padding: 8px;
+    padding-bottom: 32px;
+    font-family: sans-serif;
+  }
+
+  footer .copyright {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  footer .socials ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+</style>

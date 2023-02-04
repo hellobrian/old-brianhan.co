@@ -1,0 +1,22 @@
+:is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--ff--unbounded);
+}
+
+p,
+a,
+li,
+time,
+small,
+table > * {
+  font-family: var(--ff--roboto);
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+mark {
+  background-color: var(--accent);
+  padding: 0 4px;
+}
