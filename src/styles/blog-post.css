@@ -1,20 +1,11 @@
-.blog {
-  font-family: "Inter", sans-serif;
-  padding-bottom: 48px;
-}
-
 .blog h1 {
-  font-size: 30px;
+  font-size: clamp(18px, 16px + 1vw, 30px);
 }
 
 .blog h2 {
-  font-size: 24px;
+  font-size: clamp(18px, 16px + 1vw, 24px);
   margin-top: 16px;
   margin-bottom: 16px;
-}
-
-.blog h3 {
-  line-height: 2;
 }
 
 .blog p {
@@ -23,7 +14,8 @@
 
 .blog pre {
   padding: 16px;
-  margin: 16px 0;
+  margin-top: 16px;
+  margin-bottom: 16px;
   overflow: auto;
 }
 
@@ -42,6 +34,7 @@
 
 .blog code {
   font-family: var(--ff--firamono);
+  font-size: clamp(12px, 8px + 1vw, 14px);
 }
 
 .blog p > code,
@@ -55,6 +48,19 @@
 
 .blog li::marker {
   color: var(--accent);
+}
+
+.blog li li::marker {
+  color: var(--black);
+}
+
+.blog li ul {
+  margin-top: 0;
+}
+
+.blog ol li::marker {
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .blog :is(ul, ol) {

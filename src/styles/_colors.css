@@ -4,12 +4,10 @@
   --grey: rgb(218, 218, 218);
   --green: #10ac84;
   --orange: #ff9f43;
+  --black: #000;
+  --white: #fff;
 
-  /* colors - roles */
+  /* roles */
   --accent: var(--orange);
   --muted: var(--grey);
-
-  /* sizes */
-  --content-width: 1400px;
-  --header-height: 88px;
 }

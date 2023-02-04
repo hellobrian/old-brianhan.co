@@ -12,7 +12,7 @@ const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
   </head>
 
   <body>
-    <div>
+    <div class="wrapper">
       <div class="header">
         <Header />
       </div>
@@ -24,9 +24,7 @@ const { title, description, image = "/placeholder-social.jpg" } = Astro.props;
       <Footer />
     </div>
     <style lang="scss">
-      @import "../styles/_mixins";
-
-      div {
+      .wrapper {
         display: grid;
         grid-template-rows: auto 1fr auto;
         height: 100%;

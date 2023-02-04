@@ -1,6 +1,0 @@
-@mixin breakpoint--content-width($min-width: 1400px) {
-  @media screen and (min-width: $min-width) {
-    max-width: $min-width;
-    @content;
-  }
-}

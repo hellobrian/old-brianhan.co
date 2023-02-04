@@ -8,12 +8,9 @@ import Default from "../layouts/Default.astro";
   </section>
 </Default>
 <style lang="scss">
-  @import "../styles/_mixins";
-
   section {
     margin: 0 auto;
     padding: 16px;
-
-    @include breakpoint--content-width;
+    max-width: 1400px;
   }
 </style>
